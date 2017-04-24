@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    border: 1px solid rgb(245, 245, 245);
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font: 20px "Muli";
+    margin: 0;
+    background: rgba(0, 0, 0, 0.05);
+}
+ul {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+}
+li {
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+li a {
+    text-decoration: none;
+    color: inherit;
+}
+.on-right {
+    float: right;
+}
+button {
+    background: #DB2828;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    font: 20px "Muli";
+    margin: 6px;
+}

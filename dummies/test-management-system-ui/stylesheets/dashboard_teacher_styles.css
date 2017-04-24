@@ -1,0 +1,25 @@
+body {
+    font-family: font-family: "Oxygen";
+}
+.container{
+    width: 85%;
+}
+h3, h4, h5, h6{
+    font-weight: normal;
+}
+.new-test {
+    background: #006064;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    float: right;
+    padding: 10px;
+}
+.new-test a {
+    color: white;
+}
+.massive-font {
+    font-size: 25px;
+}
+.new-test h3, .new-test ui {
+    display: inline-block;
+}

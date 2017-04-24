@@ -1,0 +1,10 @@
+.main-container {
+    width: 60%;
+    margin: 20px auto;
+}
+textarea {
+    resize: none;
+}
+select: invalid {
+    color: grey;
+}
