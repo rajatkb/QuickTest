@@ -2,68 +2,66 @@
     <head>
         <title></title>
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen" />
-        <link rel="stylesheet" type="text/css" href="E:/computer science/web development/projects/lib/bootstrap-3.3.7/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="E:/computer science/web development/projects/lib/semantic-ui/semantic.css" />
-        <link rel="stylesheet" type="text/css" href="E:\computer science\web development\projects\lib\font-awesome-4.7.0\css\font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="E:/computer science/web development/projects/lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="E:/computer science/web development/projects/lib/skeleton-2.0.4/css/skeleton.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/dashboard_teacher_styles.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/navbar_styles.css" />
         <script type="text/javascript" src="E:/computer science/web development/projects/lib/jquery/jquery-3.2.0.min.js"></script>
         <script type="text/javascript" src="scripts/dashboard_teacher_script.js"></script>
     </head>
     <body>
-        <div class="ui massive menu">
-            <a class="active item">Your dashboard</a>
-            <a class="item">Profile</a>
-            <div class="right menu">
-                <div class="item">
-                    <a class="ui red button">Logout</a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="jumbotron">
-                <h2>Apurva Kalita</h2>
+        <nav class="menu-bar" id="main-nav">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+            <li class="on-right"><button id="logout"><a href="#">Logout</a></button></li>
+        </nav>
+        <div class="main-container">
+            <div class="banner">
+                <h3>Apurva Kalita</h3>
                 <h5>HOD, Department of ETE & CSE</h5>
             </div>
-            <div class="new-test">
-                <a href="new_test.html">
-                    <h3 class="massive-font">Create new: &nbsp</h3>
-                    <i class="fa fa-3x fa-plus-circle"></i>
-                </a>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Weekly Test - III</h3>
-                        </div>
-                        <div class="panel-body">
-                            This was the most recent test conducted by you
-                        </div>
+            <button class="new-test">
+                    <a href="new_test.html">
+                        <h5>Organize a new test </h5>
+                        <i class="fa fa-3x fa-plus-circle"></i>
+                    </a>
+            </button>
+            <div class="test-list">
+                <div class="test-list-item">
+                    <div class="test-title">
+                        <h4>Weekly Test - III</h4>
                     </div>
+                    <div class="test-short-desc">
+                        This was the most recent test conducted by you
+                    </div>
+                    <div class="controls">
+                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i></button>
+                    </div>        
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Weekly Test - II</h3>
-                        </div>
-                        <div class="panel-body">
-                            This was the second weekly test conducted by you
-                        </div>
+                <div class="test-list-item">
+                    <div class="test-title">
+                        <h4>Weekly Test - II</h4>
                     </div>
+                    <div class="test-short-desc">
+                        This was the second weekly test conducted by you
+                    </div>
+                    <div class="controls">
+                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i></button>
+                    </div>        
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Weekly Test - I</h3>
-                        </div>
-                        <div class="panel-body">
-                            This was the first weekly test conducted by you
-                        </div>
+                <div class="test-list-item">
+                    <div class="test-title">
+                        <h4>Weekly Test - I</h4>
                     </div>
+                    <div class="test-short-desc">
+                        This was the first weekly test conducted by you
+                    </div>
+                    <div class="controls">
+                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i></button>
+                    </div>        
                 </div>
             </div>
         </div>
