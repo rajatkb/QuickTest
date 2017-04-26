@@ -1,25 +1,62 @@
 body {
-    font-family: font-family: "Oxygen";
+    font-family: "Oxygen";
 }
-.container{
+.main-container{
     width: 85%;
+    margin: 0 auto;
 }
-h3, h4, h5, h6{
-    font-weight: normal;
+.banner {
+    background: rgb(245, 245, 245);
+    padding: 20px;
+    margin: 20px 10px 10px 10px;
+    border-radius: 10px;
+}
+.test-list {
+    margin: 10px;
+    position: relative;
+    top: 75px;
+    border: 2px solid rgb(235, 235, 235);
 }
 .new-test {
     background: #006064;
-    margin-bottom: 20px;
-    border-radius: 10px;
     float: right;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 5px 5px;
+    text-transform: none;
+    height: 60px;
+    margin: 5px 10px;
 }
 .new-test a {
     color: white;
+    text-decoration: none;
 }
-.massive-font {
-    font-size: 25px;
-}
-.new-test h3, .new-test ui {
+.new-test h5, .new-test i {
     display: inline-block;
+}
+i {
+    margin: 4px;
+}
+.test-list-item {
+    border: 2px solid rgb(235, 235, 235);
+    margin: 5px;
+    padding-bottom: 5px;
+}
+.test-title {
+    background: rgb(245, 245, 245);
+    padding: 0px 10px;
+}
+.test-short-desc {
+    padding: 0px 10px;
+}
+.delete-test {
+    background: #DB2828;
+    border-radius: 5px;
+    padding: 5px 5px;
+    text-transform: none;
+    height: 50px;
+    margin: 10px 10px 5px 10px;
+    color: white;
+    border: none;
+    position: relative;
+    left: 95%;
 }
