@@ -23,7 +23,7 @@ select: invalid {
     outline: none;
 }
 textarea {
-    height: 100px;
+    height: 200px !important;
     resize: none;
 }
 .form-controls{
@@ -46,4 +46,16 @@ button {
 }
 .submit-button {
     background: #01579B;
+}
+.more-qs-button{
+    width: auto;
+    padding: 5px 10px;
+    background: #388E3C;
+    float: right;
+}
+.marks-input{
+    width: 30%;
+}
+i {
+    margin: 4px;
 }
