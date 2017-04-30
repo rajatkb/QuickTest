@@ -77,7 +77,6 @@ li .on-right: active{
     background-color: white;
     margin-top: 10px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-
     
 }
 .row{
@@ -98,6 +97,9 @@ li .on-right: active{
 .text{
     font-size: 20px;
     padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: underline;
 }
 .containerdiv{
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -109,4 +111,19 @@ li .on-right: active{
     width: 95%;
     
 
+}
+#hover-content {
+    display: none;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    font-family: cursive;
+}
+.tests:hover #hover-content {
+    display: inline-block;
+}
+
+.tests:hover .questions{
+ 
+  filter: blur(1px);
 }
