@@ -16,18 +16,18 @@
         </nav>
         <div class="main-container">
             <div class="teacher-info">
-                <h3 id="teacher-name">Apurba Kalita</h3>
-                <span id="username">apurba.kalita.aec</span><br>
-                <span id="email">apurvakalita@gmail.com</span><br><br>
-                <span id="job-desc">HOD, Department of ETE & CSE</span><br>
-                <span id="qualification">Bachelor of engineering (Electronics & Telecomm.)</span><br>
-                <span id="specs"><strong>Specialization: </strong>Control Systems</span><br>
-                <div class="profile-controls">
-                    <button class="form-button" id="update-info-button">Update your info</button>
-                </div>
+                    <h3 id="teacher-name">Apurba Kalita</h3>
+                    <span id="username">apurba.kalita.aec</span><br>
+                    <span id="email">apurvakalita@gmail.com</span><br><br>
+                    <span id="job-desc">HOD, Department of ETE & CSE</span><br>
+                    <span id="qualification">Bachelor of engineering (Electronics & Telecomm.)</span><br>
+                    <span id="specs"><strong>Specialization: </strong>Control Systems</span><br>
+                    <div class="profile-controls">
+                        <button class="form-button" id="update-info-button">Update your info</button>
+                    </div>
             </div>
             <div class="update-info-form">
-                <form>
+                <form  id="update-info-form">
                     <h4 id="teacher-name">Apurba Kalita</h4>
                     <span>apurvakalita@gmail.com</span><br><br>
                     <div class="row">
@@ -38,10 +38,10 @@
                             <span class="update-info-labels">Specialization: </span><br>
                         </div>
                         <div class="eight columns">
-                            <input type="text" value="apurba.kalita.aec"><br>
-                            <input type="text" value="HOD, Department of ETE & CSE"><br>
-                            <input type="text" value="Bachelor of engineering (Electronics & Telecomm.)"><br>
-                            <input type="text" value="Control Systems"><br>
+                            <input type="text" name="new_username" value="apurba.kalita.aec"><br>
+                            <input type="text" name="new_desg" value="HOD, Department of ETE & CSE"><br>
+                            <input type="text" name="new_qual" value="Bachelor of engineering (Electronics & Telecomm.)"><br>
+                            <input type="text" name="new_specs" value="Control Systems"><br>
                         </div>
                     </div>
                 <button class="form-button" id="save-info-button" style="background: #8D6E63">Save</button>
@@ -110,6 +110,7 @@
         </div>
         <div class="dummy-grand">
             <div class="main-container new-test-form">
+                <div class="close-this"><button type="button" class="form-button escape-form-button"><i class="fa fa-window-close"></i>Close</button></div>
             <h4>You're about to organize a new test:</h4>
             <form method="post">
                 <input class="form-item" name="newtest[title]" placeholder="Title for the test" required/>
@@ -161,7 +162,7 @@
                 </div>
                 <hr>
                 <div class="question" id="question1">
-                    <input class="form-item" name="newtest[qs_1]" placeholder="Enter question" />
+                    <input class="form-item qs_title" name="newtest[qs_1]" placeholder="Enter question 1" />
                     <div class="row">
                         <div class="six columns">
                             <input class="form-item" name="newtest[qs_1_choice_a]" placeholder="A" />
@@ -189,10 +190,10 @@
                 </div>
                 <div class="more-qs-container"></div>
                 <hr>
-                <button class="form-button more-qs-button" id="add-qs-btn">Add more questions <i class="fa fa-plus-circle"></i></button>
+                <button type="button" class="form-button more-qs-button" id="add-qs-btn">Add more questions <i class="fa fa-plus-circle"></i></button>
                 <hr>
                 <div class="form-controls">
-                    <button class="form-button save-button">Save</button>
+                    <button type="button" class="form-button save-button">Save</button>
                     <button class="form-button submit-button">Submit</button>
                 </div>
             </form>
