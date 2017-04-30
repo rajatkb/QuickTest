@@ -1,0 +1,202 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen" />
+        <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/skeleton-2.0.4/css/skeleton.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/dashboard_teacher_styles.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/navbar_styles.css" />
+        <script type="text/javascript" src="lib/jquery/jquery-3.2.0.min.js"></script>
+        <script src="lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="scripts/dashboard_teacher_scripts.js"></script>
+    </head>
+    <body>
+        <nav class="menu-bar" id="main-nav">
+            <li class="on-right"><button id="logout"><a href="#">Logout</a></button></li>
+        </nav>
+        <div class="main-container">
+            <div class="teacher-info">
+                <h3 id="teacher-name">Apurba Kalita</h3>
+                <span id="username">apurba.kalita.aec</span><br>
+                <span id="email">apurvakalita@gmail.com</span><br><br>
+                <span id="job-desc">HOD, Department of ETE & CSE</span><br>
+                <span id="qualification">Bachelor of engineering (Electronics & Telecomm.)</span><br>
+                <span id="specs"><strong>Specialization: </strong>Control Systems</span><br>
+                <div class="profile-controls">
+                    <button class="form-button" id="update-info-button">Update your info</button>
+                </div>
+            </div>
+            <div class="update-info-form">
+                <form>
+                    <h4 id="teacher-name">Apurba Kalita</h4>
+                    <span>apurvakalita@gmail.com</span><br><br>
+                    <div class="row">
+                        <div class="four columns" style="padding-left: 5px">
+                            <span class="update-info-labels">Username: </span><br>
+                            <span class="update-info-labels">Designation: </span><br>
+                            <span class="update-info-labels">Qualification: </span><br>
+                            <span class="update-info-labels">Specialization: </span><br>
+                        </div>
+                        <div class="eight columns">
+                            <input type="text" value="apurba.kalita.aec"><br>
+                            <input type="text" value="HOD, Department of ETE & CSE"><br>
+                            <input type="text" value="Bachelor of engineering (Electronics & Telecomm.)"><br>
+                            <input type="text" value="Control Systems"><br>
+                        </div>
+                    </div>
+                <button class="form-button" id="save-info-button" style="background: #8D6E63">Save</button>
+                </form>
+            </div>
+            <button class="new-test" id="new-test-button">                
+                <h5>organize a new test</h5>
+                <i class="fa fa-3x fa-plus-circle" style="margin: 4px"></i>
+            </button>
+            <div class="test-list">
+                <div class="test-list-item test-saved">
+                    <div class="test-title">
+                        <h5>Weekly Test - III</h5>
+                    </div>
+                    <div class="test-short-desc">
+                        This is the test you have saved and is yet to be submitted
+                    </div>
+                    <div class="controls">
+                        <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
+                        <button class="submit-test"><i class="fa fa-3x fa-paper-plane"></i>Submit</button>
+                        <button class="edit-test"><i class="fa fa-3x fa-pencil-square-o"></i>Edit</button>
+                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
+                    </div>        
+                </div>
+                <div class="test-list-item test-submitted">
+                    <div class="test-title">
+                        <h5>Weekly Test - II</h5>
+                    </div>
+                    <div class="test-short-desc">
+                        This was the test you have submitted already and is yet to take place 
+                    </div>
+                    <div class="controls">
+                        <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
+                        <button class="submit-test"><i class="fa fa-3x fa-paper-plane"></i>Submit</button>
+                        <button class="edit-test"><i class="fa fa-3x fa-pencil-square-o"></i>Edit</button>
+                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
+                    </div>        
+                </div>
+                <div class="test-list-item test-conducted">
+                    <div class="test-title">
+                        <h5>Weekly Test - I</h5>
+                    </div>
+                    <div class="test-short-desc">
+                        This test has been already conducted
+                    </div>
+                    <div class="controls">
+                        <button class="start-test"><i class="fa fa-3x fa-hourglass-end"></i>Conducted</button>
+                        <button class="submit-test"><i class="fa fa-3x fa-paper-plane"></i>Submit</button>
+                        <button class="edit-test"><i class="fa fa-3x fa-pencil-square-o"></i>Edit</button>
+                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
+                    </div>        
+                </div>
+            </div>
+            <div class="ongoing-test-info">
+                <div class="test-title"><h5 id="ongoing-test-title">Weekly Test - I</h5></div>
+                <span id="ongoing-test-desc">This test has been described by you as this</span><br>
+                <strong>Department: </strong><span id="ongoing-test-dept">Computer Science & Engineering</span><br>
+                <strong>Semester: </strong><span id="ongoing-test-sem">IV</span><br>
+                <strong>Full marks: </strong><span id="ongoing-test-full-marks">100</span><br>
+                <strong>Passing marks: </strong><span id="ongoing-test_pass-marks">30</span><br>
+                <strong>Duration: </strong><span id="ongoing-test_duration">3 hours</span><br>
+                <strong>Time left: </strong><h1 id="ongoing-test-time-left">3:00:00</h1>
+            </div>
+        </div>
+        <div class="grand-container">
+        </div>
+        <div class="dummy-grand">
+            <div class="main-container new-test-form">
+            <h4>You're about to organize a new test:</h4>
+            <form method="post">
+                <input class="form-item" name="newtest[title]" placeholder="Title for the test" required/>
+                <textarea class="form-item" name="newtest[description]" placeholder="Add a description"></textarea>
+                <hr>
+                <div class="row">
+                    <div class="six columns">
+                        <input class="form-item" name="newtest[date]" placeholder="Scheduled date" />
+                    </div>
+                    <div class="six columns">
+                        <input class="form-item" name="newtest[duration]" placeholder="Duration" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <select class="form-item" name="newtest[department]">
+                            <option value="" disabled selected hidden>Department</option>
+                            <option value="che">Chemical</option>
+                            <option value="civ">Civil</option>
+                            <option value="cse">Computer Science</option>
+                            <option value="ele">Electrical</option>
+                            <option value="ece">Electronics & Telecommunications</option>
+                            <option value="inp">Industry & Production</option>
+                            <option value="ins">Instrumentation</option>
+                            <option value="mec">Mechanical</option>
+                        </select>
+                    </div>
+                    <div class="six columns">
+                        <select class="form-item" name="newtest[semester]">
+                            <option value="" disabled selected hidden>Semester</option>
+                            <option value="first">First</option>
+                            <option value="second">Second</option>
+                            <option value="third">Third</option>
+                            <option value="fourth">Fourth</option>
+                            <option value="fifth">Fifth</option>
+                            <option value="sixth">Sixth</option>
+                            <option value="seventh">Seventh</option>
+                            <option value="eights">Eighth</option>
+                        </select>
+                    </div>
+                </div>       
+                <div class="row">
+                    <div class="six columns">
+                        <input class="form-item" name="newtest[full_marks]" placeholder="Full marks" />
+                    </div>
+                    <div class="six columns">
+                        <input class="form-item" name="newtest[pass_marks]" placeholder="Passing marks" />
+                    </div>
+                </div>
+                <hr>
+                <div class="question" id="question1">
+                    <input class="form-item" name="newtest[qs_1]" placeholder="Enter question" />
+                    <div class="row">
+                        <div class="six columns">
+                            <input class="form-item" name="newtest[qs_1_choice_a]" placeholder="A" />
+                        </div>
+                        <div class="six columns">
+                            <input class="form-item" name="newtest[qs_1_choice_b]" placeholder="B" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="six columns">
+                            <input class="form-item" name="newtest[qs_1_choice_c]" placeholder="C" />
+                        </div>
+                        <div class="six columns">
+                            <input class="form-item" name="newtest[qs_1_choice_d]" placeholder="D" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="six columns">
+                            <input class="form-item" name="newtest[qs_1_answer]" placeholder="Correct choice" />
+                        </div>
+                        <div class="six columns">
+                            <input class="form-item" name="newtest[qs_1_marks]" placeholder="Marks for this question" />
+                        </div>
+                    </div>
+                </div>
+                <div class="more-qs-container"></div>
+                <hr>
+                <button class="form-button more-qs-button" id="add-qs-btn">Add more questions <i class="fa fa-plus-circle"></i></button>
+                <hr>
+                <div class="form-controls">
+                    <button class="form-button save-button">Save</button>
+                    <button class="form-button submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>
