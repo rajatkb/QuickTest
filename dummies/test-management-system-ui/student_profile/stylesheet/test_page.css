@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    
+    width: 100%;
 }
 nav {
     
@@ -38,6 +38,7 @@ li a {
 }
 .on-right {
     float: right;
+    right: 20px;
 }
 ul li a:hover{
     color:grey;
@@ -63,7 +64,7 @@ button {
 
     
 }
-li .on-right: active{
+li .on-right: {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
         background-color: black;
         transform: scale(0);
@@ -115,25 +116,37 @@ li .on-right: active{
     padding: 5px;
     
 }
-#red{
+#limegreen{
     width:10px;
-    background-color: red;
+    background-color: limegreen;
     height:10px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
-#yellow{
+#white{
     width:10px;
-    background-color: yellow;
+    background-color: white;
     height:10px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
-#green{
+#orange{
     width:10px;
-    background-color: green;
+    background-color: orange;
     height:10px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
-#black{
+#blue{
     width:10px;
-    background-color: black;
+    background-color: blue;
     height:10px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
 #clear{
     float:right;
@@ -141,7 +154,4 @@ li .on-right: active{
     background-color: green;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 
-}
-.row{
-    top:1000px;
 }
