@@ -1,18 +1,29 @@
 <html>
     <head>
         <title></title>
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen|Muli|Lato|Asar" />
         <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/skeleton-2.0.4/css/skeleton.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/nav.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/dashboard_teacher_styles.css" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/navbar_styles.css" />
         <script type="text/javascript" src="lib/jquery/jquery-3.2.0.min.js"></script>
         <script src="lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="scripts/nav.js"></script>
         <script type="text/javascript" src="scripts/dashboard_teacher_scripts.js"></script>
     </head>
     <body>
-        <nav class="menu-bar" id="main-nav">
-            <li class="on-right"><button id="logout"><a href="#">Logout</a></button></li>
+        <nav>
+            <span class="logo qt">
+              Quick Test
+            </span>
+            <div class="icon">
+              <span class="toggle">☰</span>
+            </div>
+            <ul class="list-item">
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">Profile</a></li>
+              <li class="on-right"><button id="#logout">Logout</button></li>
+            </ul>
         </nav>
         <div class="main-container">
             <div class="teacher-info">
@@ -85,7 +96,7 @@
                         <h5>Weekly Test - I</h5>
                     </div>
                     <div class="test-short-desc">
-                        This test has been already conducted
+                        This test has been conducted already 
                     </div>
                     <div class="controls">
                         <button class="start-test"><i class="fa fa-3x fa-hourglass-end"></i>Conducted</button>
