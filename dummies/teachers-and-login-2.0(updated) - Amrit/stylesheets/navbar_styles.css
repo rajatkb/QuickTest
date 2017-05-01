@@ -4,6 +4,23 @@ body {
     width: 100%;
 }
 
+.q{
+    font-size: 1.7em;
+    font-weight: bolder;
+
+}
+.qt{
+    
+    color: black;
+    width: auto;
+    float: left;
+    margin-left: 0.5em;
+    position: relative;
+    top: -0.6em;
+    font-size: 1.25em;
+    
+}
+
 nav {
     padding-bottom:25px;
     padding-top: 10px;
@@ -157,22 +174,7 @@ li .on-right: {
 
 
 
-.qt{
-    
-    color: black;
-    width: auto;
-    float: left;
-    margin-left: 0.5em;
-    position: relative;
-    top: -0.6em;
-    font-size: 1.25em;
-    
-}
-.q{
-    font-size: 1.7em;
-    font-weight: bolder;
 
-}
 
 .line{
 	margin: 7px;
