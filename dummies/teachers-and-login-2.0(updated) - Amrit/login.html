@@ -2,9 +2,9 @@
     <head>
         <title></title>
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen" />
-        <link rel="stylesheet" type="text/css" href="lib/skeleton-2.0.4/css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/skeleton-2.0.4/css/skeleton.css" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/navbar_styles.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/nav.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/login_styles.css" />
         <script type="text/javascript" src="lib/jquery/jquery-3.2.0.min.js"></script>
         <script type="text/javascript" src="scripts/nav.js"></script>
@@ -12,21 +12,23 @@
     </head>
     <body>
         <nav>
-            <span class="logo qt">
-                <span class="q">Q</span>uick Test
-            </span>
-            <div class="icon">
-              	<span class="toggle">
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
-            </div>
-            <ul class="list-item">
-              <li class="on-right"><button id="register">Register</button></li>
-            </ul>     
-        </nav>
+        <span class="logo qt">
+            <span class="q">Q</span>uick Test
+        </span>
+        
+        <span class="toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+        </span>
+        
+        <ul class="list-item">                      
+            <li><a href="">Dashboard</a></li>
+            <li class="on-right"><button id="register">Register</button></li>
+        </ul>
             
-        <div class="form-container">
+      </nav>
+        <div class="mega-container">
         <div class="login-main-container">
             <form method="post" id="login-teacher-form">
                 <input name="login_tch[username]" type="text" placeholder="Username or email ID" /><br>
