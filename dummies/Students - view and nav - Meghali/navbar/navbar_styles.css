@@ -118,9 +118,9 @@ li .on-right{
 	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.9);
 }
 
-@media (max-width: 700px) {
+@media (max-device-width: 700px) {
 	
-	 nav{
+	 nav{ 
   	position: fixed;
 	top:0px;
 	z-index: 1000;
