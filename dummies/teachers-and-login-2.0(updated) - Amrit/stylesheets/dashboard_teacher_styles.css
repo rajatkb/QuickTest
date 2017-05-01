@@ -5,8 +5,12 @@ body {
     width: 85%;
     margin: 10px auto;
 }
-button:active {
+.ultra-container button:active {
     transform: translateY(4px);
+    color: white;
+}
+.ultra-container button:focus {
+    color: white;
 }
 .teacher-info {
     background: rgb(245, 245, 245);
@@ -28,6 +32,9 @@ button:active {
     border: none;
     padding: 0px;
 }
+.update-info-form input {
+    width: 70%;
+}
 .update-info-form form, .ongoing-test-info, .delete-test-conf {
     margin: 20px auto;
     width: 50%;
@@ -39,12 +46,10 @@ button:active {
     background: white;
     z-index: 100;
 }
-.update-info-form form input{
-    width: 90%;
-}
 .update-info-labels {
     line-height: 50px;
     font-weight: 800;
+    margin: 0px 10px;
 }
 .ongoing-test-info {
     padding-bottom: 20px;
@@ -87,11 +92,11 @@ i {
     color: white;
     box-shadow: none;
 }
-button a:hover{
+.ultra-container button a:hover{
     text-decoration: none;
     color: white;
 }
-.delete-test:focus {
+#update-info-button:focus, .delete-test:focus {
     color: white;
 }
 .test-list-item {
@@ -120,10 +125,10 @@ button a:hover{
     padding: 0px 10px;
 }
 .submit-test {
-    background: #1565C0;
+    background: #4682B4;
 }
 .edit-test {
-    background: #689F38;
+    background: #5CB85C;
 }
 .delete-test {
     background: #DB2828;
@@ -149,7 +154,7 @@ button a:hover{
 }
 .start-test {
     height: 120px;
-    width: 180px;
+    width: auto;
     float: left;
     background: #212121;
     font-size: 23px;
@@ -161,7 +166,7 @@ button a:hover{
 .test-submitted .edit-test button{
     opacity: 0.6;
     box-shadow: none;
-} 
+}
 /*==============================================================*/
 .new-test-form {
     background: white;
@@ -171,7 +176,7 @@ button a:hover{
     width: 60%;
     margin: 10px auto;
 }
-form {
+.ultra-container form {
     border: 1px solid rgb(215, 215, 215);
     padding: 20px;
     border-radius: 8px;
@@ -191,7 +196,7 @@ select: invalid {
 .question input {
     box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
 }
-textarea {
+.ultra-container textarea {
     height: 100px !important;
     resize: none;
 }
@@ -228,7 +233,7 @@ textarea {
     background: #388E3C;
     
 }
-.row {
+.ultra-container .row {
     margin: 0px;
 }
 #question1, .more-qs-container {
