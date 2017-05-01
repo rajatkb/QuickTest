@@ -1,0 +1,206 @@
+body{
+    margin:0px;
+}
+
+.q{
+    font-size: 1.7em;
+    font-weight: bolder;
+
+}
+.qt{
+    
+    color: black;
+    width: auto;
+    float: left;
+    margin-left: 0.5em;
+    position: relative;
+    top: -0.6em;
+    font-size: 1.25em;
+    
+}
+
+nav {
+    padding-bottom:25px;
+    padding-top: 10px;
+    font: 20px "Muli";
+    margin: 0;
+    background: #E0E0E0;
+    height: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.list-item {
+    float: right;
+  display: inline-block;
+    margin: 5px;
+    padding: 0px;
+}
+.list-item li {
+    
+  display: inline-block;
+    text-decoration: none;
+    padding-left: 14px;
+    padding-right: 14px;
+  transition: all .2s ease-in-out;
+}
+.list-item li a {
+    
+  text-decoration: none;
+    color: inherit;
+    border-right: 0.2px;
+    border-color: lightcyan;
+    border-style: groove;
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-right: 25px;
+}
+.list-item li:hover {
+  color:grey;
+}
+.on-right {
+    float: right;
+    text-decoration: none;
+}
+li.on-right button {
+    background: #DB2828;
+    border: none;
+    border-radius: 4px;
+    width: 110px;
+    height: 30px;
+    color: white;
+    font: 20px "Muli";
+    padding: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+li.on-right button:hover{
+    background: #E53935;
+}
+
+li.on-right button:active{
+        box-shadow: none;
+    }
+
+
+li .on-right{
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+        background-color: black;
+        transform: scale(0);
+        float: right;
+}
+
+
+.icon {
+  display: none;
+    
+}
+.toggle {
+  display:none;
+  float: right;
+  margin: 20px;
+  color: black;
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.9);	
+  padding: 0px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  top: -20px;
+    
+}
+
+.toggle:active{
+	
+	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.9);
+}
+
+@media (max-device-width: 700px){
+    
+    .toggle{
+        display: block;
+        height: 80%;
+        width: 10%;
+    }
+    
+    nav{ 
+    padding-top: 20px;
+    padding-bottom: 0px;
+    position: fixed;
+    top:0px;
+    z-index: 1000;
+    height: 100px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    
+    .qt{
+        font-size: 60px;
+        color: black;
+        margin: 2px;
+    }
+    	
+    li.on-right button{
+        width: 60%;
+        height: 40px;
+        margin: 0px;
+        padding: 1px
+    }
+    
+    
+    
+  .icon {
+    
+  }
+  .list-item { 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -32px;
+    background-color: #E0E0E0;
+    display: none;
+    text-align: center;
+    border:none;
+
+  }
+  .list-item li {
+    font-size: 60px;
+    height:80px;
+    text-align: center;
+    padding: 5px;  
+    margin: 10px;   
+    display: block;
+    float: none;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+  }
+    .list-item li a{
+        border:none;
+    }
+    
+    li.on-right button{
+        font-size: 50px;
+        height: 90%;
+    }
+   
+    .icon{
+        height: 30px;
+        box-shadow:none;
+    }
+    
+    .line{
+	margin: 20% 10%;
+	padding: 0px;
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-top-color: black;
+	width: 80%;
+}
+
+}
+
+
