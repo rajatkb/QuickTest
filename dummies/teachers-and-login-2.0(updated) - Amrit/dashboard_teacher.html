@@ -4,8 +4,8 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen|Muli|Lato|Asar" />
         <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/skeleton-2.0.4/css/skeleton.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/nav.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/dashboard_teacher_styles.css" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/navbar_styles.css" />
         <script type="text/javascript" src="lib/jquery/jquery-3.2.0.min.js"></script>
         <script src="lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
         <script type="text/javascript" src="scripts/nav.js"></script>
@@ -13,21 +13,23 @@
     </head>
     <body>
         <nav>
-            <span class="logo qt">
-                <span class="q">Q</span>uick Test
-            </span>
-            <div class="icon">
-				<span class="toggle">
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
-			</span>
-            </div>
-            <ul class="list-item">
-              <li><a href="#">Dashboard</a></li>
-              <li class="on-right"><button>Logout</button></li>
-            </ul>     
-        </nav>
+        <span class="logo qt">
+            <span class="q">Q</span>uick Test
+        </span>
+        
+        <span class="toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+        </span>
+        
+        <ul class="list-item">                      
+            <li><a href="">Dashboard</a></li>
+            <li class="on-right"><button>LogOut</button></li>
+        </ul>
+            
+      </nav>
+        <div class="ultra-container">
         <div class="main-container">
             <div class="teacher-info">
                     <h3 id="teacher-name">Apurba Kalita</h3>
@@ -45,18 +47,10 @@
                     <h4 id="teacher-name">Apurba Kalita</h4>
                     <span>apurvakalita@gmail.com</span><br><br>
                     <div class="row">
-                        <div class="four columns" style="padding-left: 5px">
-                            <span class="update-info-labels">Username: </span><br>
-                            <span class="update-info-labels">Designation: </span><br>
-                            <span class="update-info-labels">Qualification: </span><br>
-                            <span class="update-info-labels">Specialization: </span><br>
-                        </div>
-                        <div class="eight columns">
-                            <input type="text" name="new_username" value="apurba.kalita.aec"><br>
-                            <input type="text" name="new_desg" value="HOD, Department of ETE & CSE"><br>
-                            <input type="text" name="new_qual" value="Bachelor of engineering (Electronics & Telecomm.)"><br>
-                            <input type="text" name="new_specs" value="Control Systems"><br>
-                        </div>
+                            <span class="update-info-labels">Username: </span><input type="text" name="new_username" value="apurba.kalita.aec"><br>
+                            <span class="update-info-labels">Designation: </span><input type="text" name="new_desg" value="HOD, Department of ETE & CSE"><br>
+                            <span class="update-info-labels">Qualification: </span><input type="text" name="new_qual" value="Bachelor of engineering (Electronics & Telecomm.)"><br>
+                            <span class="update-info-labels">Specialization: </span><input type="text" name="new_specs" value="Control Systems"><br>
                     </div>
                 <button class="form-button" id="save-info-button" style="background: #8D6E63">Save</button>
                 </form>
@@ -203,9 +197,7 @@
                         <div class="six columns">
                             <input class="form-item" name="newtest[qs_1_answer]" placeholder="Correct choice" />
                         </div>
-                        <div class="six columns">
-                            <input class="form-item" name="newtest[qs_1_marks]" placeholder="Marks for this question" />
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="more-qs-container"></div>
@@ -217,6 +209,7 @@
                     <button class="form-button submit-button">Submit</button>
                 </div>
             </form>
+        </div>
         </div>
         </div>
     </body>
