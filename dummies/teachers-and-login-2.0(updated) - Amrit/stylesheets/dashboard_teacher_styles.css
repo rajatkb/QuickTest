@@ -5,14 +5,16 @@ body {
     width: 85%;
     margin: 10px auto;
 }
+button:active {
+    transform: translateY(4px);
+}
 .teacher-info {
     background: rgb(245, 245, 245);
     padding: 20px;
     margin: 20px 10px 10px 10px;
     border-radius: 10px;
-    background: #004D40;
-    color: white;
-    text-shadow: 3px 3px 5px black;
+    background: rgb(230, 230, 230);
+    color: black;
 }
 #update-info-button {
     width: 150px;
@@ -26,7 +28,7 @@ body {
     border: none;
     padding: 0px;
 }
-.update-info-form form, .ongoing-test-info {
+.update-info-form form, .ongoing-test-info, .delete-test-conf {
     margin: 20px auto;
     width: 50%;
     text-align: center;
@@ -54,7 +56,7 @@ body {
     border: 2px solid rgb(235, 235, 235);
 }
 .new-test {
-    background: #3E2723; 
+    background: #00695C; 
     float: right;
     border-radius: 10px;
     padding: 5px 5px;
@@ -125,6 +127,21 @@ button a:hover{
 }
 .delete-test {
     background: #DB2828;
+}
+.delete-test-conf {
+    margin: 120px auto;
+    padding: 25px;
+    display: none;
+}
+.delete-test-conf button {
+    color: white;
+    margin: 20px;
+}
+.delete-test-yes {
+    background: #DB2828;
+}
+.delete-test-no {
+    background: #689F38;
 }
 .fa-hourglass-start, .fa-hourglass-end {
     font-size: 30px;
