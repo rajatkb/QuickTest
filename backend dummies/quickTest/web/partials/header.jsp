@@ -6,8 +6,6 @@
         <title></title>
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Muli|Lato|Asar" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/assets/lib/font-awesome-4.7.0/css/font-awesome.min.css" />">
-        <link rel="stylesheet" type="text/css" href="<c:url value="/assets/lib/skeleton-2.0.4/css/normalize.css" />">
-        <link rel="stylesheet" type="text/css" href="<c:url value="/assets/lib/skeleton-2.0.4/css/skeleton.css" />">
         <script src="<c:url value="/assets/lib/jquery/jquery-3.2.0.min.js" />" ></script>
         <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/navbar_styles.css" />" />
         <script type="text/javascript" src="<c:url value="/assets/scripts/nav.js"/>"></script>
@@ -28,7 +26,7 @@
           <%
               if( request.getServletPath().equals("/login.jsp"))
               {      
-                  out.println("<li id=\"register\" class=\"on-right\"><button>Register</button></li>");
+                  out.println("<li  class=\"on-right\"><button id=\"register\" >Register</button></li>");
               }
               else
               { 

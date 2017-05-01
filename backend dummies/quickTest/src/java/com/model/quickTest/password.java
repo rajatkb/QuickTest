@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package com.model.quickTest;
 
 import java.security.MessageDigest;
 import java.sql.*;
-/**
- *
- * @author Rajat
- */
+
 public class password {
     
     private int id;
@@ -59,4 +51,38 @@ public class password {
     }
     
     /* this is where the passwords are handled*/
+    
+    public int createDB(Connection dbObj)
+    {
+        try
+        {
+            Statement state = (Statement) dbObj.createStatement();
+            state.execute("CREATE TABLE IF NOT EXISTS password(\n" +
+                          "id          INT UNIQUE,\n" +
+                          "password    VARCHAR(50),\n" +
+                          "PRIMARY KEY(id)\n" +
+                          "); ");
+            return 1;
+        }
+        catch(SQLException ex)
+        {
+            System.out.println(ex);
+            return 0;
+        }
+    }
+    
+    public int insertIntoDB(Connection dbObj)
+    {
+        try
+        {
+            return 1;
+        }
+        catch(Exception ex)
+        {
+            return 0;
+        }
+    
+    }
+            
+    
 }

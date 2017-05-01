@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var state = 0;
     $("#register").click(function(){
-        console.log("hello");
         if(state == 0){
             $(this).text("Login");
             $(".login-main-container").hide(300, function(){

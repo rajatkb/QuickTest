@@ -21,8 +21,23 @@ public class student {
     private String department;
     private int depCode;
     private String email;
-     
-    public void setNewData(String email,int rollNo, int batchYear, String name, String username, String department, int depCode)
+    
+    private String mapDepCode(int depCode)
+    {
+        switch(depCode)
+        {
+            case 1: return "Computer Science Engineering";
+            case 2: return "Electronics Engineering";
+            case 3: return "Mechanical Engineering";
+            case 4: return "Electrical Engineering";
+            case 5: return "Civil Engineering";
+            case 6: return "Chemical Engineering";
+            case 7: return "instrumentation & Production";
+        }
+        return "";
+    }
+    
+    public void setNewData(String email,int rollNo, int batchYear, String name, String username, int depCode)
     {
         this.email = email;
         this.rollNo = rollNo;
