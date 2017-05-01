@@ -72,6 +72,7 @@ li .on-right: {
     
 }
 .toggle {
+
   float: right;
   margin: 20px;
   color: black;
@@ -80,7 +81,9 @@ li .on-right: {
   padding: 0px 5px;
   border-radius: 4px;
   cursor: pointer;
-
+  position: relative;
+    top: -20px;
+    
 }
 
 @media (max-width: 700px) {
@@ -121,16 +124,35 @@ li .on-right: {
         font-size: 20px;
     
     }
+    nav{
+        height: 25px;
+        width: 99.5%;
+        margin: 0 auto;
+        border-radius: none;
+        
+    }
+    .icon{
+        height: 30px;
+        box-shadow:none;
+    }
 }
 
 
 
+
 .qt{
-    text-transform: uppercase;
-    color: #FF1744;
-    letter-spacing: 3px;
-    text-shadow: 3px 2px grey;
-    font-size: 140%;
-    padding: 10px;
+    
+    color: black;
+    width: auto;
+    float: left;
+    margin-left: 0.5em;
+    position: relative;
+    top: -0.6em;
+    font-size: 1.25em;
+    
+}
+.q{
+    font-size: 1.7em;
+    font-weight: bolder;
 
 }
