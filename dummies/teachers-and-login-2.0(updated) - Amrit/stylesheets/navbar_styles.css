@@ -169,14 +169,8 @@ li .on-right: {
         height: 30px;
         box-shadow:none;
     }
-}
-
-
-
-
-
-
-.line{
+    
+    .line{
 	margin: 7px;
 	padding: 0px;
 	border-top-style: solid;
@@ -184,3 +178,7 @@ li .on-right: {
 	border-top-color: black;
 	width: 1em;
 }
+
+}
+
+
