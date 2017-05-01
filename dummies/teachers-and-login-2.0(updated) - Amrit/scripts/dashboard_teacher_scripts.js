@@ -11,7 +11,11 @@ function onLoading(){
         addNewQuestion(new_qs_index);
     });
     $(".escape-test-form-button").click(escapeFormWindow);
-     $(".escape-start-test").click(escapeStartTest);
+    $(".escape-start-test").click(escapeStartTest);
+    $(".delete-test").click(function(){
+        var questionToDel = $(this).parent().parent()[0];
+        deleteTest(questionToDel);
+    });
 }
 function updateTeachersInfo(){
     $(".grand-container").fadeIn(500);
@@ -32,6 +36,7 @@ function addNewQuestion(index){
         $('.more-qs-container').append(newQuestionTemplate);
     });
 } 
+
 function fixButtons(){
     $(".test-submitted .edit-test").css({"opacity": "0.5", "box-shadow": "none"});
     $(".test-submitted .submit-test").css({"opacity": "0.5", "box-shadow": "none"});
@@ -60,4 +65,26 @@ function escapeStartTest(){
     $(".grand-container").fadeOut(50, function(){
         $(".ongoing-test-info").hide("fast");
     });
+}
+function deleteTest(questionToDel){
+    var pageHeight = String(parseFloat($(".main-container").css("height"))+150);
+    $(".grand-container").css("height", pageHeight);
+    $(".grand-container").fadeIn(500, function(){
+        $(".delete-test-conf").show("fast");
+    });
+    $(".delete-test-yes").click(function(){
+        deleteThisTest(questionToDel);
+    });
+    $(".delete-test-no").click(function(){
+        closeConfBox();
+    });
+}
+function closeConfBox(){
+    $(".grand-container").fadeOut(50, function(){
+        $(".delete-test-conf").hide("fast");
+    });
+}
+function deleteThisTest(questionToDel){
+    $(questionToDel).remove();
+    closeConfBox();
 }
