@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Muli|Lato|Asar" />
+        <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="lib\skeleton\normalize.css"/>
+        <link rel="stylesheet" type="text/css" href="lib\skeleton\skeleton.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheet/test_page.css" />
+        <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="scripts/test_page.js"></script>
+	</head>
+
+	<body>
+        <nav>
+            <ul>
+            
+            
+                <li><a href="#">Profile </a></li>
+                
+            </ul>
+            <li class="on-right"><button>Logout</button></li>
+            
+        </nav>
+        <div class="row">
+            <div class="grand-question-class">
+                <div class="eight columns test random-class">
+                    <div class="questions ques1" id="ques1">
+                        
+                        Q1. <span class="bm bm1" ><i class="fa fa-bookmark " id="bm"></i></span><br>
+                        <span id="ques1" alt="1">
+                        <input type="radio" name="option1" > a) <br>
+                        <input type="radio" name="option1" > b) <br>
+                        <input type="radio" name="option1"> c) <br>
+                        <input type="radio" name="option1"> d) 
+                        <button type="reset" id="clear" class="clear">CLEAR</button>
+                        </span>
+                    </div>
+                    <div class="questions ques2" id="ques2" alt="1">
+                        
+                        Q2. <span class="bm bm2"><i class="fa fa-bookmark" id="bm"></i></span><br> 
+                       
+                        <input type="radio" name="option2"> a) <br>
+                        <input type="radio" name="option2" > b) <br>
+                        <input type="radio" name="option2"> c) <br>
+                        <input type="radio" name="option2"> d) 
+                        <button type="reset" id="clear">CLEAR</button>
+                       
+                    </div>
+                    <div class="questions ques3" id="ques3" alt="1">
+                        
+                        Q3. <span class="bm bm3"><i class="fa fa-bookmark" id="bm"></i></span><br>
+                       
+                        <input type="radio" name="option3"> a) <br>
+                        <input type="radio" name="option3" > b) <br>
+                        <input type="radio" name="option3"> c) <br>
+                        <input type="radio" name="option3"> d)
+                        <button type="reset" id="clear" class="clear">CLEAR</button>
+        
+                    </div>
+                                    <button style="position: fixed" id="next-six">Next 6</button>
+
+                </div> 
+                </div>
+                <div class="four columns test" >
+                    
+                    <div id="ques_schema" class="another-random-class">Question Schema <br><br>
+                    
+                        <div class="row">
+                            <div class="two columns color ans1" id="ans1">1</div>
+                            <div class="two columns color ans2" id="ans2">1</div>
+                            <div class="two columns color ans3" id="ans3">1</div>
+                            
+                            
+                        </div>
+                       
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="side" id="color_panel">Color Panel<br><br>
+                    
+                        
+                        <div id="white" ></div> Not Answered <br><br>
+                        <div id="orange" ></div>Answered <br><br>
+                        <div id="blue" ></div>Bookmarked <br><br>
+                        <div id="limegreen" ></div>Not Bookmarked <br><br>
+
+                    
+                    </div>
+<br><br><br><br>
+                    <div>
+                        <button id="submit" class="on-right">Submit</button>
+                        <button id="Save" class="on-right">Save</button>
+
+
+                    </div>
+            </div>
+            
+            </div>
+	</body>
+</html>
