@@ -28,7 +28,7 @@
           <%
               if( request.getServletPath().equals("/login.jsp"))
               {      
-                  out.println("<li class=\"on-right\"><button>Register</button></li>");
+                  out.println("<li id=\"register\" class=\"on-right\"><button>Register</button></li>");
               }
               else
               { 

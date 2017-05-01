@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context antiJARLocking="true" path="/quickTest">
     <Resource name="jdbc/db" auth="Container"
-		type="javax.sql.DataSource" username="root" password="iamrajat"
+		type="javax.sql.DataSource" username="root" password="1234"
 		driverClassName="com.mysql.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/quicktest"
 		maxActive="300" maxIdle="4" />
