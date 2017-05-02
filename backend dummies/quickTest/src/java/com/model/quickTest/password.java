@@ -74,7 +74,7 @@ public class password {
     public int insertIntoDB(Connection dbObj)
     {
         try
-        {
+        {   
             return 1;
         }
         catch(Exception ex)

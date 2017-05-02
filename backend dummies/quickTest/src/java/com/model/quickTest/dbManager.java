@@ -47,4 +47,24 @@ public class dbManager {
         }
     }
     
+    public int intialiseAllDB()
+    {
+        password pobj = new password();
+        teacher tobj = new teacher();
+        pobj.createDB(dbObj);
+        tobj.createDB(dbObj);
+        return 1;
+    }
+    
+    public int registerTeacher( String username,String name,String jobDescription,String email,String specialization,String qualification)
+    {
+        teacher obj= new teacher();
+        obj.setNewData(name, username, jobDescription, email, specialization, qualification);
+        int value=obj.insertDataIntoDB(dbObj);
+        if(value == 0)
+            return 0;
+        return 1;
+    }
+    
+    
 }

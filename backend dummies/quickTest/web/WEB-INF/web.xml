@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    
+    <listener>
+	<listener-class>
+             com.controller.quickTest.initializeEverything
+        </listener-class>
+    </listener>
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
@@ -10,6 +16,10 @@
     <servlet>
         <servlet-name>registerController</servlet-name>
         <servlet-class>com.controller.quickTest.registerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>initialize</servlet-name>
+        <servlet-class>com.controller.quickTest.initialize</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
@@ -26,6 +36,10 @@
     <servlet-mapping>
         <servlet-name>registerController</servlet-name>
         <url-pattern>/registerController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>initialize</servlet-name>
+        <url-pattern>/initialize</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
