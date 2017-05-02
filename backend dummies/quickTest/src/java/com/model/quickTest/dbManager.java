@@ -56,14 +56,23 @@ public class dbManager {
         return 1;
     }
     
-    public int registerTeacher( String username,String name,String jobDescription,String email,String specialization,String qualification)
+    public int registerTeacher( String username,String name,String jobDescription,String email,String specialization,String qualification , String password)
     {
         teacher obj= new teacher();
         obj.setNewData(name, username, jobDescription, email, specialization, qualification);
         int value=obj.insertDataIntoDB(dbObj);
-        if(value == 0)
-            return 0;
-        return 1;
+        // This deotes the succesfull insertion of data into the db for teacheer
+        // may fail if the value is 0 which is bcz of dulicate data 
+        int insertedId = obj.getID();
+        if(value==1 )
+        {   
+            password pobj = new password();
+            pobj.setData( insertedId , password);
+            pobj.insertIntoDB(dbObj);
+            //insert the id  and password in the DB
+            return 1;
+        }
+        return 0;
     }
     
     

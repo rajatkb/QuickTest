@@ -59,7 +59,7 @@ public class password {
             Statement state = (Statement) dbObj.createStatement();
             state.execute("CREATE TABLE IF NOT EXISTS password(\n" +
                           "id          INT UNIQUE,\n" +
-                          "password    VARCHAR(50),\n" +
+                          "password    VARCHAR(65),\n" +
                           "PRIMARY KEY(id)\n" +
                           "); ");
             return 1;
@@ -75,10 +75,13 @@ public class password {
     {
         try
         {   
+            Statement set = (Statement) dbObj.createStatement();
+            set.execute("INSERT INTO password( id , password) VALUES ( "+String.valueOf(this.id)+" , \""+this.password+"\");");
             return 1;
         }
         catch(Exception ex)
         {
+            System.out.println(ex);
             return 0;
         }
     

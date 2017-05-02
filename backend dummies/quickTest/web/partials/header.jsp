@@ -12,7 +12,7 @@
     </head>
     <body>
         <nav>
-        <span class="logo qt">
+        <span class="qt">
             <span class="q">Q</span>uick Test
         </span>
         
