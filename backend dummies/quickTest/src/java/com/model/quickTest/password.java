@@ -86,6 +86,25 @@ public class password {
         }
     
     }
+    
+    public int loadDataFromDB(Connection dbObj , int Id)
+    {
+        try
+        {
+            Statement state = (Statement) dbObj.createStatement();
+            ResultSet set =state.executeQuery("SELECT * FROM password WHERE id="+String.valueOf(Id)+";");
+            set.next();
+            this.id = Id;
+            this.password = set.getString("password");
+            return 1;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return 0;
+        }
+    }
+    
             
     
 }

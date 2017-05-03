@@ -56,24 +56,50 @@ public class dbManager {
         return 1;
     }
     
+    public  teacher teacher_search(int id)
+    {
+        teacher obj = new teacher();
+        obj.loadDataFromDb(dbObj, id);
+        return obj;
+    }
+    
+    public teacher teacher_search(String user) 
+    {
+        try{
+        Statement state = (Statement) this.dbObj.createStatement();
+        ResultSet set= state.executeQuery("SELECT teacherId FROM teacher WHERE username=\""+user+"\" or email=\""+user+"\";");
+        teacher obj = new teacher();
+        set.next();
+        obj.loadDataFromDb(dbObj,set.getInt("teacherId"));
+        return obj;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex + "The user is not found");
+            return null;
+        }
+       
+    }
+    
+    
     public int registerTeacher( String username,String name,String jobDescription,String email,String specialization,String qualification , String password)
     {
         teacher obj= new teacher();
         obj.setNewData(name, username, jobDescription, email, specialization, qualification);
-        int value=obj.insertDataIntoDB(dbObj);
+        int insertedId=obj.insertDataIntoDB(dbObj);
         // This deotes the succesfull insertion of data into the db for teacheer
         // may fail if the value is 0 which is bcz of dulicate data 
-        int insertedId = obj.getID();
-        if(value==1 )
+        if(insertedId!=0 )
         {   
             password pobj = new password();
-            pobj.setData( insertedId , password);
+            pobj.setData(insertedId  , password);
             pobj.insertIntoDB(dbObj);
             //insert the id  and password in the DB
-            return 1;
+            return insertedId;
         }
         return 0;
     }
+    
     
     
 }

@@ -30,6 +30,30 @@ public class teacher {
         Other stuff can be added later
     */
     
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public String getJobDescription() {
+        return jobDescription;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
     
     public int setNewData( String name, String username ,String jobDescription ,String email,String specialization , String qualification )
     {
@@ -103,7 +127,7 @@ public class teacher {
             ResultSet rst= stateObj.executeQuery( "SELECT teacherId from teacher WHERE username = \""+this.username+"\";");
             rst.next();
             this.teacherId= Integer.parseInt(rst.getString("teacherId"));
-            return 1;
+            return this.teacherId;
         }
         catch( SQLException ex)
         {
@@ -148,6 +172,8 @@ public class teacher {
             return 0;
         }    
     }
+    
+    
     
     public int updateDataInDB(Connection dbObj) 
     {   

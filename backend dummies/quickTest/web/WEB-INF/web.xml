@@ -17,14 +17,15 @@
         <servlet-name>registerController</servlet-name>
         <servlet-class>com.controller.quickTest.registerController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>initialize</servlet-name>
-        <servlet-class>com.controller.quickTest.initialize</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/loginController</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registerController</servlet-name>
+        <url-pattern>/registerController</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>studentDash</servlet-name>
         <jsp-file>/studentDash.jsp</jsp-file>
@@ -33,14 +34,16 @@
         <servlet-name>studentDash</servlet-name>
         <url-pattern>/studentDash</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>teacherDash</servlet-name>
+        <jsp-file>/teacherDash.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>registerController</servlet-name>
-        <url-pattern>/registerController</url-pattern>
+        <servlet-name>teacherDash</servlet-name>
+        <url-pattern>/teacherDash</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>initialize</servlet-name>
-        <url-pattern>/initialize</url-pattern>
-    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
