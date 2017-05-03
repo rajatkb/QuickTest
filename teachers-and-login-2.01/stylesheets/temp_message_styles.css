@@ -1,0 +1,10 @@
+.message-container {
+    margin: 60px auto;
+    padding: 15px 20px;
+    border-radius: 6px;
+    background: #F8BBD0;
+    width: 60%;
+    height: auto;
+    color: white;
+    font-weight: 500;
+}
