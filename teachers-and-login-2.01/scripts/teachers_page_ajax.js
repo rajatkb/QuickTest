@@ -9,8 +9,12 @@ function deleteQues(){
     $.ajax({
         type: "POST",
         data: screen_qs_index,
-        dataType: "JSON", 
-        encode: true
+        dataType: "text", 
+        statusCode: {
+            404: function(){
+                console.log("Error: 404");
+            }    
+        }
     })
     .done(function(data){
         console.log(data);
