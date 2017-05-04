@@ -79,15 +79,16 @@ li .on-right: {
 }
 .questions{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    margin-bottom: 10px;
     border-width: 1px;
     border-bottom-color: grey;
-    padding: 10px;
-
+    padding: 50px;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-top: 50
 }
-.questions: active{
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
-
+.question-panel{
+    margin-top: 10px;
+    margin-right: 0px;
 }
 .bm: hover{
     color: lawngreen;
@@ -96,6 +97,8 @@ li .on-right: {
     float: right;
     font-size: 50px;
     color: lawngreen;
+    position: relative;
+    top: -70px;
     
 }
 .bm i:fixed{
@@ -108,13 +111,20 @@ li .on-right: {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     text-align: center;
     margin-bottom: 2px;
-
+    float: left;
+    width: 50px;
+    height: 25px;
+    padding: 5px;
+    margin-right: 10px;
  
 }
 .side{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     padding: 5px;
     
+}
+ansclass{
+    background-color: white;
 }
 #limegreen{
     width:10px;
@@ -153,5 +163,160 @@ li .on-right: {
     margin-bottom: 10px;
     background-color: green;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 
+}
+
+
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 7em;
+
+  z-index: 999;
+  display: block;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+#slider{
+    position: relative;
+    
+}
+a.control_next {
+  border-radius: 2px 0 0 2px;
+    position: relative;
+    float: right;
+}
+.right-panel{
+    float: right;
+    width: 30%;
+    position: relative;
+    margin-top: -450px;
+    right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+
+}
+.container{
+    float: left;
+    width: 100%;
+}
+
+#time{
+    position: relative;
+    background-color: limegreen;
+    color: white;
+    padding: 10px;
+    widows: 70%;
+    text-align: center;
+    font-size: 50px;
+    
+}
+.try{
+    background-color: black;
+    height: 50%;
+}
+@media(max-device-width: 700px){
+    .toggle{
+        display: block;
+        height: 80%;
+        width: 10%;
+    }
+    
+    nav{ 
+    padding-top: 20px;
+    padding-bottom: 0px;
+    position: fixed;
+    top:0px;
+    z-index: 1000;
+    height: 100px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    
+    .qt{
+        font-size: 60px;
+        color: black;
+        margin: 2px;
+    }
+    	
+    li.on-right button{
+        width: 60%;
+        height: 40px;
+        margin: 0px;
+        padding: 1px
+    }
+    
+    
+    
+  .icon {
+    
+  }
+  .list-item { 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -32px;
+    background-color: #E0E0E0;
+    display: none;
+    text-align: center;
+    border:none;
+
+  }
+  .list-item li {
+    font-size: 60px;
+    height:80px;
+    text-align: center;
+    padding: 5px;  
+    margin: 10px;   
+    display: block;
+    float: none;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+  }
+    .list-item li a{
+        border:none;
+    }
+    
+    li.on-right button{
+        font-size: 50px;
+        height: 90%;
+    }
+   
+    .icon{
+        height: 30px;
+        box-shadow:none;
+    }
+    
+    .line{
+	margin: 20% 10%;
+	padding: 0px;
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-top-color: black;
+	width: 80%;
+}
+    body{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#ques2,#ques3{
+    display: none;
 }
