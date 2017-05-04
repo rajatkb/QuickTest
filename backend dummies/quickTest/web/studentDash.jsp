@@ -1,7 +1,7 @@
 <%@page import="com.model.quickTest.student"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="partials/header.jsp" %>
-<% student obj =(student) request.getSession().getAttribute("student_data"); %>
+<% student obj =(student) request.getSession().getAttribute("user_data"); %>
 <% if(obj == null){%>
     <c:redirect url="/login" />
 <%}%>

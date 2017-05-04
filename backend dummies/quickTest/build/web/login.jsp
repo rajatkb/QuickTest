@@ -21,8 +21,8 @@
                     <input required name="teacher_name" type="text" placeholder="Name" /><br>
                     <input required name="teacher_email" type="text" placeholder="Email ID" /><br>
                     <input required name="teacher_username" type="text" placeholder="Username" /><br>
-                    <input required name="teacher_password" type="password" placeholder="Password"><br>
-                    <input required mname="teacher_jobDescription" type="text" placeholder="JobDescription" /><br>
+                    <input required name="teacher_password" type="password" placeholder="Password"/><br>
+                    <input required name="teacher_jobDescription" type="text" placeholder="JobDescription"/><br>
                     <input required name="teacher_qualification" type="text" placeholder="Qualification" /><br>
                     <input required name="teacher_specialization" type="text" placeholder="Specialization" /><br>
 		    <button class="register-teacher">Register as teacher <span class="fa  fa-angle-right"></span> </button>

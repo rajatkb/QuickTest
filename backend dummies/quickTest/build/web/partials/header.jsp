@@ -3,10 +3,16 @@
 
 <html>
     <head>
-        <title></title>
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Muli|Lato|Asar" />
+        <% if( request.getSession().getAttribute("user_data") == null){ %>
+            <title>Welcome to QuickTest</title>
+        <%}else{%>
+            <title>Dashboard</title>
+        <%}%>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen|Muli|Lato|Asar|Cormorant+SC" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/assets/lib/font-awesome-4.7.0/css/font-awesome.min.css" />">
+        <link rel="stylesheet" type="text/css" href="<c:url value="/assets/lib/skeleton-2.0.4/css/skeleton.css" />">
         <script src="<c:url value="/assets/lib/jquery/jquery-3.2.0.min.js" />" ></script>
+        <script src="<c:url value="/assets/lib/jquery-ui-1.12.1/jquery-ui.min.js" />" ></script>
         <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/navbar_styles.css" />" />
         <script type="text/javascript" src="<c:url value="/assets/scripts/nav.js"/>"></script>
     </head>
@@ -24,7 +30,7 @@
         
         <ul class="list-item">
           <%
-              if( request.getServletPath().equals("/login.jsp"))
+              if( request.getSession().getAttribute("user_data") == null)
               {      
                   out.println("<li  class=\"on-right\"><button id=\"register\" >Register</button></li>");
               }
@@ -36,3 +42,4 @@
         </ul>
             
       </nav>
+        

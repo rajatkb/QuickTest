@@ -1,0 +1,42 @@
+@media (max-device-width: 700px) {
+    body{
+        font-size: 2.2em;
+    }
+    .ultra-container button, .controls button {
+        font-size: 1.5em;
+        width: auto;
+        height: auto;
+    }
+    .test-list {
+        top: 120px !important;
+    }
+    #update-info-button {
+        padding: 10px;
+    }
+    .new-test h5{
+        font-size: 1em;
+    }
+    #new-test-button {
+        padding: 0px 5px;
+    }
+    #plus-circle {
+        font-size: 1.4em;
+        vertical-align: middle;
+        padding-top: 7px;
+    }
+    .controls button {
+        padding: 10px;
+    }
+    .ultra-container {
+        position: absolute;
+        top: 150px;
+    }
+    .grand-container {
+        position: absolute;
+        top: -50px;
+    }
+    .delete-test-yes, .delete-test-no, .save-button, .submit-button, escape-test-form-button {
+        padding: 10px;
+        font-size: 1em;
+    }
+}

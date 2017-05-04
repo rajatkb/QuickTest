@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class loginController extends HttpServlet {
 
@@ -28,7 +29,7 @@ public class loginController extends HttpServlet {
          else
          {
              teacher tobj = dobj.teacher_search(teacherId);
-             request.getSession().setAttribute("teacher_data", tobj);
+             request.getSession().setAttribute("user_data", tobj);
              response.sendRedirect("teacherDash");
          }
      }
@@ -41,7 +42,7 @@ public class loginController extends HttpServlet {
          else
          {
              student sobj = dobj.student_search(studentId);
-             request.getSession().setAttribute("student_data", sobj);
+             request.getSession().setAttribute("user_data", sobj);
              response.sendRedirect("studentDash");
          }
      }
@@ -57,6 +58,7 @@ public class loginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         processRequest(request, response);
     }
 

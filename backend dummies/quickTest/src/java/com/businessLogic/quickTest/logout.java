@@ -35,7 +35,9 @@ public class logout extends HttpServlet {
         if (session != null) {
             session.invalidate();
         }
+        System.out.println("ajax recieved");
         response.sendRedirect("login");
+        
     }
     
     @Override

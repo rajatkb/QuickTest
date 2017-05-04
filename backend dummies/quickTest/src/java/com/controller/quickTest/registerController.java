@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -26,7 +27,8 @@ public class registerController extends HttpServlet {
        if(teacher_username != null)
        {
             String name = request.getParameter("teacher_name") ;
-            String jobDescription =request.getParameter("teacher_jobDescription");
+            String jobDescription = request.getParameter("teacher_jobDescription");
+            System.out.println("Receieved Job Description:"+ jobDescription);
             String mail = request.getParameter("teacher_email");
             String specialization = request.getParameter("teacher_specialization");
             String qualification = request.getParameter("teacher_qualification");
@@ -39,7 +41,7 @@ public class registerController extends HttpServlet {
             }
             else{
                 teacher tobj = obj.teacher_search(id);
-                request.getSession().setAttribute("teacher_data", tobj ); // When ts succeds
+                request.getSession().setAttribute("user_data", tobj ); // When ts succeds
                 response.sendRedirect("teacherDash");
             }
        }
@@ -63,7 +65,7 @@ public class registerController extends HttpServlet {
            {    
                
                student sobj = obj.student_search(insertedId);
-               request.getSession().setAttribute("student_data", sobj );
+               request.getSession().setAttribute("user_data", sobj );
                response.sendRedirect("studentDash");
            }
        }

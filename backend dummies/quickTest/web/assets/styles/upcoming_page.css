@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+nav {
+    
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font: 20px "Muli";
+    margin: 0;
+    background: #E0E0E0;
+    height: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+ul {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+}
+li {
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+li a {
+    text-decoration: none;
+    color: inherit;
+    border-right: 0.2px;
+    border-color: lightcyan;
+    border-style: groove;
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-right: 25px;
+}
+.on-right {
+    float: right;
+}
+ul li a:hover{
+    color:grey;
+    
+}
+button {
+    background: #DB2828;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 30px;
+    color: white;
+    font: 20px "Muli";
+    margin: 6px;
+    padding: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+li .on-right:active{
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+        background-color: black;
+        transform: scale(0);
+
+}
+.test {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-top: 5px;
+    background-color: #FFCA28;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    
+    
+}
+.questions{
+    background-color: white;
+    margin-top: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    
+}
+.row{
+
+    margin: 10px;
+}
+.test2 {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-top: 5px;
+    background-color: #FFAB40;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    
+    
+}
+.text{
+    font-size: 20px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.containerdiv{
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    margin-left: 15px;
+    padding: 20px;
+    background-color: #F5F5F5;
+    text-align: center;
+    width: 95%;
+    
+
+}
+#hover-content {
+    display: none;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    font-family: cursive;
+}
+.tests:hover #hover-content {
+    display: inline-block;
+}
+
+.tests:hover .questions{
+ 
+  filter: blur(1px);
+}
