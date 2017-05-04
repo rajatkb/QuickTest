@@ -7,11 +7,11 @@
 
 <% if( obj == null){ %>
     
-<c:redirect url="/login.jsp" />
+<c:redirect url="/login" />
 
 <%}%>
 
-<h1>HI <%= obj.getName() %></h1>
+
 
 
 <%@ include file="partials/footer.jsp" %>

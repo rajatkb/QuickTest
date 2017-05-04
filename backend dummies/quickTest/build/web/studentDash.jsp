@@ -3,7 +3,7 @@
 <%@include file="partials/header.jsp" %>
 <% student obj =(student) request.getSession().getAttribute("student_data"); %>
 <% if(obj == null){%>
-    <c:redirect url="/login.jsp" />
+    <c:redirect url="/login" />
 <%}%>
 <h1>Hi <%= obj.getName() %></h1>
 <%@include file="partials/footer.jsp" %>

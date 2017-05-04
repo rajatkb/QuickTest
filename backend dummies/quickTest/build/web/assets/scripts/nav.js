@@ -9,8 +9,18 @@ $(document).ready(function(){
             $('nav ul').removeAttr('style');
         }
     });
-
+    
 });
+$(window).on("unload",function(){
+    $.ajax({
+        type: "get",
+        url: "logout"
+    })
+    .done(function(){
+        console.log("Logged you out!");
+    });
+});
+
 
 
 
