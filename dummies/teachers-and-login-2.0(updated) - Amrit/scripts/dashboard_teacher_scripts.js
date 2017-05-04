@@ -37,6 +37,7 @@ function onLoading(){
         var questions = $(".question");
         var new_qs_index = questions.length+1;
         var screen_qs_index = screenQuestionIndex();
+        //console.log(screen_qs_index);
         var $element = $(this);
         if($element.data("clicked")){
             event.preventDefault();
@@ -111,8 +112,18 @@ function screenQuestionIndex(){
             screenQuestion.push(ques);
     });
     var pres_qs_id = $(screenQuestion[0]).attr("id");
-    var pres_qs_index = Number(pres_qs_id[pres_qs_id.length-1]);
+    var pres_qs_index = getQsIndex(pres_qs_id);
+    //var pres_qs_index = Number(pres_qs_id[pres_qs_id.length-1]);
     return pres_qs_index;
+}
+function getQsIndex(pres_qs_id){
+    var digits = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    for(var i=0; i<pres_qs_id.length; i++){
+        if(digits.includes(pres_qs_id[i])){
+            var index = Number(pres_qs_id.substring(i));
+            return index;
+        }
+    }
 }
 function loadNewTestForm(){
     $(".grand-container").fadeIn(500);
@@ -136,7 +147,6 @@ function escapeStartTest(){
     });
 }
 function deleteTest(questionToDel){
-    console.log(questionToDel);
     var pageHeight = String(parseFloat($(".main-container").css("height"))+150);
     $(".grand-container").css("height", pageHeight);
     $(".grand-container").fadeIn(500, function(){
