@@ -8,8 +8,8 @@
     *deleteDataFromDB / deletes that particular dataset that is loaded using loadFromDB
 */ 
 package com.model.quickTest;
-import com.mysql.jdbc.Connection;
 import java.sql.*;
+import java.io.*;
 
 public class student {
     
@@ -21,6 +21,40 @@ public class student {
     private String department;
     private int depCode;
     private String email;
+   
+    
+
+    public String getUsername() {
+        return username;
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public int getBatchYear() {
+        return batchYear;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     private String mapDepCode(int depCode)
     {
@@ -101,7 +135,8 @@ public class student {
             Statement state =(Statement) dbObj.createStatement();
             state.execute("INSERT INTO student(studentId , username , batchYear , depCode , name , department , rollno , email)" +
                           "VALUES ("+String.valueOf(this.studentId)+", \""+this.username+"\","+String.valueOf(this.batchYear)+","+String.valueOf(this.depCode)+", \""+this.name+"\" , \""+this.department+"\", "+String.valueOf(this.rollNo)+",\""+this.email+"\");");
-            return 1;
+            
+            return this.studentId;
         }catch(Exception ex)
         {
             System.out.println(ex);

@@ -1,2 +1,9 @@
+<%@page import="com.model.quickTest.student"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<h1>Student Dash</h1>
+<%@include file="partials/header.jsp" %>
+<% student obj =(student) request.getSession().getAttribute("student_data"); %>
+<% if(obj == null){%>
+    <c:redirect url="/login.jsp" />
+<%}%>
+<h1>Hi <%= obj.getName() %></h1>
+<%@include file="partials/footer.jsp" %>

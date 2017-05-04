@@ -115,6 +115,14 @@ li .on-right{
 	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.9);
 }
 
+li.on-right button a{
+    
+    text-decoration: none;
+    padding: 0px;
+    margin:  auto;
+    border: none;
+}
+
 @media (max-device-width: 700px){
     
     .toggle{
@@ -202,5 +210,6 @@ li .on-right{
 }
 
 }
+
 
 

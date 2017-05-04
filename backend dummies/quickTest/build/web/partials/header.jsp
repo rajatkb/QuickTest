@@ -31,7 +31,7 @@
               else
               { 
                   out.println("<li><a href=\"\">Dashboard</a></li>");
-                  out.println("<li class=\"on-right\"><button>LogOut</button></li>");
+                  out.println("<li class=\"on-right\"><button><a href=\"/logout\">LogOut</a></button></li>");
               }
           %>
         </ul>

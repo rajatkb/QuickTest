@@ -51,8 +51,15 @@ public class dbManager {
     {
         password pobj = new password();
         teacher tobj = new teacher();
+        student sobj = new student();
+        question qobj = new question();
+        test tsobj = new test();
         pobj.createDB(dbObj);
         tobj.createDB(dbObj);
+        sobj.createDB(dbObj);
+        qobj.createDB(dbObj);
+        tsobj.createDB(dbObj);
+        
         return 1;
     }
     
@@ -84,6 +91,7 @@ public class dbManager {
     
     public int registerTeacher( String username,String name,String jobDescription,String email,String specialization,String qualification , String password)
     {
+        try{
         teacher obj= new teacher();
         obj.setNewData(name, username, jobDescription, email, specialization, qualification);
         int insertedId=obj.insertDataIntoDB(dbObj);
@@ -97,9 +105,68 @@ public class dbManager {
             //insert the id  and password in the DB
             return insertedId;
         }
+        
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            
+        }
         return 0;
     }
     
+    public student student_search(int id)
+    {
+        student obj = new student();
+        obj.loadDataFromDb(dbObj, id);
+        return obj;
+    }
+    
+    public student student_search(String user) 
+    {
+        try{
+        Statement state = (Statement) this.dbObj.createStatement();
+        ResultSet set= state.executeQuery("SELECT studentId FROM student WHERE username=\""+user+"\" or email=\""+user+"\";");
+        student obj = new student();
+        set.next();
+        obj.loadDataFromDb(dbObj,set.getInt("studentId"));
+        return obj;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex + "The user is not found");
+            return null;
+        }
+       
+    }
+    
+    
+    
+    
+    
+    
+    
+    public int  studentRegister(String email,int rollNo, int batchYear, String name, String username, int depCode , String password)
+    {
+        try{
+        student obj =new student();
+        obj.setNewData(email, rollNo, batchYear, name, username, depCode);
+        int insertedId = obj.insertDataIntoDB(dbObj);
+        if(insertedId != 0)
+        {
+            password pobj = new password();
+            pobj.setData(insertedId, password);
+            pobj.insertIntoDB(dbObj);
+            //insert the id and password
+            return insertedId;
+        }
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Exception at student register" + ex);
+        }
+        return 0;
+    }
     
     
 }

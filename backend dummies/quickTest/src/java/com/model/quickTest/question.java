@@ -4,8 +4,8 @@
 
 package com.model.quickTest;
 
-import com.mysql.jdbc.Connection;
 import java.sql.*;
+import java.io.*;
 
 public class question{
         private int questionId;

@@ -1,6 +1,9 @@
 package com.controller.quickTest;
 
+import com.businessLogic.quickTest.authenticator;
 import com.model.quickTest.dbManager;
+import com.model.quickTest.student;
+import com.model.quickTest.teacher;
 import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +16,39 @@ public class loginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       authenticator obj = new authenticator();
-     
+      dbManager dobj = new dbManager();
+     String teacher_username = request.getParameter("teacher_username");
+     String student_username = request.getParameter("student_username");
+     if(teacher_username != null)
+     {
+         String password= request.getParameter("teacher_password");
+         int teacherId =obj.authenticateTeacher(teacher_username, password);
+         if(teacherId <= 0)
+             response.sendRedirect("login");
+         else
+         {
+             teacher tobj = dobj.teacher_search(teacherId);
+             request.getSession().setAttribute("teacher_data", tobj);
+             response.sendRedirect("teacherDash");
+         }
+     }
+     else if(student_username != null)
+     {
+         String password = request.getParameter("student_password");
+         int studentId = obj.authenticateStudent(student_username, password);
+         if(studentId<=0)
+             response.sendRedirect("login");
+         else
+         {
+             student sobj = dobj.student_search(studentId);
+             request.getSession().setAttribute("student_data", sobj);
+             response.sendRedirect("studentDash");
+         }
+     }
+     else
+     {
+         response.sendRedirect("login.jsp");
+     }
       
        
     }

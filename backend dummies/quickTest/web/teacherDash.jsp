@@ -3,10 +3,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="partials/header.jsp" %>
 
-<% if(request.getSession().getAttribute("teacher_data") == null){ %>
+<% teacher obj = (teacher) request.getSession().getAttribute("teacher_data"); %>
+
+<% if( obj == null){ %>
     
 <c:redirect url="/login.jsp" />
 
 <%}%>
+
+<h1>HI <%= obj.getName() %></h1>
+
 
 <%@ include file="partials/footer.jsp" %>
