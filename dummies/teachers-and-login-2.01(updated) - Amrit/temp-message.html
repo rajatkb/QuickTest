@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen|Muli|Lato|Asar" />
+        <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/skeleton-2.0.4/css/skeleton.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/temp_message_styles.css" />
+        <script type="text/javascript" src="lib/jquery/jquery-3.2.0.min.js"></script>
+    </head>
+    <script>
+        $(document).ready(function(){
+            if($(".message-container").css("display")=="block"){
+                setTimeout(function(){
+                    $(".message-container").slideUp();
+                }, 1000);   
+            }
+        });
+    </script>
+    <body>
+        <div class="message-container">
+            <span>Username or password incorrect</span>
+        </div>
+    </body>
+</html>

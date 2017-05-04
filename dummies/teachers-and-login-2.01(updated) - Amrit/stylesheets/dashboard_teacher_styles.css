@@ -1,0 +1,329 @@
+body {
+    font-family: "Oxygen";
+}
+.main-container{
+    width: 85%;
+    margin: 10px auto;
+}
+.ultra-container button:active {
+    transform: translateY(4px);
+    color: white;
+}
+.ultra-container button:focus {
+    color: white;
+}
+.teacher-info {
+    background: rgb(245, 245, 245);
+    padding: 20px;
+    margin: 20px 10px 10px 10px;
+    border-radius: 10px;
+    background: rgb(230, 230, 230);
+    color: black;
+}
+#update-info-button {
+    width: auto;
+    background: #F9A825;
+}
+.update-info-form, .ongoing-test-info {
+    display: none;
+}
+#update-info-form {
+    border: none;
+    padding: 0px;
+}
+.update-info-form input {
+    width: 70%;
+}
+.update-info-form form, .ongoing-test-info, .delete-test-conf {
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    background: white;
+    z-index: 100;
+}
+.update-info-labels {
+    line-height: 50px;
+    font-weight: 800;
+    margin: 0px 10px;
+}
+.ongoing-test-info {
+    padding-bottom: 20px;
+}
+.test-list {
+    margin: 10px;
+    position: relative;
+    top: 75px;
+    border: 2px solid rgb(235, 235, 235);
+}
+.new-test {
+    background: #00695C; 
+    float: right;
+    border-radius: 10px;
+    padding: 5px 5px;
+    text-transform: none;
+    height: 60px;
+    margin: 5px 10px;
+    color: white;
+    width: auto;
+}
+.new-test:hover {
+    color: white;
+    
+}
+.new-test h5, .new-test i {
+    display: inline-block;
+}
+.new-test h5 {
+    position: relative;
+    top: 6px;
+}
+i {
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.main-container button, .new-test-form button {
+    box-shadow:  0px 8px 6px -6px black;
+}
+.new-test:hover, .delete-test:hover, button:hover {
+    color: white;
+    box-shadow: none;
+}
+.ultra-container button a:hover{
+    text-decoration: none;
+    color: white;
+}
+#update-info-button:focus, .delete-test:focus {
+    color: white;
+}
+.test-list-item {
+    margin: 5px;
+    padding-bottom: 10px;
+}
+.test-title {
+    background: rgb(245, 245, 245);
+    padding: 0px 10px;
+}
+.profile-controls, .controls {
+    text-align: right;
+}
+.controls button {
+    border-radius: 5px;
+    padding: 5px 5px;
+    text-transform: none;
+    height: 50px;
+    margin: 10px 10px 5px 10px;
+    color: white;
+    border: none;
+    padding: 0px 10px;
+    font-size: 1em;
+    height: auto;
+}
+.controls button i {
+    font-size: 1.2em;
+}
+.submit-test {
+    background: #4682B4;
+}
+.edit-test {
+    background: #5CB85C;
+}
+.delete-test {
+    background: #DB2828;
+}
+.delete-test-conf {
+    margin: 120px auto;
+    padding: 25px;
+    display: none;
+}
+.delete-test-conf button {
+    color: white;
+    margin: 20px;
+}
+.delete-test-yes {
+    background: #DB2828;
+}
+.delete-test-no {
+    background: #689F38;
+}
+.fa-hourglass-start, .fa-hourglass-end {
+    font-size: 30px;
+    padding: 5px 0;
+}
+.start-test {
+    height: 120px;
+    width: auto;
+    float: left;
+    background: #212121;
+    font-size: 23px;
+    padding: 5px 0;
+}
+#teacher-name{
+    margin-bottom: 0px;
+}
+.test-saved .test-title {
+    background: #00BCD4;
+    color: white;
+}
+.test-submitted .test-title {
+    background: #795548;
+    color: white;
+}
+.test-conducted .test-title {
+    background: #FFC107;
+    color: white;
+}
+.test-saved {
+    border: 2px solid #00BCD4;
+    box-shadow: inset 0 0 6px #00BCD4;
+}
+.test-submitted {
+    border: 2px solid #795548;
+    box-shadow: inset 0 0 6px #795548;
+}
+.test-conducted {
+    border: 2px solid #FFC107;
+    box-shadow: inset 0 0 6px #FFC107;
+}
+.test-info {
+    padding: 0px 20px 20px 20px;
+    text-align: justify;
+}
+.test-info-labels {
+    font-weight: 800;
+}
+/*==============================================================*/
+.new-test-form {
+    background: white;
+    padding: 2px 10px;
+    opacity: 1;
+    width: 60%;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+.new-test-form h4, .close-this {
+    display: inline-block;
+}
+.ultra-container form {
+    border: 1px solid rgb(215, 215, 215);
+    padding: 20px;
+    border-radius: 8px;
+}
+select: invalid {
+    color: grey;
+}
+.form-item {
+    height: 50px;
+    width: 100%;
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 5px;
+    outline: none;
+}
+.question input {
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.ultra-container textarea {
+    height: 100px !important;
+    resize: none;
+}
+.form-controls{
+   text-align: center; 
+}
+.form-button {
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    padding: 2px;
+    margin: 10px;
+    text-transform: none;
+    color: white;
+    font: 16px "Oxygen";
+}
+.close-this {
+    text-align: right;
+}
+.escape-test-form-button, .escape-start-test {
+    background: #DB2828;
+}
+.save-button {
+    background: #EF6C00;
+}
+.submit-button {
+    background: #01579B;
+}
+
+.prev-qs-button, .next-qs-button, .more-qs-button {
+    width: auto;
+    padding: 5px 10px;
+    background: #00BCD4;   
+}
+.prev-qs-button {
+    background: #F44336;
+}
+.next-qs-button {
+    background: #388E3C;
+}
+#search-ques-button {
+    width: auto;
+    padding: 10px;
+    text-align: center;
+    background: white;
+    color: #212121;
+    font-size: 2.5em;
+    border: none;
+    box-shadow: none;
+}
+.ultra-container .row {
+    margin: 0px;
+}
+#question1, .more-qs-container {
+    display: inline-block;
+    width: 100%;
+}
+.question input {
+    border: 1px solid rgb(55, 55, 55);
+}
+.question .qs_title {
+    font-size: 18px;
+    font-weight: 400;
+}
+/*==============*/
+.dummy-grand{
+    display: none;
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.grand-container {
+    margin: 0;
+    padding: 10px;
+    background: rgb(60, 60, 60);
+    display: none;
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    opacity: 0.7;
+}
+.random-class {
+    margin: 0;
+    padding: 10px;
+    background: rgb(60, 60, 60);
+    display: none;
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    opacity: 0.7;
+}
