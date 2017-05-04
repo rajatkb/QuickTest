@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    
+    margin: 0 auto;
 }
 nav {
     
@@ -62,68 +62,45 @@ li .on-right:active{
         transform: scale(0);
 
 }
-.test {
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-bottom: 3px;
-    padding-top: 5px;
-    background-color: #FFCA28;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    
-    
+.containerdiv .test{
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Jura', serif;
+    color: white;
+
 }
-.questions{
+.containerdiv .test .db{
     background-color: white;
-    margin-top: 10px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-    
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Ruluko', serif;
+    color: black;
+    padding: 10px;
 }
 .row{
-
-    margin: 10px;
+    width: 90%;
+    margin: 0 auto;
 }
-.test2 {
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-bottom: 3px;
-    padding-top: 5px;
-    background-color: #FFAB40;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    
-    
+
+.test{
+    margin-top: 8px;
+}
+
+.test:hover{
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
 }
 .text{
-    font-size: 20px;
-    padding: 20px;
-    font-size: 30px;
-    font-weight: 700;
-    text-decoration: underline;
+    text-align: center;
+    font-style: 'Marcellus SC',serif;
+    font-size: 2em;
+    letter-spacing: 3px;
 }
 .containerdiv{
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    margin-top: 20px;
-    margin-left: 15px;
-    padding: 20px;
     background-color: #F5F5F5;
+    margin: 30px 10px 0px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 95%;
+    padding: 30px;
     
-
-}
-#hover-content {
-    display: none;
-    position: relative;
-    text-align: center;
-    font-size: 50px;
-    font-family: cursive;
-}
-.tests:hover #hover-content {
-    display: inline-block;
-}
-
-.tests:hover .questions{
- 
-  filter: blur(1px);
 }

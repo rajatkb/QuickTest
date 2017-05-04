@@ -63,7 +63,6 @@ li .on-right: active{
 
 }
 .containerdiv .test{
-    background-color: yellow;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     text-align: center;
     font-size: 2em;
@@ -83,9 +82,13 @@ li .on-right: active{
     width: 90%;
     margin: 0 auto;
 }
-.test: {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
 
+.test{
+    margin-top: 8px;
+}
+
+.test:hover{
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
 }
 .text{
     text-align: center;
