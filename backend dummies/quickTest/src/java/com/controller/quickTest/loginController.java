@@ -18,14 +18,24 @@ public class loginController extends HttpServlet {
             throws ServletException, IOException {
       authenticator obj = new authenticator();
       dbManager dobj = new dbManager();
+     
      String teacher_username = request.getParameter("teacher_username");
      String student_username = request.getParameter("student_username");
+     
      if(teacher_username != null)
      {
          String password= request.getParameter("teacher_password");
          int teacherId =obj.authenticateTeacher(teacher_username, password);
-         if(teacherId <= 0)
+         if(teacherId == 0)
+         { 
+             request.getSession().setAttribute("warn","USER NOT FOUND , REGISER FIRST");
              response.sendRedirect("login");
+         }
+         else if(teacherId < 0)
+         {
+             request.getSession().setAttribute("warn","WRONG PASSWORD, CHECK USERNAME & PASSWORD");
+             response.sendRedirect("login");
+         }
          else
          {
              teacher tobj = dobj.teacher_search(teacherId);
@@ -37,8 +47,16 @@ public class loginController extends HttpServlet {
      {
          String password = request.getParameter("student_password");
          int studentId = obj.authenticateStudent(student_username, password);
-         if(studentId<=0)
+         if(studentId ==0)
+         {    
+             request.getSession().setAttribute("warn","USER NOT FOUND, REGISTER FIRST");
              response.sendRedirect("login");
+         }
+         else if(studentId < 0 )
+         {
+             request.getSession().setAttribute("warn","WRONG PASSWORD, CHECK USERNAME & PASSWORD");
+             response.sendRedirect("login");
+         }
          else
          {
              student sobj = dobj.student_search(studentId);
