@@ -255,7 +255,7 @@ select: invalid {
 .submit-button {
     background: #01579B;
 }
-.prev-qs-button, .next-qs-button, .more-qs-button, del-qs-button{
+.prev-qs-button, .next-qs-button, .more-qs-button{
     width: auto;
     padding: 5px 10px;
     background: #00BCD4;   
