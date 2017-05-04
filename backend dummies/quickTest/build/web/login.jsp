@@ -2,8 +2,16 @@
 <%@ include file="partials/header.jsp" %>
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/login_styles.css" />" />
 <script type="text/javascript" src="<c:url value="/assets/scripts/login_script.js"/>"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/warning.css" />" />
+<script type="text/javascript" src="<c:url value="/assets/scripts/warning.js"/>"></script>
 <div class="mega-container">
+    <% String warn = String.valueOf(request.getSession().getAttribute("warn")); 
+       if(warn != "null"){%>
+        <div class="message-container">
+            <span><%= warn %></span>
+        </div>
+    <%}%>
         <div class="login-main-container">
             <form method="post" action="loginController"i d="login-teacher-form">
                 <input name="teacher_username" type="text" placeholder="Username or email ID" /><br>

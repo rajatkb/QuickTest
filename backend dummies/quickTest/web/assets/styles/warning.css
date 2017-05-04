@@ -1,5 +1,6 @@
 .message-container {
-    
+    text-align: center;
+    font-weight: 600;
     width: 99%;
     border-radius: 2px;
     margin-bottom: 2px;
