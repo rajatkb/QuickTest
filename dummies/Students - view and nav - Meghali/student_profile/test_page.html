@@ -4,10 +4,12 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Muli|Lato|Asar" />
         <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css" />
+        
         <link rel="stylesheet" type="text/css" href="lib\skeleton\normalize.css"/>
         <link rel="stylesheet" type="text/css" href="lib\skeleton\skeleton.css" />
         <link rel="stylesheet" type="text/css" href="stylesheet/test_page.css" />
         <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
         <script type="text/javascript" src="scripts/test_page.js"></script>
 	</head>
 
@@ -25,7 +27,19 @@
         <div class="row">
             <div class="grand-question-class">
                 <div class="eight columns test random-class">
-                    <div class="questions ques1" id="ques1">
+                    <div id="time" class="side">
+                        Time Left: 00:00:00
+                    
+            
+            
+                    </div>
+            </br></br>
+                    <div id="slider">
+                    <a href="#" class="control_next"><i class="fa fa-chevron-right right" style="font-size:60px;color:black;"></i></a>
+                    <a href="#" class="control_prev"><i class="fa fa-chevron-left left" style="font-size:60px;color:black;"></i></a></div>
+                <div id="questions" class="questions">
+                    <div class="ques1 ques" id="ques1" >
+                       
                         
                         Q1. <span class="bm bm1" ><i class="fa fa-bookmark " id="bm"></i></span><br>
                         <span id="ques1" alt="1">
@@ -36,29 +50,38 @@
                         <button type="reset" id="clear" class="clear">CLEAR</button>
                         </span>
                     </div>
-                    <div class="questions ques2" id="ques2" alt="1">
-                        
-                        Q2. <span class="bm bm2"><i class="fa fa-bookmark" id="bm"></i></span><br> 
+                    <div class="ques2 ques" id="ques2" >
                        
-                        <input type="radio" name="option2"> a) <br>
+                        
+                        Q2. <span class="bm bm" ><i class="fa fa-bookmark " id="bm"></i></span><br>
+                        <span alt="1">
+                        <input type="radio" name="option2" > a) <br>
                         <input type="radio" name="option2" > b) <br>
                         <input type="radio" name="option2"> c) <br>
                         <input type="radio" name="option2"> d) 
-                        <button type="reset" id="clear">CLEAR</button>
-                       
+                        <button type="reset" id="clear" class="clear">CLEAR</button>
+                        </span>
                     </div>
-                    <div class="questions ques3" id="ques3" alt="1">
-                        
-                        Q3. <span class="bm bm3"><i class="fa fa-bookmark" id="bm"></i></span><br>
+                    <div class="ques3 ques" id="ques3" >
                        
-                        <input type="radio" name="option3"> a) <br>
+                        
+                        Q3. <span class="bm bm1" ><i class="fa fa-bookmark " id="bm"></i></span><br>
+                        <span alt="1">
+                        <input type="radio" name="option3" > a) <br>
                         <input type="radio" name="option3" > b) <br>
                         <input type="radio" name="option3"> c) <br>
-                        <input type="radio" name="option3"> d)
+                        <input type="radio" name="option3"> d) 
                         <button type="reset" id="clear" class="clear">CLEAR</button>
-        
+                        </span>
                     </div>
-                                    <button style="position: fixed" id="next-six">Next 6</button>
+
+                </div>
+            <div class="new-bm">
+            <span class="bookmark" id="bookmark"><i class="fa fa-bookmark "><br>Question</i></span>
+            </div>
+            
+            
+            
 
                 </div> 
                 </div>
@@ -88,10 +111,10 @@
 
                     
                     </div>
-<br><br><br><br>
+    </br></br>
                     <div>
                         <button id="submit" class="on-right">Submit</button>
-                        <button id="Save" class="on-right">Save</button>
+                        
 
 
                     </div>
@@ -100,3 +123,5 @@
             </div>
 	</body>
 </html>
+
+
