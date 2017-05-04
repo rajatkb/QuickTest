@@ -16,7 +16,7 @@ function onLoading(){
             window.setTimeout(function(){
                 $element.removeData("clicked");
                 showPrevQuestion(pres_qs_index);
-            }, 750);
+            }, 150);
         }
     });
     $("#next-qs-btn").on("click", function(event){
@@ -30,7 +30,7 @@ function onLoading(){
             window.setTimeout(function(){
                 $element.removeData("clicked");
                 showNextQuestion(pres_qs_index);
-            }, 750);
+            }, 150);
         }
     });
     $("#add-qs-btn").on("click", function(event){
@@ -46,14 +46,25 @@ function onLoading(){
             window.setTimeout(function(){
                 $element.removeData("clicked");
                 addNewQuestion(screen_qs_index, new_qs_index);
-            }, 750);
+            }, 150);
         }
     });
     $(".escape-test-form-button").click(escapeFormWindow);
     $(".escape-start-test").click(escapeStartTest);
     $(".delete-test").click(function(){
         var questionToDel = $(this).parent().parent()[0];
-        deleteTest(questionToDel);
+        console.log(questionToDel);
+        var pageHeight = String(parseFloat($(".main-container").css("height"))+150);
+        $(".grand-container").css("height", pageHeight);
+        $(".grand-container").fadeIn(500, function(){
+            $(".delete-test-conf").show("fast");
+        });
+        $(".delete-test-yes").click(function(){
+            deleteThisTest(questionToDel);
+        });
+        $(".delete-test-no").click(function(){
+            closeConfBox();
+        });
     });
 }
 function updateTeachersInfo(){
@@ -70,22 +81,22 @@ function startTest(){
 }
 function addNewQuestion(screen_qs_index, index){
     var newQuestionTemplate = '<div class="question" id="question'+ index + '"' + '><input class="form-item qs_title" name="newtest[qs_' + index + ']" placeholder="Enter question '+ index +'" /><div class="row"><div class="six columns"><input class="form-item" name="newtest[qs_' + index + '_choice_a]" placeholder="A" /></div><div class="six columns"><input class="form-item" name="newtest[qs_' + index + '_choice_b]" placeholder="B" /></div></div><div class="row"><div class="six columns"><input class="form-item" name="newtest[qs_' + index + '_choice_c]" placeholder="C" /></div><div class="six columns"><input class="form-item" name="newtest[qs_' + index + '_choice_d]" placeholder="D" /></div></div><div class="row"><div class="six columns"><input class="form-item" name="newtest[qs_' + index + '_answer]" placeholder="Correct choice" /></div><div class="six columns"></div></div>'
-    $('#question'+String(screen_qs_index)).hide('slide', {direction: 'left'}, 300, function(){
+    $('#question'+String(screen_qs_index)).hide('slide', {direction: 'left'}, 200, function(){
         $('.more-qs-container').append(newQuestionTemplate);
     });
 } 
 function showPrevQuestion(index){
     if(index>1){
-        $('#question'+String(index)).hide('slide', {direction: 'right'}, 300, function(){
-            $('#question'+String(index-1)).show('slide', {direction: 'left'}, 300);
+        $('#question'+String(index)).hide('slide', {direction: 'right'}, 200, function(){
+            $('#question'+String(index-1)).show('slide', {direction: 'left'}, 200);
         });
     }
 }
 function showNextQuestion(index){
     var allQues = $(".question").toArray();
     if(index+1 <= allQues.length)
-        $('#question'+String(index)).hide('slide', {direction: 'left'}, 300, function(){
-            $('#question'+String(index+1)).show('slide', {direction: 'right'}, 300);
+        $('#question'+String(index)).hide('slide', {direction: 'left'}, 200, function(){
+            $('#question'+String(index+1)).show('slide', {direction: 'right'}, 200);
         });
 }
 function fixButtons(){
@@ -125,6 +136,7 @@ function escapeStartTest(){
     });
 }
 function deleteTest(questionToDel){
+    console.log(questionToDel);
     var pageHeight = String(parseFloat($(".main-container").css("height"))+150);
     $(".grand-container").css("height", pageHeight);
     $(".grand-container").fadeIn(500, function(){

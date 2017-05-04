@@ -255,11 +255,8 @@ select: invalid {
 .submit-button {
     background: #01579B;
 }
-<<<<<<< HEAD
+
 .prev-qs-button, .next-qs-button, .more-qs-button {
-=======
-.prev-qs-button, .next-qs-button, .more-qs-button{
->>>>>>> origin/QuickTest-teachers-controls
     width: auto;
     padding: 5px 10px;
     background: #00BCD4;   
