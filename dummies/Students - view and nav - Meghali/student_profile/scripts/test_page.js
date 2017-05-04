@@ -1,13 +1,27 @@
 $(document).ready(function(){
+    var divId = $(".ques").not(":hidden").prop("id");
+    index=Number(divId[divId.length-1]);
+
+    var items = $('.ques').length;
+    if(index===(items)){
+        console.log("hi");
+        $('.control_next').css("display","none");
+    }
+    
+    
+    
     $(".bm i").click(function(){
-        $(this).toggleClass("myclass");
-                
+        $(this).toggleClass("myclass", function(){
+            addnewbm(index);
+        });
+        
     });
-    
-    
-    $("#next-six").click(showNextSixQs);
-    
-    
+    function addnewbm(index){
+        console.log(index-1);
+    var newQuestionTemplate = '<div class="new-bm"><span class="bookmark" id="bookmark"><i class="fa fa-bookmark "><br>'+(index) +'</i></span></div>'
+        $('.new-bm').append(newQuestionTemplate);
+    };
+
     
     
     $('.ques1 input').click(function(){
@@ -47,6 +61,7 @@ $(document).ready(function(){
        function Clear()
         {    
        clearRadioGroup("option1");
+       clearans("option1");
         }
 
         function clearRadioGroup(GroupName)
@@ -55,19 +70,52 @@ $(document).ready(function(){
             for(var i=0;i<ele.length;i++)
             ele[i].checked = false;
         }
+        function clearans(GroupName)
+    {
+        $('#ans1').css({"background-color":"white","color":"black"});
+    }
     
     
 
     function showNextSixQs(){
         var question=10;
-        for(var i=4; i<question;i++){
+        for(var i=2; i<question;i++){
+            
             $(".random-class").append('<div class="questions"> Q'+i+' <span class="bm"><i class="fa fa-bookmark " id="bm"></i></span><br><input type="radio" name="option" > a) <br> <input type="radio" name="option" > b) <br> <input type="radio" name="option"> c) <br><input type="radio" name="option"> d) <button type="reset" id="clear">CLEAR</button></div>');
-            $(".another-random-class").append('<div class="two columns color">'+i+'</div>');
+        
         }
 }
-/*$("#clear").click(function(){
-    $("input[radio]").removeAttr("checked");
-});*/
+    
+    $(".control_next").on("click",function(){
+        var divId = $(".ques").not(":hidden").prop("id");
+        index=Number(divId[divId.length-1]);
+        if(index!=(items)){
+        $('#ques'+String(index)).hide('slide', {direction: 'left'}, 100, function(){
+            $('#ques'+String(index+1)).show('slide', {direction: 'right'}, 100);
 
 
-    })
+        });
+        }
+});
+    $(".control_prev").on("click",function(){
+        var divId = $(".ques").not(":hidden").prop("id");
+        index=Number(divId[divId.length-1]);
+        if(index!=1){
+        $('#ques'+String(index)).hide('slide', {direction: 'right'}, 100, function(){
+            $('#ques'+String(index-1)).show('slide', {direction: 'left'}, 100);
+        
+
+
+        });
+        }
+        
+        
+});
+    
+    /*answers sending*/
+
+var answer[]
+});
+    
+    
+
