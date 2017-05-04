@@ -155,6 +155,18 @@ function deleteThisTest(questionToDel){
     closeConfBox();
 }
 function showSelectedQuestion(){
-    var ques_search = $("#search-ques").val();
+    var ques_search = Number($("#search-ques").val());
     var ques_on_screen = screenQuestionIndex();
+    var netQues = $(".question").toArray();
+    if(ques_search <= netQues.length){
+        if(ques_search < ques_on_screen){
+            $('#question'+String(ques_on_screen)).hide('slide', {direction: 'right'}, 200, function(){
+                $('#question'+String(ques_search)).show('slide', {direction: 'left'}, 200);
+            });
+        } else if(ques_search > ques_on_screen) {
+            $('#question'+String(ques_on_screen)).hide('slide', {direction: 'left'}, 200, function(){
+                $('#question'+String(ques_search)).show('slide', {direction: 'right'}, 200);
+            });
+        }
+    }
 }
