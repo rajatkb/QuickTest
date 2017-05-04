@@ -1,15 +1,17 @@
 <html>
     <head>
         <title></title>
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen|Muli|Lato|Asar" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen|Muli|Lato|Asar|Cormorant+SC" />
         <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/skeleton-2.0.4/css/skeleton.css" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/navbar_styles.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/nav.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/dashboard_teacher_styles.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/dashboard_teacher_mobile.css" />
         <script type="text/javascript" src="lib/jquery/jquery-3.2.0.min.js"></script>
         <script src="lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
         <script type="text/javascript" src="scripts/nav.js"></script>
         <script type="text/javascript" src="scripts/dashboard_teacher_scripts.js"></script>
+        <script type="text/javascript" src="scripts/teachers_page_ajax.js"></script>
     </head>
     <body>
         <nav>
@@ -26,8 +28,7 @@
         <ul class="list-item">                      
             <li><a href="">Dashboard</a></li>
             <li class="on-right"><button>LogOut</button></li>
-        </ul>
-            
+        </ul>    
       </nav>
         <div class="ultra-container">
         <div class="main-container">
@@ -57,34 +58,40 @@
             </div>
             <button class="new-test" id="new-test-button">                
                 <h5>organize a new test</h5>
-                <i class="fa fa-3x fa-plus-circle" style="margin: 4px"></i>
+                <i id="plus-circle" class="fa fa-3x fa-plus-circle" style="margin: 4px"></i>
             </button>
             <div class="test-list">
                 <div class="test-list-item test-saved">
                     <div class="test-title">
                         <h5>Weekly Test - III</h5>
                     </div>
-                    <div class="test-short-desc">
-                        This is the test you have saved and is yet to be submitted
+                    <div class="test-info">
+                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
+                        <span class="test-info-labels">Scheduled date of examination:</span><span> 21/04/2017</span> <br>
+                        <span class="test-info-labels">Department:</span><span id="test3-info-branch"> Computer Science & Engineering</span> <br>
+                        <span class="test-info-labels">Semester:</span><span id="test3-info-sem"> III</span> <br>
+                        <span class="test-info-labels">Maximum marks:</span><span id="test3-info-max"> 50</span> <br>
                     </div>
                     <div class="controls">
-                        <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
-                        <button class="submit-test"><i class="fa fa-3x fa-paper-plane"></i>Submit</button>
-                        <button class="edit-test"><i class="fa fa-3x fa-pencil-square-o"></i>Edit</button>
-                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
+                        <button class="start-test"><i class="fa fa-hourglass-start"></i>Start now</button>
+                        <button class="submit-test"><i class="fa fa-paper-plane"></i>Submit</button>
+                        <button class="edit-test"><i class="fa fa-pencil-square-o"></i>Edit</button>
+                        <button class="delete-test"><i class="fa fa-trash-o"></i>Delete</button>
                     </div>        
                 </div>
                 <div class="test-list-item test-submitted">
                     <div class="test-title">
                         <h5>Weekly Test - II</h5>
                     </div>
-                    <div class="test-short-desc">
-                        This was the test you have submitted already and is yet to take place 
+                    <div class="test-info">
+                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
+                        <span class="test-info-labels">Scheduled date of examination:</span><span> 15/01/2017</span> <br>
+                        <span class="test-info-labels">Department:</span><span id="test2-info-branch"> Industry & Production Engineering</span> <br>
+                        <span class="test-info-labels">Semester:</span><span id="test2-info-sem"> III</span> <br>
+                        <span class="test-info-labels">Maximum marks:</span><span id="test2-info-max"> 50</span> <br>
                     </div>
                     <div class="controls">
                         <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
-                        <button class="submit-test"><i class="fa fa-3x fa-paper-plane"></i>Submit</button>
-                        <button class="edit-test"><i class="fa fa-3x fa-pencil-square-o"></i>Edit</button>
                         <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
                     </div>        
                 </div>
@@ -92,13 +99,15 @@
                     <div class="test-title">
                         <h5>Weekly Test - I</h5>
                     </div>
-                    <div class="test-short-desc">
-                        This test has been conducted already 
+                    <div class="test-info">
+                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
+                        <span class="test-info-labels">Scheduled date of examination:</span><span> 02/11/2016</span> <br>
+                        <span class="test-info-labels">Department:</span><span id="test1-info-branch"> Eletrical Engineering</span> <br>
+                        <span class="test-info-labels">Semester:</span><span id="test1-info-sem"> VI</span> <br>
+                        <span class="test-info-labels">Maximum marks:</span><span id="test1-info-max"> 50</span> <br>
                     </div>
                     <div class="controls">
                         <button class="start-test"><i class="fa fa-3x fa-hourglass-end"></i>Conducted</button>
-                        <button class="submit-test"><i class="fa fa-3x fa-paper-plane"></i>Submit</button>
-                        <button class="edit-test"><i class="fa fa-3x fa-pencil-square-o"></i>Edit</button>
                         <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
                     </div>        
                 </div>
@@ -197,12 +206,15 @@
                         <div class="six columns">
                             <input class="form-item" name="newtest[qs_1_answer]" placeholder="Correct choice" />
                         </div>
-                        
                     </div>
                 </div>
                 <div class="more-qs-container"></div>
                 <hr>
-                <button type="button" class="form-button more-qs-button" id="add-qs-btn">Add more questions <i class="fa fa-plus-circle"></i></button>
+                <div class="row">
+                <div class="six columns"><button type="button" class="form-button prev-qs-button" id="prev-qs-btn"><i class="fa fa-arrow-circle-left"></i> Previous </button></div>
+                <div class="six columns" style="text-align: right"><button type="button" class="form-button next-qs-button" id="next-qs-btn"><i class="fa fa-arrow-circle-right"></i> Next </button><br></div>
+                </div>
+                <div style="text-align: center"><button type="button" class="form-button more-qs-button" id="add-qs-btn">Add more questions <i class="fa fa-plus-circle"></i></button></div>
                 <hr>
                 <div class="form-controls">
                     <button type="button" class="form-button save-button">Save</button>

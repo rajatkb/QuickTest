@@ -21,8 +21,7 @@ body {
     color: black;
 }
 #update-info-button {
-    width: 150px;
-    background: red;
+    width: auto;
     background: #F9A825;
 }
 .update-info-form, .ongoing-test-info {
@@ -68,7 +67,8 @@ body {
     text-transform: none;
     height: 60px;
     margin: 5px 10px;
-    color: white;  
+    color: white;
+    width: auto;
 }
 .new-test:hover {
     color: white;
@@ -100,15 +100,11 @@ i {
     color: white;
 }
 .test-list-item {
-    border: 2px solid rgb(235, 235, 235);
     margin: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 .test-title {
     background: rgb(245, 245, 245);
-    padding: 0px 10px;
-}
-.test-short-desc {
     padding: 0px 10px;
 }
 .profile-controls, .controls {
@@ -123,6 +119,11 @@ i {
     color: white;
     border: none;
     padding: 0px 10px;
+    font-size: 1em;
+    height: auto;
+}
+.controls button i {
+    font-size: 1.2em;
 }
 .submit-test {
     background: #4682B4;
@@ -163,9 +164,36 @@ i {
 #teacher-name{
     margin-bottom: 0px;
 }
-.test-submitted .edit-test button{
-    opacity: 0.6;
-    box-shadow: none;
+.test-saved .test-title {
+    background: #00BCD4;
+    color: white;
+}
+.test-submitted .test-title {
+    background: #795548;
+    color: white;
+}
+.test-conducted .test-title {
+    background: #FFC107;
+    color: white;
+}
+.test-saved {
+    border: 2px solid #00BCD4;
+    box-shadow: inset 0 0 6px #00BCD4;
+}
+.test-submitted {
+    border: 2px solid #795548;
+    box-shadow: inset 0 0 6px #795548;
+}
+.test-conducted {
+    border: 2px solid #FFC107;
+    box-shadow: inset 0 0 6px #FFC107;
+}
+.test-info {
+    padding: 0px 20px 20px 20px;
+    text-align: justify;
+}
+.test-info-labels {
+    font-weight: 800;
 }
 /*==============================================================*/
 .new-test-form {
@@ -227,11 +255,23 @@ select: invalid {
 .submit-button {
     background: #01579B;
 }
-.more-qs-button{
+<<<<<<< HEAD
+.prev-qs-button, .next-qs-button, .more-qs-button {
+=======
+.prev-qs-button, .next-qs-button, .more-qs-button{
+>>>>>>> origin/QuickTest-teachers-controls
     width: auto;
     padding: 5px 10px;
+    background: #00BCD4;   
+}
+.prev-qs-button {
+    background: #F44336;
+}
+.next-qs-button {
     background: #388E3C;
-    
+}
+.del-qs-button {
+    background: black;
 }
 .ultra-container .row {
     margin: 0px;

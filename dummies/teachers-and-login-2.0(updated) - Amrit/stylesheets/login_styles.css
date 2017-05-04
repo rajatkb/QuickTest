@@ -1,186 +1,70 @@
-.mega-container{
-	margin: 100px auto;
-	width: 60%
+.mega-container {
+    position: absolute;
+    top: 50px;
+    margin: 0px auto;
+    width: 100%;
+}
+.login-main-container, .register-main-container {
+    width: 100%;
+    margin: 100px auto;
+    text-align: center;
 }
 
-.login-main-container{
-	width: 100%;
+form {
+    padding: 5px 20px;
 }
-
-.register-main-container{
-	width: 100%;
-	display: none;
+#login-teacher-form, #login-student-form, #register-teacher-form, #register-student-form {
+    display: inline-block;
 }
-
-form{
-	display: inline-block;
-	margin: auto;
-	width: 49%;
-	text-align: center;
-	box-shadow: 0px 1px 10px rgba(0,0,0,0.27);
-	padding: 20px 0px;
+.mega-container input {
+    width: 240px;
 }
-
-form:nth-of-type(1){
-	border-right: 3px solid rgba(0,0,0,0.3);
+.register-main-container {
+    display: none;
 }
-
-div.login-main-container input {
-  padding: 10px;
-  border: solid 1px rgba(0,0,0,0.3);
-  box-shadow: 0 0 5px 1px #969696;	
-  transition: box-shadow 0.3s, border 0.3s;
-  margin-bottom: 30px;
-  width: 80%;
-  height: 8%;
-  font-size: 1.2em;	
+.register-main-container input {
+    width: 350px;
 }
-
-div.register-main-container input{
-  padding: 10px;
-  border: solid 1px rgba(0,0,0,0.3);
-  box-shadow: 0 0 5px 1px #969696;	
-  transition: box-shadow 0.3s, border 0.3s;
-  margin-bottom: 30px;
-  width: 90%;
-  height: 5%;
-  font-size: 1.2em;	
-	
+.mega-container button {
+    width: 170px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: none;
 }
-
-div.register-main-container input:focus,
-div.login-main-container input:focus{
-	border: solid 1px #707070;
-  box-shadow: inset 0 0 2px 1px #707070;
+#login-teacher-form, #register-teacher-form {
+    border-right: 1px solid rgb(220, 220, 220);
 }
-
-
-div.register-main-container input:active,
-div.login-main-container input:active{
-	border: solid 1px #707070;
-  box-shadow: inset 0 0 2px 1px #707070;
+#register {
+    box-shadow: 0px 8px 6px -6px black;
+    width: auto;
 }
-
-
-div.mega-container button{
-	
-	border-radius: 4px;
-	height: 7%;
-	border:none;
-	color:white;
-	font-size:1.2em;
-	text-shadow: 0px 0px 1px rgba(0,0,0,0.9);
-	box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+#login {
+    margin: 10px;
+    background: #DB2828;
+    color: white;
 }
-
-div.mega-container button:active{
-	box-shadow: none;
+#register:hover {
+    color: white;
+    box-shadow: none;
 }
-
-.register-student,
-.login-student{
-	background-color: #388E3C;
+#login-student, #register-student {
+    background: #F57F17;
+    color: white;
+    box-shadow: 0px 8px 6px -6px black;
 }
-
-.register-teacher,
-.login-teacher{
-	background-color: #03A9F4;
+#login-teacher, #register-teacher {
+    background: #7CB342;
+    color: white;
+    box-shadow: 0px 8px 6px -6px black;
 }
-
-@media (max-device-width : 700px ){
-	
-	.mega-container{
-		margin: 150px auto;
-		width: 100%;
-	}
-	
-	.login-main-container{
-		width: 100%;
-	}
-
-	.register-main-container{
-		width: 100%;
-		display: none;
-	}
-	
-	form{
-	display: block;
-		width: 90%;
-		box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-		margin-bottom: 10px;
-	}
-	form:nth-of-type(1){
-		border-bottom: none;
-	}	
-	
-	div.mega-container button{
-	
-	border-radius: 4px;
-	height: 7%;
-	border:none;
-	color:white;
-	font-size:2.2em;
-	text-shadow: 0px 0px 1px rgba(0,0,0,0.9);
-	box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-	}
-
-	div.mega-container button:active{
-		box-shadow: none;
-	}
-
-	.register-student,
-	.login-student{
-		background-color: #388E3C;
-	}
-
-	.register-teacher,
-	.login-teacher{
-		background-color: #03A9F4;
-	}
-	
-		div.login-main-container input {
-	  padding: 10px;
-	  border: solid 1px rgba(0,0,0,0.3);
-	  box-shadow: 1 1 5px 1px #969696;	
-	  transition: box-shadow 0.3s, border 0.3s;
-	  margin-bottom: 30px;
-	  width: 90%;
-	  height: 10%;
-	  font-size: 2.2em;	
-	}
-
-	div.register-main-container input{
-	  padding: 10px;
-	  border: solid 1px rgba(0,0,0,0.3);
-	  box-shadow: 1 1 5px 1px #969696;	
-	  transition: box-shadow 0.3s, border 0.3s;
-	  margin-bottom: 30px;
-	  width: 90%;
-	  height: 10%;
-	  font-size: 2.2em;	
-
-	}
-
-	div.register-main-container input:focus,
-	div.login-main-container input:focus{
-		border: solid 1px blue;
-	  box-shadow: inset 0 0 2px 1px blue;
-		height: 10%;
-	  font-size: 2.2em;
-		
-	}
-
-
-	div.register-main-container input:active,
-	div.login-main-container input:active{
-		border: solid 1px blue;
-	  box-shadow: inset 0 0 2px 1px blue;
-		height: 10%;
-	  font-size: 2.2em;
-	}
-	
+@media (max-width: 600px) {
+    #login-teacher-form {
+        border-right: none;
+    }
 }
-
-
-
-
+@media (max-width: 800px) {
+    #register-teacher-form {
+        border-right: none;
+    }
+}
