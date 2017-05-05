@@ -1,21 +1,16 @@
 $(document).ready(function(){
-    var divId = $(".ques").not(":hidden").prop("id");
-    index=Number(divId[divId.length-1]);
-
+     var divId = $(".ques").not(":hidden").prop("id");
+        var index = divId.match(/\d/g);
+        index = Number((index).join(""));
     var items = $('.ques').length;
-    if(index===(items)){
-        console.log("hi");
-        $('.control_next').css("display","none");
-    }
-    
-    
-    
+        
     $(".bm i").click(function(){
         $(this).toggleClass("myclass", function(){
             addnewbm(index);
         });
         
     });
+    $("#search-ques-button").click(showSelectedQuestion);
     function addnewbm(index){
         console.log(index-1);
     var newQuestionTemplate = '<div class="new-bm"><span class="bookmark" id="bookmark"><i class="fa fa-bookmark "><br>'+(index) +'</i></span></div>'
@@ -88,7 +83,9 @@ $(document).ready(function(){
     
     $(".control_next").on("click",function(){
         var divId = $(".ques").not(":hidden").prop("id");
-        index=Number(divId[divId.length-1]);
+        var index = divId.match(/\d/g);
+        index = Number((index).join(""));
+        
         if(index!=(items)){
         $('#ques'+String(index)).hide('slide', {direction: 'left'}, 100, function(){
             $('#ques'+String(index+1)).show('slide', {direction: 'right'}, 100);
@@ -99,7 +96,9 @@ $(document).ready(function(){
 });
     $(".control_prev").on("click",function(){
         var divId = $(".ques").not(":hidden").prop("id");
-        index=Number(divId[divId.length-1]);
+        var index = divId.match(/\d/g);
+        index = Number((index).join(""));
+        
         if(index!=1){
         $('#ques'+String(index)).hide('slide', {direction: 'right'}, 100, function(){
             $('#ques'+String(index-1)).show('slide', {direction: 'left'}, 100);
@@ -111,10 +110,23 @@ $(document).ready(function(){
         
         
 });
-    
-    /*answers sending*/
+    function showSelectedQuestion(){
+    var ques_search = Number($("#search-ques").val());
+        console.log(ques_search);
+        console.log(items);
+    $('.ques').hide('slide',{direction:'left'}, 90 , function(){
+        console.log(ques_search-1);
+        $($('.ques')[ques_search-1]).css('display','block')
 
-var answer[]
+    });
+    
+    }
+    
+    
+    
+
+    
+    
 });
     
     
