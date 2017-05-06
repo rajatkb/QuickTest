@@ -23,6 +23,7 @@ body {
 #update-info-button {
     width: auto;
     background: #F9A825;
+    padding: 5px;
 }
 .update-info-form, .ongoing-test-info {
     display: none;
@@ -270,6 +271,9 @@ select: invalid {
 .next-qs-button {
     background: #388E3C;
 }
+#search-ques {
+    width: 250px;
+}
 #search-ques-button {
     width: auto;
     padding: 10px;
@@ -334,4 +338,7 @@ select: invalid {
 #search-ques-button {
     position: relative; 
     top: 7px;
+}
+#test_title, #test_full_marks, #test_pass_marks, #test_duration {
+    height: 50px !important;
 }
