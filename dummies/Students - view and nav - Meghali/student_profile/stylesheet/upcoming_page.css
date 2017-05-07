@@ -194,6 +194,8 @@ li .on-right: {
     font-size: 2em;
     font-family: 'Jura', serif;
     color: white;
+     margin-left: 25px;
+    margin-bottom: 20px;
 
 }
 .containerdiv .test .db{
@@ -203,13 +205,22 @@ li .on-right: {
     font-family: 'Ruluko', serif;
     color: black;
     padding: 10px;
+   
 }
+
 .row{
     width: 90%;
     margin: 0 auto;
 }
 .test: {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+        transition: 0.5s;
+
+
+}
+.test:hover{
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
 
 }
 .text{
@@ -232,10 +243,12 @@ li .on-right: {
         font-family: 'Ruluko', serif;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     margin-left: 30px;
-    background-color: lemonchiffon;
-    padding: 12px;
-    width: 30%;
 
+    background-color: #E0E0E0;
+    padding: 12px;
+    position: fixed;
+    right: 0px;
+    width: 17%;
 }
 strong{
     font-size: 17px;
