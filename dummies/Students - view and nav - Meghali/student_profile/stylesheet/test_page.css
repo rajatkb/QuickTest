@@ -81,17 +81,18 @@ li .on-right: {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     border-width: 1px;
     border-bottom-color: grey;
-    padding: 50px;
+    padding: 40px 90px 20px 90px;
     font-size: 20px;
     font-family: sans-serif;
-    margin-top: 50
+    margin-top: 50;
+    display: block;
 }
 .question-panel{
     margin-top: 10px;
     margin-right: 0px;
 }
-.bm: hover{
-    color: lawngreen;
+.bm:hover{
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 .bm{
     float: right;
@@ -99,13 +100,26 @@ li .on-right: {
     color: lawngreen;
     position: relative;
     top: -70px;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
     
 }
 .bm i:fixed{
     color: lawngreen;
 } 
+.button-container{
+    text-align: center;
+}
+
+div .button-container button{
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    right: 0px;
+}
+
 .myclass {
-    color: blue;
+    color: darkgreen;
+    text-shadow: none;
 }
 .color{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -319,4 +333,24 @@ a.control_next {
 
 #ques2,#ques3{
     display: none;
+}
+.prev-qs-button, .next-qs-button, .more-qs-button {
+    width: auto;
+    padding: 5px 10px;
+}
+.prev-qs-button {
+    background: #F44336;
+}
+.next-qs-button {
+    background: #F44336;
+}
+#search-ques-button {
+    width: auto;
+    padding: 10px;
+    text-align: center;
+    background: white;
+    color: #212121;
+    font-size: 2.5em;
+    border: none;
+    box-shadow: none;
 }
