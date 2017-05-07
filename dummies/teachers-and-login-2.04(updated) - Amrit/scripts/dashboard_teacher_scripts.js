@@ -78,6 +78,7 @@ function updateTeachersInfo(){
     $(".update-info-form").fadeIn(500);
 }
 function startTest(){
+    $("html body").animate({scrollTop: 0}, "fast");
     $(".grand-container").fadeIn(500);
     var pageHeight = String(parseFloat($(".main-container").css("height"))+150);
     $(".grand-container").css("height", pageHeight);

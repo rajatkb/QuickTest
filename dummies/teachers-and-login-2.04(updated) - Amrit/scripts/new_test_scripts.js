@@ -7,6 +7,7 @@ function makeFormSubmission(){
     var newTestData = getTestData();
     var newTestTemplate = '<div class="test-list-item test-submitted"><div class="test-title"><h5>' + newTestData.testData.title + '</h5></div><div class="test-info"><p>' + newTestData.testData.desc + '</p><span class="test-info-labels">Scheduled date of examination: </span><span>' + newTestData.testData.date + '</span> <br><span class="test-info-labels">Department: </span><span>' + newTestData.testData.dept + '</span> <br><span class="test-info-labels">Batch: </span><span> ' + 20+newTestData.testData.batch + '</span> <br><span class="test-info-labels">Maximum marks: </span><span>' + newTestData.testData.fullMarks + '</span> <br></div><div class="controls"><button class="start-test"><button class="delete-test"><i class="fa fa-trash-o"></i>Delete</button></div></div>';
     $(".test-list").prepend(newTestTemplate);
+    $(".start-test").click(startTest);
     $(".delete-test").click(function(){
         $("html body").animate({scrollTop: 0}, "fast");
         forDeletingTest(this);
