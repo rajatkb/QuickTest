@@ -1,133 +1,81 @@
 $(document).ready(function(){
-     var divId = $(".ques").not(":hidden").prop("id");
-        var index = divId.match(/\d/g);
-        index = Number((index).join(""));
-    var items = $('.ques').length;
-        
+    var items = $('.question').length;
+    
+    $($('.question')[0]).css("display","block");
+    
     $(".bm i").click(function(){
-        $(this).toggleClass("myclass", function(){
-            addnewbm(index);
-        });
-        
+        $(this).toggleClass("myclass"); 
+   });
+    
+      $('.control_prev').click(function(){
+        plusDivs(-1);
     });
-    $("#search-ques-button").click(showSelectedQuestion);
-    function addnewbm(index){
-        console.log(index-1);
-    var newQuestionTemplate = '<div class="new-bm"><span class="bookmark" id="bookmark"><i class="fa fa-bookmark "><br>'+(index) +'</i></span></div>'
-        $('.new-bm').append(newQuestionTemplate);
-    };
+    $('.control_next').click(function(){
+        plusDivs(1);
+    });
+    
+      
+    var index = 1;
+showDivs(index);
 
-    
-    
-    $('.ques1 input').click(function(){
-   
-        if($(this).attr("alt") == "1")
-                $('.ans1').css("background","red")
-                .css("color","white");
-        else
-            $('.ans1').css("background","orange")
-              .css("color","white");
-   
-  });
-    
-    $('.ques2 input').click(function(){
-   
-        if($(this).attr("alt") == "1")
-                $('.ans2').css("background","red")
-                .css("color","white");
-        else
-            $('.ans2').css("background","orange")
-              .css("color","white");
-   
-  });
-    $('.ques3 input').click(function(){
-   
-        if($(this).attr("alt") == "1")
-                $('.ans3').css("background","red")
-                .css("color","white");
-        else
-            $('.ans3').css("background","orange")
-              .css("color","white");
-   
-  });
-    $('#clear').click(Clear);
-    
-
-       function Clear()
-        {    
-       clearRadioGroup("option1");
-       clearans("option1");
-        }
-
-        function clearRadioGroup(GroupName)
-        {
-          var ele = document.getElementsByName(GroupName);
-            for(var i=0;i<ele.length;i++)
-            ele[i].checked = false;
-        }
-        function clearans(GroupName)
-    {
-        $('#ans1').css({"background-color":"white","color":"black"});
-    }
-    
-    
-
-    function showNextSixQs(){
-        var question=10;
-        for(var i=2; i<question;i++){
-            
-            $(".random-class").append('<div class="questions"> Q'+i+' <span class="bm"><i class="fa fa-bookmark " id="bm"></i></span><br><input type="radio" name="option" > a) <br> <input type="radio" name="option" > b) <br> <input type="radio" name="option"> c) <br><input type="radio" name="option"> d) <button type="reset" id="clear">CLEAR</button></div>');
-        
-        }
+function plusDivs(n) {
+    showDivs(index += n);
 }
-    
-    $(".control_next").on("click",function(){
-        var divId = $(".ques").not(":hidden").prop("id");
-        var index = divId.match(/\d/g);
-        index = Number((index).join(""));
-        
-        if(index!=(items)){
-        $('#ques'+String(index)).hide('slide', {direction: 'left'}, 100, function(){
-            $('#ques'+String(index+1)).show('slide', {direction: 'right'}, 100);
 
-
-        });
-        }
-});
-    $(".control_prev").on("click",function(){
-        var divId = $(".ques").not(":hidden").prop("id");
-        var index = divId.match(/\d/g);
-        index = Number((index).join(""));
-        
-        if(index!=1){
-        $('#ques'+String(index)).hide('slide', {direction: 'right'}, 100, function(){
-            $('#ques'+String(index-1)).show('slide', {direction: 'left'}, 100);
-        
-
-
-        });
-        }
-        
-        
-});
-    function showSelectedQuestion(){
-    var ques_search = Number($("#search-ques").val());
-        console.log(ques_search);
-        console.log(items);
-    $('.ques').hide('slide',{direction:'left'}, 90 , function(){
-        console.log(ques_search-1);
-        $($('.ques')[ques_search-1]).css('display','block')
-
-    });
-    
+function showDivs(n) {
+    var i;
+    var x = $(".question");
+    if (n > x.length) {index = 1} 
+    if (n < 1) {index = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
     }
+    x[index-1].style.display = "block"; 
+}
+    $('#search-ques-button').click(showSelectedQuestion);
     
+    function showSelectedQuestion(){
+        var ques_search = Number($(".search-ques").val());
+        var x = $(".question");
+        if((ques_search>x.length) || (ques_search<1)){return;}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; 
+        }
+        x[ques_search-1].style.display = "block"; 
+            
+        }
+        
     
-    
+    $("input:radio").on("click",function (e) {
+        var inp=$(this);
+    if (inp.is(".theone")) {
+        inp.prop("checked",false).removeClass("theone");
+    } else {
+        $("input:radio[name='"+inp.prop("name")+"'].theone").removeClass("theone");
+        inp.addClass("theone");
+    }
 
+});
+
+    var answers=[];
+    $('.submit').click(function(){
+        $(".question input[type=radio]:checked").each(function(val){
+            
+            answers.push($(this).val());
+            
+        });
+        final_answer=answers.join("");
+        $.ajax({
+           type:"post",
+            url:"",
+            data: final_answer
+        });
+    })
+    
+    
+    
     
     
 });
-    
-    
+
 
