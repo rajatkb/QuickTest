@@ -52,6 +52,7 @@ function onLoading(){
     $(".escape-test-form-button").click(escapeFormWindow);
     $(".escape-start-test").click(escapeStartTest);
     $(".delete-test").click(function(){
+        $("html body").animate({scrollTop: 0}, "fast");
         forDeletingTest(this);
     });
     $("#search-ques-button").click(showSelectedQuestion);
@@ -153,7 +154,7 @@ function closeConfBox(){
     });
 }
 function deleteThisTest(questionToDel){
-    $(questionToDel).remove();
+    $(questionToDel).hide();
     closeConfBox();
 }
 function showSelectedQuestion(){
