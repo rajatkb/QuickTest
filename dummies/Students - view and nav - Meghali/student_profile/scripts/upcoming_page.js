@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $('.toggle').click(function () {
-        console.log("hi");
 
         $('nav ul').slideToggle();
     });
@@ -16,9 +15,13 @@ $(document).ready(function() {
             $(this).css('background',randomColor());
         
     });
-    $('.pro').click(function(){
-       $('.profile').toggle('show');
+    $('.pro').mouseover(function(){
+       $('.profile').slideDown("fast");
     });
+    $('.pro').mouseout(function(){
+       $('.profile').slideUp("fast");
+    });
+    
 });
 var codes = ['00','33','66','99','cc','ff'];
 var rand = function() {
