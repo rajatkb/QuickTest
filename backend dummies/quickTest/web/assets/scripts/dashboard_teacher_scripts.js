@@ -4,7 +4,7 @@ function onLoading(){
     fixButtons();
     $("#new-test-button").click(loadNewTestForm);
     $("#update-info-button").click(updateTeachersInfo);
-    $(".start-test").on('click','button.start-test',startTest);
+    $(".test-list").on('click','.start-test',startTest);
     $("#prev-qs-btn").on("click", function(event){
         var pres_qs_index = screenQuestionIndex();
         var $element = $(this);
@@ -79,6 +79,7 @@ function updateTeachersInfo(){
     $(".update-info-form").fadeIn(500);
 }
 function startTest(){
+    console.log("clicked start test");
     $("html body").animate({scrollTop: 0}, "fast");
     $(".grand-container").fadeIn(500);
     var pageHeight = String(parseFloat($(".main-container").css("height"))+150);

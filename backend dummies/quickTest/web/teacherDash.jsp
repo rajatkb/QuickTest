@@ -46,6 +46,38 @@
                 <i id="plus-circle" class="fa fa-3x fa-plus-circle" style="margin: 4px"></i>
             </button>
             <div class="test-list">
+                <div class="test-list-item test-submitted" id="test4">
+                    <div class="test-title">
+                        <h5>Weekly Test - IV</h5>
+                    </div>
+                    <div class="test-info">
+                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
+                        <span class="test-info-labels">Scheduled date of examination:</span><span> 2017-01-15</span> <br>
+                        <span class="test-info-labels">Department:</span><span> IPE</span> <br>
+                        <span class="test-info-labels">Batch:</span><span> 2017</span> <br>
+                        <span class="test-info-labels">Maximum marks:</span><span> 50</span> <br>
+                    </div>
+                    <div class="controls">
+                        <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
+                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
+                    </div>        
+                </div>
+                <div class="test-list-item test-submitted" id="test3">
+                    <div class="test-title">
+                        <h5>Weekly Test - III</h5>
+                    </div>
+                    <div class="test-info">
+                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
+                        <span class="test-info-labels">Scheduled date of examination:</span><span> 2017-01-15</span> <br>
+                        <span class="test-info-labels">Department:</span><span> IPE</span> <br>
+                        <span class="test-info-labels">Batch:</span><span> 2017</span> <br>
+                        <span class="test-info-labels">Maximum marks:</span><span> 50</span> <br>
+                    </div>
+                    <div class="controls">
+                        <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
+                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
+                    </div>        
+                </div>
                 <div class="test-list-item test-submitted" id="test2">
                     <div class="test-title">
                         <h5>Weekly Test - II</h5>

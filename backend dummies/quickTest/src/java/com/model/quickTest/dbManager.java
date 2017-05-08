@@ -205,7 +205,7 @@ public class dbManager {
                 questionNo = "question"+String.valueOf(i+1);
                 for(int j = 1 ; j <= 4 ; j++)
                 {
-                    questionOptions[j] = request.getParameter(questionNo+"+_opt"+String.valueOf(j));
+                    questionOptions[j-1] = request.getParameter(questionNo+"+_opt"+String.valueOf(j));
                 }
                 questionNo= request.getParameter(questionNo);
                 qobj.putQuestion(testId, questionNo, questionOptions);
