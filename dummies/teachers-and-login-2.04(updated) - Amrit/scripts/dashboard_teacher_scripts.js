@@ -5,6 +5,7 @@ function onLoading(){
     $("#new-test-button").click(loadNewTestForm);
     $("#update-info-button").click(updateTeachersInfo);
     $(".start-test").click(startTest);
+    $(".get-performa").on("click", showPerforma);
     $("#prev-qs-btn").on("click", function(event){
         var pres_qs_index = screenQuestionIndex();
         var $element = $(this);
@@ -129,9 +130,9 @@ function getQsIndex(pres_qs_id){
      }
 }
 function loadNewTestForm(){
-    $(".grand-container").fadeIn(500);
-    var pageHeight = String(parseFloat($(".main-container").css("height"))+150);
+    var pageHeight = String(parseFloat($(window).height()));
     $(".grand-container").css("height", pageHeight);
+    $(".grand-container").fadeIn(500);
     $(".dummy-grand").fadeIn(500);
     var formHeight = String(parseFloat($(".new-test-form").css("height"))+50);
     $(".dummy-grand").css("height", formHeight);
@@ -181,4 +182,10 @@ function showSelectedQuestion(){
         }
     }
 }
-
+function showPerforma() {
+    var pageHeight = String(parseFloat($(window).height()));
+    $(".grand-container").css("height", pageHeight);
+    $(".grand-container").fadeIn(500);
+    $(".performa-container").fadeIn(500);
+    $("html body").animate({scrollTop: 0}, "fast");
+}
