@@ -236,4 +236,17 @@ public class dbManager {
         
     }
     
+    public ResultSet getAllTest(int teacherId)
+    {
+        try{
+            Statement state = this.dbObj.createStatement();
+            ResultSet set = state.executeQuery("select * from test where teacherId="+String.valueOf(teacherId)+";");
+            return set;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return null;
+        }
+    }
 }

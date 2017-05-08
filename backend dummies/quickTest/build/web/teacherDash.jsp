@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.model.quickTest.dbManager"%>
 <%@page import="com.model.quickTest.teacher"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -46,9 +48,13 @@
                 <i id="plus-circle" class="fa fa-3x fa-plus-circle" style="margin: 4px"></i>
             </button>
             <div class="test-list">
+                <% dbManager dbObj =new dbManager(); 
+                   ResultSet set = dbObj.getAllTest( obj.getID() );
+                %>
+                <% while(set.next()){ %>
                 <div class="test-list-item test-submitted" id="test4">
                     <div class="test-title">
-                        <h5>Weekly Test - IV</h5>
+                        <h5> <%= set.getString("") %> </h5>
                     </div>
                     <div class="test-info">
                         <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
@@ -62,6 +68,7 @@
                         <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
                     </div>        
                 </div>
+                <% }%>
                 <div class="test-list-item test-submitted" id="test3">
                     <div class="test-title">
                         <h5>Weekly Test - III</h5>
