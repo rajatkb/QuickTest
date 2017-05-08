@@ -42,7 +42,9 @@ public class testInteract extends HttpServlet {
         System.out.println("AJAX receved for deleting test");
         if( String.valueOf(request.getSession().getAttribute("user_data").getClass().getSimpleName()).equals("teacher")) 
         {
-            
+            dbManager obj = new dbManager();
+            int testId = Integer.parseInt(request.getParameter("testId"));
+            obj.deleteTest(testId);
         }
         
     }

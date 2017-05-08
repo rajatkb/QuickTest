@@ -3,6 +3,8 @@ import java.io.*;
 import java.sql.*;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 
@@ -62,6 +64,7 @@ public class dbManager {
         
         return 1;
     }
+    /////////////TEACHER MANAGERIAL PART ///////////
     
     public  teacher teacher_search(int id)
     {
@@ -115,6 +118,8 @@ public class dbManager {
         return 0;
     }
     
+    ///////////// STUDENT MANAGERIAL PART//////////////
+    
     public student student_search(int id)
     {
         student obj = new student();
@@ -140,12 +145,6 @@ public class dbManager {
        
     }
     
-    
-    
-    
-    
-    
-    
     public int  studentRegister(String email,int rollNo, int batchYear, String name, String username, int depCode , String password)
     {
         try{
@@ -167,6 +166,74 @@ public class dbManager {
         }
         return 0;
     }
+    ///// test routines  for db /////////////////
     
+    public int addTest(HttpServletRequest request, HttpServletResponse response )
+    {
+        try{
+            /*
+                title: $("input[name=newtest_title]").val(),
+        desc: $("textarea[name=newtest_description]").val(),
+        date: $("input[name=newtest_date]").val(),
+        duration: $("input[name=newtest_duration]").val(),
+        dept: $("select[name=newtest_department]").val(),
+        batch: $("select[name=newtest_batch_year]").val(),
+        fullMarks: $("input[name=newtest_full_marks]").val(),
+        passMarks: $("input[name=newtest_pass_marks]").val(),
+        total_ques: $(".question").length
+            */
+           
+            String title = request.getParameter("title");
+            String description = request.getParameter("desc");
+            int depCode = Integer.parseInt(request.getParameter("dept"));
+            int batchYear = Integer.parseInt(request.getParameter("batch"));
+            int totalMarks = Integer.parseInt(request.getParameter("fullMarks"));
+            int passMarks = Integer.parseInt(request.getParameter("passMarks"));
+            int teacherId = ((teacher)request.getSession().getAttribute("user_data")).getID();
+            int allotedTime = Integer.parseInt(request.getParameter("duration"));
+            String scheduledDate = request.getParameter("date");
+            String answerScript = request.getParameter("answers");
+            test tobj = new test();
+            tobj.setData(title, description, depCode, batchYear, totalMarks, passMarks, teacherId, allotedTime, scheduledDate, answerScript);
+            int testId = tobj.insertIntoDB(dbObj);
+            int noOfQuestion = Integer.parseInt(request.getParameter("total_ques"));
+            question qobj = new question();            
+            String questionNo="";
+            String[] questionOptions =new String[4] ;
+            for(int i = 0 ;i < noOfQuestion ; i++)
+            {
+                questionNo = "question"+String.valueOf(i+1);
+                for(int j = 1 ; j <= 4 ; j++)
+                {
+                    questionOptions[j] = request.getParameter(questionNo+"+_opt"+String.valueOf(j));
+                }
+                questionNo= request.getParameter(questionNo);
+                qobj.putQuestion(testId, questionNo, questionOptions);
+                qobj.insertIntoDB(dbObj);
+            }
+            return testId;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return 0;
+        }
+    }
+    
+    public int deleteTest(int testId)
+    {
+        try
+        {
+            test obj = new test();
+            obj.loadFromDB(dbObj, testId);
+            return obj.deleteFromDB(dbObj);
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return 0;
+        }
+        
+    }
     
 }
