@@ -240,7 +240,7 @@ public class dbManager {
     {
         try{
             Statement state = this.dbObj.createStatement();
-            ResultSet set = state.executeQuery("select * from test where teacherId="+String.valueOf(teacherId)+";");
+            ResultSet set = state.executeQuery("select * from test where teacherId="+String.valueOf(teacherId)+" order by testId desc;");
             return set;
         }
         catch(Exception ex)

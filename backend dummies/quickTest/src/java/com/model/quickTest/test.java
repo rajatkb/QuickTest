@@ -10,6 +10,7 @@
 */
 package com.model.quickTest;
 
+import com.businessLogic.quickTest.utility;
 import java.sql.*;
 import java.io.*;
 
@@ -40,20 +41,7 @@ public class test {
         this.yetToStart = true;
     }
     
-    private String mapDepCode(int depCode)
-    {
-        switch(depCode)
-        {
-            case 1: return "Computer Science Engineering";
-            case 2: return "Electronics Engineering";
-            case 3: return "Mechanical Engineering";
-            case 4: return "Electrical Engineering";
-            case 5: return "Civil Engineering";
-            case 6: return "Chemical Engineering";
-            case 7: return "instrumentation & Production";
-        }
-        return "";
-    }
+    
     
     
     public int setData( 
@@ -69,6 +57,7 @@ public class test {
                          String answerScript
                          )
     {
+        utility util = new utility();
         this.title=title;
         this.marksPerQuestion = totalMarks / answerScript.length();
         this.scheduledDate = scheduledDate;
@@ -80,7 +69,7 @@ public class test {
         this.teacherId = teacherId;
         this.allotedTime= allotedTime;
         this.answerScript = answerScript;
-        this.department = mapDepCode(depCode);
+        this.department = util.mapDepCode(depCode);
         return 1;
     }
     
@@ -191,6 +180,7 @@ public class test {
             Statement state= (Statement) dbObj.createStatement();
             ResultSet set = state.executeQuery("SELECT * FROM test WHERE testId="+String.valueOf(testId)+";");
             set.next();
+            utility util = new utility();
             this.testId = set.getInt("testId");
             this.teacherId = set.getInt("teacherId");
             this.title = set.getString("title");
@@ -210,7 +200,7 @@ public class test {
             this.running = set.getBoolean("running");
             this.finished = set.getBoolean("finished");
             this.answerScript = set.getString("answerScript");
-            this.department = mapDepCode(this.depCode);
+            this.department = util.mapDepCode(this.depCode);
             return 1;   
         }catch(Exception ex)
         {

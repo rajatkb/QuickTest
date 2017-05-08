@@ -1,3 +1,4 @@
+<%@page import="com.businessLogic.quickTest.utility"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.model.quickTest.dbManager"%>
 <%@page import="com.model.quickTest.teacher"%>
@@ -8,7 +9,10 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/dashboard_teacher_styles.css" />" />
 <script type="text/javascript" src="<c:url value="/assets/scripts/dashboard_teacher_scripts.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/new_test_scripts.js"/>"></script>
-<% teacher obj = (teacher) request.getSession().getAttribute("user_data"); %>
+<% teacher obj = (teacher) request.getSession().getAttribute("user_data"); 
+   dbManager dbObj =new dbManager(); 
+   utility util = new utility();
+%>
 
 <% if( obj == null){ %>
     
@@ -48,59 +52,34 @@
                 <i id="plus-circle" class="fa fa-3x fa-plus-circle" style="margin: 4px"></i>
             </button>
             <div class="test-list">
-                <% dbManager dbObj =new dbManager(); 
-                   ResultSet set = dbObj.getAllTest( obj.getID() );
-                %>
-                <% while(set.next()){ %>
-                <div class="test-list-item test-submitted" id="test4">
-                    <div class="test-title">
-                        <h5> <%= set.getString("") %> </h5>
-                    </div>
-                    <div class="test-info">
-                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
-                        <span class="test-info-labels">Scheduled date of examination:</span><span> 2017-01-15</span> <br>
-                        <span class="test-info-labels">Department:</span><span> IPE</span> <br>
-                        <span class="test-info-labels">Batch:</span><span> 2017</span> <br>
-                        <span class="test-info-labels">Maximum marks:</span><span> 50</span> <br>
-                    </div>
-                    <div class="controls">
-                        <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
-                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
-                    </div>        
-                </div>
+                <% ResultSet set = dbObj.getAllTest( obj.getID() );
+                   while(set.next()){ %>
+                        <% if(set.getBoolean("finished")){%>
+                            <div class="test-list-item test-conducted" id="test<%= set.getString("testId") %>">
+                        <% } else { %>       
+                            <div class="test-list-item test-submitted" id="test<%= set.getString("testId") %>">
+                        <% } %>    
+                            <div class="test-title">
+                                <h5> <%= set.getString("title") %> </h5>
+                            </div>
+                            <div class="test-info">
+                                <p> <%= set.getString("description") %> </p>
+                                <span class="test-info-labels">Scheduled date of examination: </span><span> <%= set.getString("scheduledDate") %></span> <br>
+                                <span class="test-info-labels">Department: </span><span> <%= util.mapDepCode( set.getInt("depCode"))  %></span> <br>
+                                <span class="test-info-labels">Batch: </span><span><%= set.getString("batchYear") %></span> <br>
+                                <span class="test-info-labels">Maximum marks: </span><span><%= set.getString("totalMarks") %> </span> <br>
+                            </div>
+                            <div class="controls">
+                                <% if(set.getBoolean("finished")){%>
+                                    <button class="get-test-review"><i class="fa fa-3x fa-hourglass-start"></i>Get test review</button>
+                                <% } else { %>       
+                                    <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
+                                <% } %>
+                                <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
+                            </div>        
+                        </div>
                 <% }%>
-                <div class="test-list-item test-submitted" id="test3">
-                    <div class="test-title">
-                        <h5>Weekly Test - III</h5>
-                    </div>
-                    <div class="test-info">
-                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
-                        <span class="test-info-labels">Scheduled date of examination:</span><span> 2017-01-15</span> <br>
-                        <span class="test-info-labels">Department:</span><span> IPE</span> <br>
-                        <span class="test-info-labels">Batch:</span><span> 2017</span> <br>
-                        <span class="test-info-labels">Maximum marks:</span><span> 50</span> <br>
-                    </div>
-                    <div class="controls">
-                        <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
-                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
-                    </div>        
-                </div>
-                <div class="test-list-item test-submitted" id="test2">
-                    <div class="test-title">
-                        <h5>Weekly Test - II</h5>
-                    </div>
-                    <div class="test-info">
-                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
-                        <span class="test-info-labels">Scheduled date of examination:</span><span> 2017-01-15</span> <br>
-                        <span class="test-info-labels">Department:</span><span> IPE</span> <br>
-                        <span class="test-info-labels">Batch:</span><span> 2017</span> <br>
-                        <span class="test-info-labels">Maximum marks:</span><span> 50</span> <br>
-                    </div>
-                    <div class="controls">
-                        <button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now</button>
-                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
-                    </div>        
-                </div>
+                
                 <div class="test-list-item test-conducted" id="test1">
                     <div class="test-title">
                         <h5>Weekly Test - I</h5>

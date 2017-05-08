@@ -159,15 +159,19 @@ function closeConfBox(){
 function deleteThisTest(questionToDel){
     var testID = $(questionToDel).attr("id");
     var testIndex = Number(testID.match(/\d/g).join(""));
+    var encoded = $.param({ testId :testIndex});
+    console.log(encoded);
     $.ajax({
-        method: "delete",
-        url: "testInteraction",
-        data: $.param({testId : testIndex,}),
+        method:"delete",
+        url:"testInteract",
+        data:encoded,
         success : function(data){
             $(questionToDel).hide();
+            console.log(data);
+            closeConfBox();
         }
     });
-    closeConfBox();
+    
 }
 function showSelectedQuestion(){
     var ques_search = Number($("#search-ques").val());

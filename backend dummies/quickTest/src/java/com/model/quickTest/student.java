@@ -8,6 +8,7 @@
     *deleteDataFromDB / deletes that particular dataset that is loaded using loadFromDB
 */ 
 package com.model.quickTest;
+import com.businessLogic.quickTest.utility;
 import java.sql.*;
 import java.io.*;
 
@@ -47,38 +48,17 @@ public class student {
     public int getBatchYear() {
         return batchYear;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    private String mapDepCode(int depCode)
-    {
-        switch(depCode)
-        {
-            case 1: return "Computer Science Engineering";
-            case 2: return "Electronics Engineering";
-            case 3: return "Mechanical Engineering";
-            case 4: return "Electrical Engineering";
-            case 5: return "Civil Engineering";
-            case 6: return "Chemical Engineering";
-            case 7: return "instrumentation & Production";
-        }
-        return "";
-    }
+   
     
     public void setNewData(String email,int rollNo, int batchYear, String name, String username, int depCode)
     {
+        utility util = new utility();
         this.email = email;
         this.rollNo = rollNo;
         this.batchYear = batchYear;
         this.name = name;
         this.username = username;
-        this.department = department;
+        this.department = util.mapDepCode(depCode);
         this.depCode = depCode;
         this.studentId=  Integer.valueOf(String.valueOf(batchYear)+String.valueOf(rollNo));
     }

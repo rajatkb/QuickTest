@@ -1,5 +1,3 @@
-
-
 package com.controller.quickTest;
 
 import com.model.quickTest.dbManager;
@@ -37,14 +35,23 @@ public class testInteract extends HttpServlet {
     }
 
     @Override
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         System.out.println("AJAX receved for deleting test");
         if( String.valueOf(request.getSession().getAttribute("user_data").getClass().getSimpleName()).equals("teacher")) 
         {
+            
             dbManager obj = new dbManager();
-            int testId = Integer.parseInt(request.getParameter("testId"));
-            obj.deleteTest(testId);
+            try{
+                System.out.println(request.getParameterMap());
+                int testId = Integer.parseInt(request.getParameter("testId"));
+                obj.deleteTest(testId);
+            }
+            catch(Exception ex)
+            {
+                System.out.println(ex);
+            }
+            
         }
         
     }

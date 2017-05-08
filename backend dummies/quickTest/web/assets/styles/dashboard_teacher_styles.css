@@ -162,6 +162,16 @@ i {
     font-size: 23px;
     padding: 5px 0;
 }
+
+.get-test-review{
+    height: 120px;
+    width: auto;
+    float: left;
+    background: #212121;
+    font-size: 23px;
+    padding: 5px 0;
+}
+
 #teacher-name{
     margin-bottom: 0px;
 }

@@ -25,7 +25,7 @@ function makeFormSubmission(){
         success: function(data) {
             if(Number(data) != 0)
             {   escapeFormWindow();
-                var newTestTemplate = '<div class="test-list-item test-submitted" id="test' + String(data) + '"><div class="test-title"><h5>' + newTestData.testData.title + '</h5></div><div class="test-info"><p>' + newTestData.testData.desc + '</p><span class="test-info-labels">Scheduled date of examination: </span><span>' + newTestData.testData.date + '</span> <br><span class="test-info-labels">Department: </span><span>' + deplist[newTestData.testData.dept] + '</span> <br><span class="test-info-labels">Batch: </span><span> ' + 20+newTestData.testData.batch + '</span> <br><span class="test-info-labels">Maximum marks: </span><span>' + newTestData.testData.fullMarks + '</span> <br></div><div class="controls"><button class="start-test"><button class="delete-test"><i class="fa fa-trash-o"></i>Delete</button></div></div>';
+                var newTestTemplate = '<div class="test-list-item test-submitted" id="test'+ String(data) + '"><div class="test-title"><h5>' + newTestData.testData.title + '</h5></div><div class="test-info"><p>' + newTestData.testData.desc + '</p><span class="test-info-labels">Scheduled date of examination: </span><span>' + newTestData.testData.date + '</span> <br><span class="test-info-labels">Department: </span><span>' + deplist[newTestData.testData.dept] + '</span> <br><span class="test-info-labels">Batch: </span><span> ' + 20+newTestData.testData.batch + '</span> <br><span class="test-info-labels">Maximum marks: </span><span>' + newTestData.testData.fullMarks + '</span> <br></div><div class="controls"><button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now<button class="delete-test"><i class="fa fa-trash-o"></i>Delete</button></div></div>';
                 $(".test-list").prepend(newTestTemplate);
             }
         }
@@ -67,5 +67,6 @@ function getTestData(){
     });
     testData.answers = answers;
     var encodedData = $.param(testData);
+    console.log(encodedData);
     return {encodedData: encodedData, testData: testData};
 }
