@@ -161,7 +161,7 @@ function deleteThisTest(questionToDel){
     $.ajax({
         method: "post",
         url: "",
-        data: testIndex
+        data: $.param({testId : testIndex,}),
     });
     closeConfBox();
 }

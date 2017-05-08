@@ -1,8 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <html>
     <head>
+        
         <% if( request.getSession().getAttribute("user_data") == null){ %>
             <title>Welcome to QuickTest</title>
         <%}else{%>
@@ -30,16 +30,12 @@
 	</span>
         
         <ul class="list-item">
-          <%
-              if( request.getSession().getAttribute("user_data") == null)
-              {      
-                  out.println("<li  class=\"on-right\"><button id=\"register\" >Register</button></li>");
-              }
-              else
-              { 
-                  out.println("<li class=\"on-right\"><button><a href=\"logout\">LogOut</a></button></li>");
-              }
-          %>
+          <%if( request.getSession().getAttribute("user_data") == null){%>      
+                  <li  class="on-right"><button id="register" >Register</button></li>
+          <%}else{%> 
+                  <li><a href="<%=request.getSession().getAttribute("user_data").getClass().getSimpleName()%>Dash">Dashboard</a></li>
+                  <li class="on-right"><button><a href="logout">LogOut</a></button></li>
+          <%}%>
         </ul>
             
       </nav>

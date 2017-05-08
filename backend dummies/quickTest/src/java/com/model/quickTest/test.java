@@ -23,7 +23,7 @@ public class test {
     private int totalMarks;
     private int passMarks;
     private int allotedTime;
-    private int marksPerQuestion;
+    private float marksPerQuestion;
     private String scheduledDate;
     private String startDate;
     private String startTime;
@@ -33,6 +33,28 @@ public class test {
     private boolean running;
     private boolean finished;
     private String answerScript;
+    private String department;
+    
+    public test()
+    {
+        this.yetToStart = true;
+    }
+    
+    private String mapDepCode(int depCode)
+    {
+        switch(depCode)
+        {
+            case 1: return "Computer Science Engineering";
+            case 2: return "Electronics Engineering";
+            case 3: return "Mechanical Engineering";
+            case 4: return "Electrical Engineering";
+            case 5: return "Civil Engineering";
+            case 6: return "Chemical Engineering";
+            case 7: return "instrumentation & Production";
+        }
+        return "";
+    }
+    
     
     public int setData( 
                          String title,
@@ -41,7 +63,6 @@ public class test {
                          int batchYear,
                          int totalMarks,
                          int passMarks ,
-                         int marksPerQuestion,
                          int teacherId ,
                          int allotedTime ,
                          String scheduledDate,
@@ -49,7 +70,7 @@ public class test {
                          )
     {
         this.title=title;
-        this.marksPerQuestion = marksPerQuestion;
+        this.marksPerQuestion = totalMarks / answerScript.length();
         this.scheduledDate = scheduledDate;
         this.description = description;
         this.depCode= depCode;
@@ -59,7 +80,8 @@ public class test {
         this.teacherId = teacherId;
         this.allotedTime= allotedTime;
         this.answerScript = answerScript;
-        return testId;
+        this.department = mapDepCode(depCode);
+        return 1;
     }
     
     public void viewData()
@@ -122,7 +144,7 @@ public class test {
                           "    batchYear       INT NOT NULL , " +
                           "    totalMarks      INT NOT NULL , " +
                           "    passMarks       INT NOT NULL , " +
-                          "    marksPerQuestion INT NOT NULL , "+
+                          "    marksPerQuestion DECIMAL NOT NULL , "+
                           "    allotedTime     INT NOT NULL , " +
                           "    scheduledDate   DATE NOT NULL , "+
                           "    startDateTime   TIMESTAMP NULL , " +
@@ -155,7 +177,7 @@ public class test {
                 ResultSet set = state.executeQuery("SELECT testId FROM test WHERE answerScript=\""+this.answerScript+"\" AND description=\""+this.description+"\" AND title=\""+this.title+"\";");
                 set.next();
                 this.testId = set.getInt("testId");
-                return 1;
+                return this.testId;
             }
             catch( Exception ex)
             {
@@ -178,7 +200,7 @@ public class test {
             this.totalMarks = set.getInt("totalMarks");
             this.passMarks = set.getInt("passMarks");
             this.allotedTime = set.getInt("allotedTime");
-            this.marksPerQuestion = set.getInt("marksPerQuestion");
+            this.marksPerQuestion = set.getFloat("marksPerQuestion");
             this.scheduledDate = set.getString("scheduledDate");
             this.startDate = String.valueOf(set.getDate("startDateTime"));
             this.startTime = String.valueOf(set.getTime("startDateTime"));
@@ -188,7 +210,7 @@ public class test {
             this.running = set.getBoolean("running");
             this.finished = set.getBoolean("finished");
             this.answerScript = set.getString("answerScript");
-            
+            this.department = mapDepCode(this.depCode);
             return 1;   
         }catch(Exception ex)
         {
