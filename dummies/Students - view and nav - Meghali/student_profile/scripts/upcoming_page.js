@@ -1,20 +1,10 @@
 $(document).ready(function() {
-    $('.toggle').click(function () {
-
-        $('nav ul').slideToggle();
-    });
-    
-    
-    $(window).resize(function () {
-        if ($(window).width() > 700) {
-            $('nav ul').removeAttr('style');
-        }
-    });
-
-        $('.test').each(function() {
+      $('.test').each(function() {
             $(this).css('background',randomColor());
-        
+            
     });
+    
+    
     $('.pro').mouseover(function(){
        $('.profile').slideDown("fast");
     });
