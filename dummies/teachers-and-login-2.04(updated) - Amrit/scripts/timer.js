@@ -3,9 +3,14 @@ $(document).ready(function(){
 	    var totalsec=60*60*3;
 	    var inter;
 	    var state=false;
+        $.ajax({
+            type: "get",
+            url: "",
+            success: function(data){
+                totalsec = data;
+            }
+        });
 	    setInitTime(totalsec);
-	    
-	    
 	    $("#button").on("click",function(){
 	        
 	        if(state==true)

@@ -5,7 +5,7 @@ function onLoading(){
     $("#new-test-button").click(loadNewTestForm);
     $("#update-info-button").click(updateTeachersInfo);
     $(".start-test").click(startTest);
-    $(".get-performa").on("click", showPerforma);
+    $(".get-test-review").on("click", showPerforma);
     $("#prev-qs-btn").on("click", function(event){
         var pres_qs_index = screenQuestionIndex();
         var $element = $(this);
