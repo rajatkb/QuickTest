@@ -122,10 +122,11 @@ public class dbManager {
     {
         try
         {
+            System.out.println(request.getParameterMap());
             String name = request.getParameter("new_name");
             String jobDescription = request.getParameter("new_desg");
             String specialization = request.getParameter("new_qual");
-            String qualification = request.getParameter("new_secs");
+            String qualification = request.getParameter("new_specs");
             obj.setUpdateData(name, jobDescription, specialization, qualification);
             obj.updateDataInDB(dbObj);
             return 1;

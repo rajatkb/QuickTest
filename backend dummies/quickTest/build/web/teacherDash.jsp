@@ -35,7 +35,7 @@
                     </div>
             </div>
              <div class="update-info-form">
-                 <form method="put" action="registerController" id="update-info-form">
+                 <form method="get" action="registerController" id="update-info-form">
                     <h4 id="teacher-name"><%= obj.getUsername() %></h4>
                     <span><%= obj.getEmail() %></span><br><br>
                     <div class="row">

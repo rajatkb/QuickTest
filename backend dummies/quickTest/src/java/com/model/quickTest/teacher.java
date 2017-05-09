@@ -180,7 +180,7 @@ public class teacher {
         try{
         Statement stateObj = (Statement) dbObj.createStatement();
         stateObj.executeUpdate("UPDATE teacher " +
-                               "SET jobDescription=\""+this.jobDescription+"\", specialization=\""+this.specialization+"\" , qualification =\""+this.qualification+"\"\n" +
+                               "SET jobDescription=\""+this.jobDescription+"\", specialization=\""+this.specialization+"\" , qualification =\""+this.qualification+"\" , name=\""+ this.name +"\"" +
                                "WHERE teacherID="+String.valueOf(this.teacherId)+";");
         
         return 1;
