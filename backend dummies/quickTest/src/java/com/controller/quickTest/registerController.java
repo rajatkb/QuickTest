@@ -95,6 +95,7 @@ public class registerController extends HttpServlet {
             System.out.println("Receieved Update for Teacher");
             dbManager obj = new dbManager();
             obj.updateTeacher(((teacher)request.getSession().getAttribute("user_data")), request);
+            
         }
         response.sendRedirect("/studentDash");
    }
