@@ -89,6 +89,20 @@ public class registerController extends HttpServlet {
     }
 
     @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(String.valueOf(request.getSession().getAttribute("user_data").getClass().getSimpleName()).equals("teacher"))
+        {
+            System.out.println("Receieved Update for Teacher");
+            dbManager obj = new dbManager();
+            obj.updateTeacher(((teacher)request.getSession().getAttribute("user_data")), request);
+        }
+        response.sendRedirect("/studentDash");
+   }
+
+    
+    
+    
+    @Override
     public String getServletInfo() {
         return "Short description";
     }

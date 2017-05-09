@@ -163,8 +163,7 @@ function deleteThisTest(questionToDel){
     console.log(encoded);
     $.ajax({
         method:"delete",
-        url:"testInteract",
-        data:encoded,
+        url:"testInteract"+'?'+encoded,
         success : function(data){
             $(questionToDel).hide();
             console.log(data);

@@ -35,7 +35,7 @@
                     </div>
             </div>
              <div class="update-info-form">
-                <form  id="update-info-form">
+                 <form method="put" action="registerController" id="update-info-form">
                     <h4 id="teacher-name"><%= obj.getUsername() %></h4>
                     <span><%= obj.getEmail() %></span><br><br>
                     <div class="row">
@@ -44,7 +44,7 @@
                             <span class="update-info-labels">Qualification: </span><input type="text" name="new_qual" value="<%= obj.getQualification() %>"><br>
                             <span class="update-info-labels">Specialization: </span><input type="text" name="new_specs" value="<%= obj.getSpecialization() %>"><br>
                     </div>
-                <button class="form-button" id="save-info-button" style="background: #8D6E63">Save</button>
+                    <button type="submit" class="form-button" id="save-info-button" style="background: #8D6E63">Save</button>
                 </form>
             </div>
             <button class="new-test" id="new-test-button">                
@@ -80,22 +80,6 @@
                         </div>
                 <% }%>
                 
-                <div class="test-list-item test-conducted" id="test1">
-                    <div class="test-title">
-                        <h5>Weekly Test - I</h5>
-                    </div>
-                    <div class="test-info">
-                        <p>The marks secured in this test will hold a 15% carriage into the total sessional marks as displayed in the semester marksheet of the respective students. It is hereby stated that the appearance of all the students in this weekly test is mandatory and no special arrangements will be made/entertained on the request of the absentees.</p>
-                        <span class="test-info-labels">Scheduled date of examination:</span><span> 2016-11-06 </span> <br>
-                        <span class="test-info-labels">Department:</span><span> ELE</span> <br>
-                        <span class="test-info-labels">Batch:</span><span> 2016 </span> <br>
-                        <span class="test-info-labels">Maximum marks:</span><span> 50</span> <br>
-                    </div>
-                    <div class="controls">
-                        <button class="start-test"><i class="fa fa-3x fa-hourglass-end"></i>Conducted</button>
-                        <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
-                    </div>        
-                </div>
             </div>
             <div class="ongoing-test-info">
                 <div class="test-title"><h5 id="ongoing-test-title">Test title</h5></div>

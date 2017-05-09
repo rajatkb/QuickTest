@@ -43,8 +43,9 @@ public class testInteract extends HttpServlet {
             
             dbManager obj = new dbManager();
             try{
-                System.out.println(request.getParameterMap());
                 int testId = Integer.parseInt(request.getParameter("testId"));
+                System.out.println(testId);
+
                 obj.deleteTest(testId);
             }
             catch(Exception ex)

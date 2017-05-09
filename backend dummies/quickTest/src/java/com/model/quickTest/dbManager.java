@@ -118,6 +118,26 @@ public class dbManager {
         return 0;
     }
     
+    public int updateTeacher( teacher obj , HttpServletRequest request)
+    {
+        try
+        {
+            String name = request.getParameter("new_name");
+            String jobDescription = request.getParameter("new_desg");
+            String specialization = request.getParameter("new_qual");
+            String qualification = request.getParameter("new_secs");
+            obj.setUpdateData(name, jobDescription, specialization, qualification);
+            obj.updateDataInDB(dbObj);
+            return 1;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return 0;
+        }
+        
+    }
+    
     ///////////// STUDENT MANAGERIAL PART//////////////
     
     public student student_search(int id)
