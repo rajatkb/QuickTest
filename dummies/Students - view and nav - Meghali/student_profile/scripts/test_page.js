@@ -27,6 +27,7 @@ function showDivs(n) {
     var x = $(".question");
     if (n > x.length) {index = 1} 
     if (n < 1) {index = x.length} ;
+    
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none"; 
     }
@@ -37,7 +38,7 @@ function showDivs(n) {
     function showSelectedQuestion(){
         var ques_search = Number($(".search-ques").val());
         var x = $(".question");
-        if((ques_search>x.length) || (ques_search<1)){return;}
+        if((ques_search>x.length) || (ques_search<1) || (ques_search==String(ques_search))){return;}
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none"; 
         }
@@ -68,14 +69,19 @@ function showDivs(n) {
         $.ajax({
            type:"post",
             url:"",
-            data: final_answer
+            data: $.param({answerScript : final_answer}),
+            success: function(dat){
+                alert("You will now be redirected.");
+                window.location = "//www.aspsnippets.com/";
+  
+            },
+            failure: function(dat){
+                alert("NO DATA SEND");
+            }
         });
     })
-    
-    
-    
-    
-    
 });
+    
+    
 
 
