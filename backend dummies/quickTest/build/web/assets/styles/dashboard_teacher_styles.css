@@ -5,11 +5,11 @@ body {
     width: 85%;
     margin: 10px auto;
 }
-.ultra-container button:active {
+.ultra-container button:active, #download-performa:active {
     transform: translateY(4px);
     color: white;
 }
-.ultra-container button:focus {
+.ultra-container button:focus, #download-performa:focus {
     color: white;
 }
 .teacher-info {
@@ -86,10 +86,10 @@ i {
     margin-right: 4px;
     vertical-align: middle;
 }
-.main-container button, .new-test-form button {
+.main-container button, .new-test-form button, #download-performa {
     box-shadow:  0px 8px 6px -6px black;
 }
-.new-test:hover, .delete-test:hover, button:hover {
+.new-test:hover, .delete-test:hover, button:hover, #download-performa:hover {
     color: white;
     box-shadow: none;
 }
@@ -104,9 +104,13 @@ i {
     margin: 5px;
     padding-bottom: 10px;
 }
-.test-title {
+.ongoing-test-title {
     background: rgb(245, 245, 245);
-    padding: 0px 10px;
+    padding: 0 10px;
+    margin-top: 0;
+}
+#ongoing-test-title {
+    vertical-align: middle;
 }
 .profile-controls, .controls {
     text-align: right;
@@ -154,7 +158,7 @@ i {
     font-size: 30px;
     padding: 5px 0;
 }
-.start-test {
+.start-test, .get-performa {
     height: 120px;
     width: auto;
     float: left;
@@ -162,16 +166,6 @@ i {
     font-size: 23px;
     padding: 5px 0;
 }
-
-.get-test-review{
-    height: 120px;
-    width: auto;
-    float: left;
-    background: #212121;
-    font-size: 23px;
-    padding: 5px 0;
-}
-
 #teacher-name{
     margin-bottom: 0px;
 }
@@ -235,8 +229,14 @@ select:invalid {
     margin: 5px;
     outline: none;
 }
-.question input {
+.new-test-form select, .ultra-container textarea, .new-test-form form input {
+    border-color: black;
     box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    font-weight: 400;
+}
+.new-test-form form input {
+    height: 50px;
 }
 .ultra-container textarea {
     height: 100px !important;
@@ -329,6 +329,31 @@ select:invalid {
     right: 0px;
     opacity: 0.7;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .random-class {
     margin: 0;
     padding: 10px;
@@ -351,4 +376,19 @@ select:invalid {
 }
 #test_title, #test_full_marks, #test_pass_marks, #test_duration {
     height: 50px !important;
+}
+.get-test-review {
+    background: #FF9100;
+    float: left;
+}
+#button {
+    background: #FF9100;
+    color: white;
+}
+.close-this {
+    text-align: center;
+}
+.escape-start-test {
+    position: relative;
+    top: -20px;
 }

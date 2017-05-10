@@ -24,8 +24,9 @@
         <span class="text">UPCOMING TESTS</span>
         <% ResultSet set = dbObj.getAllTest( obj.getDepCode() , obj.getBatchYear()); %>
         <div class="row">
-            <% while( set.next() ){ if( ! set.getBoolean("finished") ){ %>
-            <div class="four columns test ">
+            <% int i=0; 
+            while( set.next() ){ if( ! set.getBoolean("finished") ){ i++; %>
+            <a href="#" ><div class="four columns test ">
                 <div><%= set.getString("title") %></div>
                     <div class="db">
                         Date of Test: <%= set.getString("scheduledDate")%><br>
@@ -33,18 +34,22 @@
                         Full Marks: <%= set.getString("totalMarks")%> <br>
                         Pass Marks: <%= set.getString("passMarks") %> <br> 
                     </div>
-            </div>
-            <% } } %>
+                </div>
+            </a>
+            <% } } if(i==0){ %>
+            <br/>
+            <h1 style="text-align:center;">¯\_(ツ)_/¯ NOT FOUND</h1>
+              <%  } %>
             </div>
             <div class="row"></div>    
         </div>
         
-<div class="containerdiv prev-test">
+<div class="containerdiv prevest">
         <span class="text">PREVIOUS TESTS</span>
         <div class="row">
-        
-            <% while( set.next() ){ if( set.getBoolean("finished") ){ %>
-            <div class="four columns test ">
+            <% i=0; 
+            while( set.next() ){ if( set.getBoolean("finished") ){ i++; %>
+            <a href=""><div class="four columns test ">
                 <div><%= set.getString("title") %></div>
                     <div class="db">
                         Date of Test: <%= set.getString("scheduledDate")%><br>
@@ -52,8 +57,12 @@
                         Full Marks: <%= set.getString("totalMarks")%> <br>
                         Pass Marks: <%= set.getString("passMarks") %> <br> 
                     </div>
-            </div>
-            <% } } %>
+                </div>
+            </a>
+            <% } } if(i==0){ %>
+            <br/>
+            <h1 style="text-align:center;">¯\_(ツ)_/¯ NOT FOUND</h1>
+              <%  } %>
         
         
         </div>
