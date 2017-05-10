@@ -19,21 +19,7 @@
     margin-top: 10px;
     margin-right: 0px;
 }
-.bm:hover{
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-}
-.bm{
-    float: right;
-    font-size: 50px;
-    color: lawngreen;
-    position: relative;
-    top: -70px;
-    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-    
-}
-.bm i:fixed{
-    color: lawngreen;
-} 
+
 .button-container{
     text-align: center;
 }
@@ -65,50 +51,6 @@ div .button-container button{
     padding: 5px;
     
 }
-ansclass{
-    background-color: white;
-}
-#limegreen{
-    width:10px;
-    background-color: limegreen;
-    height:10px;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-}
-#white{
-    width:10px;
-    background-color: white;
-    height:10px;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-}
-#orange{
-    width:10px;
-    background-color: orange;
-    height:10px;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-}
-#blue{
-    width:10px;
-    background-color: blue;
-    height:10px;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-}
-#clear{
-    float:right;
-    margin-bottom: 10px;
-    background-color: green;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-
-}
-
 
 
 a.control_prev, a.control_next {
@@ -164,104 +106,7 @@ a.control_next {
     font-size: 50px;
     
 }
-.try{
-    background-color: black;
-    height: 50%;
-}
-@media(max-device-width: 700px){
-    .toggle{
-        display: block;
-        height: 80%;
-        width: 10%;
-    }
-    
-    nav{ 
-    padding-top: 20px;
-    padding-bottom: 0px;
-    position: fixed;
-    top:0px;
-    z-index: 1000;
-    height: 100px;
-    width: 100%;
-    margin: 0 auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    }
-    
-    .qt{
-        font-size: 60px;
-        color: black;
-        margin: 2px;
-    }
-    	
-    li.on-right button{
-        width: 60%;
-        height: 40px;
-        margin: 0px;
-        padding: 1px;
-        
-    }
-    
-    
-    
-  .icon {
-    
-  }
-  .list-item { 
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: -32px;
-    background-color: #E0E0E0;
-    display: none;
-    text-align: center;
-    border:none;
 
-  }
-  .list-item li {
-    font-size: 60px;
-    height:80px;
-    text-align: center;
-    padding: 5px;  
-    margin: 10px;   
-    display: block;
-    float: none;
-    box-shadow: none;
-    border: 1px solid rgba(0,0,0,0.2);
-    border-radius: 3px;
-    box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
-  }
-    .list-item li a{
-        border:none;
-    }
-    
-    li.on-right button{
-        font-size: 50px;
-        height: 90%;
-    }
-   
-    .icon{
-        height: 30px;
-        box-shadow:none;
-    }
-    
-    .line{
-	margin: 20% 10%;
-	padding: 0px;
-	border-top-style: solid;
-	border-top-width: 2px;
-	border-top-color: black;
-	width: 80%;
-}
-    body{
-        width: 100%;
-        height: 100%;
-    }
-}
-
-#ques2,#ques3{
-    display: none;
-}
 .prev-qs-button, .next-qs-button, .more-qs-button {
     width: auto;
     padding: 5px 10px;
