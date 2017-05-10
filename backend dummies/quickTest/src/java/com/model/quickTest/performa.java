@@ -13,6 +13,12 @@ public class performa {
     private String remark = "none";
     
     
+    public void setData(int studentId , int testId)
+    {
+        this.studentId = studentId;
+        this.testId = testId;
+    }
+    
     public void viewData()
     {
         System.out.println(this.studentId);
@@ -47,10 +53,12 @@ public class performa {
     
     
     
-    public int insertPerforma(String response)
+    public int insertPerforma(String response, Connection dbObj)
     {
         try
         {
+           Statement state = dbObj.createStatement();
+           
             return 1;
         }
         catch(Exception ex)

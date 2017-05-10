@@ -3,20 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/assets/styles/navbar_styles.css</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/src/java/com/model/quickTest/performa.java</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/src/java/com/model/quickTest/dbManager.java</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/assets/scripts/dashboard_teacher_scripts.js</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/src/java/com/controller/quickTest/registerController.java</file>
             <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/teacherDash.jsp</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/src/java/com/model/quickTest/student.java</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/assets/scripts/new_test_scripts.js</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/assets/scripts/upcoming_page.js</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/src/java/com/controller/quickTest/loginController.java</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/login.jsp</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/studentDash.jsp</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/src/java/com/controller/quickTest/testInteract.java</file>
-            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/assets/styles/upcoming_page.css</file>
+            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/assets/styles/dashboard_teacher_mobile.css</file>
+            <file>file:/F:/github/QuickTest/backend%20dummies/quickTest/web/assets/styles/dashboard_teacher_styles.css</file>
         </group>
     </open-files>
 </project-private>
