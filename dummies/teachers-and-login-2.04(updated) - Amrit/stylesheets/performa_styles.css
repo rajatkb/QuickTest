@@ -44,3 +44,9 @@
     background: #795548;
     color: white;
 }
+.close-performa-button {
+    background: rgb(219, 40, 40);
+    color: white;
+    box-shadow:  0px 8px 6px -6px black;
+    margin: 10px;
+}

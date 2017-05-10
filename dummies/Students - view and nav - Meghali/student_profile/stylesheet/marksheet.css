@@ -57,12 +57,17 @@ th{
     text-transform: none;
     margin-bottom: 10px;
     background-color: limegreen;
+    font-size: 20px;
+    color: white;
 }
 .pdf:hover{
             box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4) inset;
     background-color: darkgreen;
     color: white;
 
+}
+.pdf:active{
+    transform: scale(0.95);
 }
 .score:hover{
                 box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4) inset;
