@@ -30,6 +30,7 @@ $(document).ready(function(){
 	                document.getElementById("button").innerHTML="Stop";
 	                var out;
 	                var h,m,s;
+                    testInProgress = true;
 	                inter=setInterval(function(){
 	                    h=Math.floor(totalsec/(60*60));
 	                    m=Math.floor((totalsec%(60*60))/60);
@@ -43,6 +44,7 @@ $(document).ready(function(){
 	                     if(totalsec < 0)
 	                        {
 	                            window.location.reload(1);
+                                testInProgress = false;
                                 clearInterval(inter);
 	                        }
 	
