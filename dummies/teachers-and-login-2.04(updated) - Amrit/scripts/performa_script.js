@@ -14,7 +14,7 @@ function showPerforma() {
         success: function(responseJSON){
             var students = Object.keys(responseJSON);
             for(var i=0; i<students.length; i++){
-                var performaTemplate = '<div class="student row"><div class="six columns">' + students[i] + '</div><div class="six columns">' + list[students[i]] + '</div></div>';
+                var performaTemplate = '<div class="student row"><div class="six columns">' + students[i] + '</div><div class="six columns">' + responseJSON[students[i]] + '</div></div>';
                 $(".students-list").append(performaTemplate);
             }
         }

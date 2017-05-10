@@ -35,7 +35,6 @@ $(document).ready(function(){
 	                    m=Math.floor((totalsec%(60*60))/60);
 	                    s=Math.floor((totalsec%(60*60))%60);
 	                    out=h.toString()+":"+m.toString()+":"+s.toString();
-	                    console.log(out);
 	                    chsec(s);
 	                    chminute(m);
 	                    chhour(h);
@@ -43,7 +42,8 @@ $(document).ready(function(){
 	                    totalsec--;
 	                     if(totalsec < 0)
 	                        {
-	                            clearInterval(inter);
+	                            window.location.reload(1);
+                                clearInterval(inter);
 	                        }
 	
 	                },1000);
