@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Signika|Jura|Ruluko|Marcellus SC">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oxygen|Muli|Lato|Asar|Cormorant+SC" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/assets/lib/font-awesome-4.7.0/css/font-awesome.min.css" />">
+        <link rel="stylesheet" type="text/css" href="<c:url value="/assets/lib/skeleton-2.0.4/css/normalize.css" />">
         <link rel="stylesheet" type="text/css" href="<c:url value="/assets/lib/skeleton-2.0.4/css/skeleton.css" />">
         <script src="<c:url value="/assets/lib/jquery/jquery-3.2.0.min.js" />" ></script>
         <script src="<c:url value="/assets/lib/jquery-ui-1.12.1/jquery-ui.min.js" />" ></script>
