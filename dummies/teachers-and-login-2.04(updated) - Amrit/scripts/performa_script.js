@@ -1,5 +1,7 @@
 $(document).ready(function(){
+    downloadPerforma();
     $(".get-review-test").on("click", showPerforma);
+    $(".close-performa-button").on("click", closePerforma);
 });
 function showPerforma() {
     var pageHeight = String(parseFloat($(window).height()));
@@ -10,7 +12,6 @@ function showPerforma() {
     $.ajax({
         type: "get",
         url: "",
-        async: false,
         success: function(responseJSON){
             var students = Object.keys(responseJSON);
             for(var i=0; i<students.length; i++){
@@ -18,5 +19,26 @@ function showPerforma() {
                 $(".students-list").append(performaTemplate);
             }
         }
+    });
+}
+
+function closePerforma() {
+    $(".grand-container").hide(200);
+    $(".performa-container").hide(200);
+}
+
+function downloadPerforma() {
+    var doc = new jsPDF();
+    var downloadButton = {
+        "#download-performa": function(element, renderer) {
+            return true;
+        }
+    };
+    $("#download-performa").on("click", function(){
+        doc.fromHTML($(".performa-container").html(), 15, 15, {
+            "width": 170,
+            "eventHandlers": downloadButton
+        });
+        doc.save("performa.pdf");
     });
 }

@@ -5,11 +5,11 @@ body {
     width: 85%;
     margin: 10px auto;
 }
-.ultra-container button:active, #download-performa:active {
+.ultra-container button:active, #download-performa:active, .close-performa-button:active {
     transform: translateY(4px);
     color: white;
 }
-.ultra-container button:focus, #download-performa:focus {
+.ultra-container button:focus, #download-performa:focus, .close-performa-button:focus {
     color: white;
 }
 .teacher-info {
@@ -86,10 +86,10 @@ i {
     margin-right: 4px;
     vertical-align: middle;
 }
-.main-container button, .new-test-form button, #download-performa {
+.main-container button, .new-test-form button, #download-performa, .close-performa-button {
     box-shadow:  0px 8px 6px -6px black;
 }
-.new-test:hover, .delete-test:hover, button:hover, #download-performa:hover {
+.new-test:hover, .delete-test:hover, button:hover, #download-performa:hover, .close-performa-button {
     color: white;
     box-shadow: none;
 }
