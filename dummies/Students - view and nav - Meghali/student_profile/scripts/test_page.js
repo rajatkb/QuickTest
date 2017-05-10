@@ -1,3 +1,4 @@
+var final_answer;
 $(document).ready(function(){
     var items = $('.question').length;
     
