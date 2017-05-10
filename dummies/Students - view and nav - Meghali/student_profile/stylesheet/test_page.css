@@ -1,7 +1,6 @@
 
 .test{
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        margin: 10px 10px;
         padding: 10px;
         
 }
@@ -19,7 +18,21 @@
     margin-top: 10px;
     margin-right: 0px;
 }
-
+.bm:hover{
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+.bm{
+    float: right;
+    font-size: 50px;
+    color: lawngreen;
+    position: relative;
+    top: -70px;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+    
+}
+.bm i:fixed{
+    color: lawngreen;
+} 
 .button-container{
     text-align: center;
 }
@@ -51,7 +64,6 @@ div .button-container button{
     padding: 5px;
     
 }
-
 
 a.control_prev, a.control_next {
   position: absolute;
@@ -106,7 +118,14 @@ a.control_next {
     font-size: 50px;
     
 }
+.try{
+    background-color: black;
+    height: 50%;
+}
 
+#ques2,#ques3{
+    display: none;
+}
 .prev-qs-button, .next-qs-button, .more-qs-button {
     width: auto;
     padding: 5px 10px;
@@ -154,6 +173,11 @@ a.control_next {
 #colon{
     color: black;
     font-size: 70px;
+}
+.row{
+    margin-top: 10px;
+    width: 97%;
+    margin-left: 5px;
 }
 .another-random-class{
     text-align: left;
