@@ -11,6 +11,7 @@
     right: 0;
     left: 0;
     background: white;
+    display: none;
 }
 .performa-container .performa-title {
     width: 100%;

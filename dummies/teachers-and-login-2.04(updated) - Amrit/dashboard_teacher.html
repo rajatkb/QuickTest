@@ -15,6 +15,7 @@
         <script type="text/javascript" src="scripts/dashboard_teacher_scripts.js"></script>
         <script type="text/javascript" src="scripts/new_test_scripts.js"></script>
         <script type="text/javascript" src="scripts/timer.js"></script>
+        <script type="text/javascript" src="scripts/performa_script.js"></script>
     </head>
     <body>
         <nav>
@@ -109,7 +110,7 @@
                     </div>
                     <div class="controls">
                         <button class="start-test"><i class="fa fa-3x fa-hourglass-end"></i>Conducted</button>
-                        <a href="collective_performance.html"><button class="get-test-review"><i class="fa fa-file"></i>Get performa</button></a>
+                        <button class="get-test-review"><i class="fa fa-file"></i>Get performa</button>
                         <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
                     </div>        
                 </div>
@@ -126,7 +127,7 @@
                     </div>
                     <div class="controls">
                         <button class="start-test"><i class="fa fa-3x fa-hourglass-end"></i>Conducted</button>
-                        <a href="collective_performance.html"><button class="get-test-review"><i class="fa fa-file"></i>Get performa</button></a>
+                        <button class="get-test-review"><i class="fa fa-file"></i>Get performa</button>
                         <button class="delete-test"><i class="fa fa-3x fa-trash-o"></i>Delete</button>
                     </div>        
                 </div>
@@ -260,7 +261,49 @@
             </form>
         </div>
         </div>
-        
+            <div class="performa-container">
+        <div class="performa-title"><h5 id="review-test-title">Weekly Test - I</h5></div>
+        <div class="performa-info">
+            <div class="basic-test-info">
+                <div class="row">
+                    <div class="six columns"><strong>Date of exam: </strong><span id="review-test-date">21/04/2017</span></div>
+                    <div class="six columns"><a href="#" download="performa.pdf"><button id="download-performa"><i class="fa fa-download"></i>Download</button></a></div>
+                </div>
+                <div class="row">
+                    <div class="four columns"><strong>Department: </strong><span  id="review-test-dept">CSE</span></div>
+                    <div class="four columns"><strong>Batch: </strong><span id="review-test-batch">2016</span></div>
+                    <div class="four columns"><strong>Maximum marks: </strong><span id="review-test-marks">100</span></div>
+                </div>
+            </div>
+            <h6><em>*According to the marks obtained</em></h6>
+            <div class="row headings">
+                <div class="six columns"><strong>Name of the student</strong></div>
+                <div class="six columns"><strong>Marks obtained</strong></div>
+            </div>
+            <div class="students-list">
+                <div class="student row">
+                    <div class="six columns">Meghali Nandi</div>
+                    <div class="six columns">100</div>
+                </div>
+                <div class="student row">
+                    <div class="six columns">Rajat Kanti Bhattacharjee</div>
+                    <div class="six columns">150</div>
+                </div>
+                <div class="student row">
+                    <div class="six columns">Prantick Das</div>
+                    <div class="six columns">95</div>
+                </div>
+                <div class="student row">
+                    <div class="six columns">Amrit Jha</div>
+                    <div class="six columns">25</div>
+                </div>
+                <div class="student row">
+                    <div class="six columns">Jnandeep Dev Sharma</div>
+                    <div class="six columns">100</div>
+                </div>
+            </div>
+        </div>
+    </div>
         </div>
     </body>
 </html>

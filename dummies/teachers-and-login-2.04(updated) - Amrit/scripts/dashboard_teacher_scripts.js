@@ -182,10 +182,3 @@ function showSelectedQuestion(){
         }
     }
 }
-function showPerforma() {
-    var pageHeight = String(parseFloat($(window).height()));
-    $(".grand-container").css("height", pageHeight);
-    $(".grand-container").fadeIn(500);
-    $(".performa-container").fadeIn(500);
-    $("html body").animate({scrollTop: 0}, "fast");
-}
