@@ -33,7 +33,7 @@
           <%if( request.getSession().getAttribute("user_data") == null){%>      
                   <li  class="on-right"><button id="register" >Register</button></li>
           <%}else{%> 
-                  <li><a href="<%=request.getSession().getAttribute("user_data").getClass().getSimpleName()%>Dash">Dashboard</a></li>
+                  <li><a class="pro" href="<%=request.getSession().getAttribute("user_data").getClass().getSimpleName()%>Dash">Dashboard</a></li>
                   <li class="on-right"><button><a href="logout">LogOut</a></button></li>
           <%}%>
         </ul>

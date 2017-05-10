@@ -30,6 +30,7 @@ public class testInteract extends HttpServlet {
         {
             dbManager obj = new dbManager();
             int testId = obj.addTest(request, response);
+            obj.insertTestForAllStudents(testId);
             response.getWriter().print(String.valueOf(testId));
         }
     }
@@ -45,7 +46,6 @@ public class testInteract extends HttpServlet {
             try{
                 int testId = Integer.parseInt(request.getParameter("testId"));
                 System.out.println(testId);
-
                 obj.deleteTest(testId);
             }
             catch(Exception ex)

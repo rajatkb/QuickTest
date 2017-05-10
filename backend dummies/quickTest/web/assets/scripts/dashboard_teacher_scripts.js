@@ -133,7 +133,7 @@ function getQsIndex(pres_qs_id){
 function loadNewTestForm(){
     $(".grand-container").fadeIn(500);
     var pageHeight = String(parseFloat($(".main-container").css("height"))+150);
-    $(".grand-container").css("height", pageHeight);
+    $('.grand-container').css('height', String($('html').height()*3));
     $(".dummy-grand").fadeIn(500);
     var formHeight = String(parseFloat($(".new-test-form").css("height"))+50);
     $(".dummy-grand").css("height", formHeight);
@@ -166,8 +166,10 @@ function deleteThisTest(questionToDel){
         url:"testInteract"+'?'+encoded,
         success : function(data){
             $(questionToDel).hide();
-            console.log(data);
             closeConfBox();
+        },
+        error: function(){
+            alert('Request Failed');
         }
     });
     

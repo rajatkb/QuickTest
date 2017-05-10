@@ -56,12 +56,13 @@ public class dbManager {
         student sobj = new student();
         question qobj = new question();
         test tsobj = new test();
+        performa perObj = new performa();
         pobj.createDB(dbObj);
         tobj.createDB(dbObj);
         sobj.createDB(dbObj);
         qobj.createDB(dbObj);
         tsobj.createDB(dbObj);
-        
+        perObj.createDB(dbObj);
         return 1;
     }
     /////////////TEACHER MANAGERIAL PART ///////////
@@ -171,6 +172,7 @@ public class dbManager {
         try{
         student obj =new student();
         obj.setNewData(email, rollNo, batchYear, name, username, depCode);
+        obj.viewData();
         int insertedId = obj.insertDataIntoDB(dbObj);
         if(insertedId != 0)
         {
@@ -188,22 +190,30 @@ public class dbManager {
         return 0;
     }
     ///// test routines  for db /////////////////
+    //this inserts the test for all the students in the perform for those students the test belongs to
+    public int insertTestForAllStudents(int testId)
+    {
+        try
+        {
+            Statement state = this.dbObj.createStatement();
+            state.execute("insert into performa(studentId , testId)\n" +
+                               "select studentId , testId \n" +
+                               "from student s\n" +
+                               "inner join test t on (s.depCode = t.depCode and  s.batchYear = t.batchYear and t.testId="+String.valueOf(testId)+" );\n" +
+                               "");
+            return 1;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return 0;
+        }
+    }
     
     public int addTest(HttpServletRequest request, HttpServletResponse response )
     {
         try{
-            /*
-                title: $("input[name=newtest_title]").val(),
-        desc: $("textarea[name=newtest_description]").val(),
-        date: $("input[name=newtest_date]").val(),
-        duration: $("input[name=newtest_duration]").val(),
-        dept: $("select[name=newtest_department]").val(),
-        batch: $("select[name=newtest_batch_year]").val(),
-        fullMarks: $("input[name=newtest_full_marks]").val(),
-        passMarks: $("input[name=newtest_pass_marks]").val(),
-        total_ques: $(".question").length
-            */
-           
+            
             String title = request.getParameter("title");
             String description = request.getParameter("desc");
             int depCode = Integer.parseInt(request.getParameter("dept"));
@@ -226,7 +236,7 @@ public class dbManager {
                 questionNo = "question"+String.valueOf(i+1);
                 for(int j = 1 ; j <= 4 ; j++)
                 {
-                    questionOptions[j-1] = request.getParameter(questionNo+"+_opt"+String.valueOf(j));
+                    questionOptions[j-1] = request.getParameter(questionNo+"_opt"+String.valueOf(j));
                 }
                 questionNo= request.getParameter(questionNo);
                 qobj.putQuestion(testId, questionNo, questionOptions);
@@ -257,7 +267,7 @@ public class dbManager {
         
     }
     
-    public ResultSet getAllTest(int teacherId)
+    public ResultSet getAllTest(int teacherId) // for teacher
     {
         try{
             Statement state = this.dbObj.createStatement();
@@ -270,4 +280,20 @@ public class dbManager {
             return null;
         }
     }
+    
+    public ResultSet getAllTest(int depCode , int batchYear)
+    {
+        try
+        {
+            Statement state = this.dbObj.createStatement();
+            ResultSet set = state.executeQuery("select * from test where depCode="+String.valueOf(depCode)+" and batchYear="+String.valueOf(batchYear)+";");
+            return set;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return null;
+        }
+    }
+    
 }

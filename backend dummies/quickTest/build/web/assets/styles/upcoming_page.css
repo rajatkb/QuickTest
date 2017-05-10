@@ -1,73 +1,12 @@
-body {
-    margin: 0;
-    padding: 0;
-    margin: 0 auto;
-}
-nav {
-    
-    padding-right: 10px;
-    padding-bottom: 10px;
-    font: 20px "Muli";
-    margin: 0;
-    background: #E0E0E0;
-    height: 35px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-
-}
-ul {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px;
-}
-li {
-    display: inline-block;
-    text-decoration: none;
-    padding-left: 14px;
-    padding-right: 14px;
-}
-li a {
-    text-decoration: none;
-    color: inherit;
-    border-right: 0.2px;
-    border-color: lightcyan;
-    border-style: groove;
-    border-left: 0px;
-    border-top: 0px;
-    border-bottom: 0px;
-    padding-right: 25px;
-}
-.on-right {
-    float: right;
-}
-ul li a:hover{
-    color:grey;
-    
-}
-button {
-    background: #DB2828;
-    border: none;
-    border-radius: 4px;
-    width: 100px;
-    height: 30px;
-    color: white;
-    font: 20px "Muli";
-    margin: 6px;
-    padding: 3px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-
-}
-li .on-right:active{
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
-        background-color: black;
-        transform: scale(0);
-
-}
 .containerdiv .test{
+    background-color: yellow;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     text-align: center;
     font-size: 2em;
     font-family: 'Jura', serif;
     color: white;
+     margin-left: 25px;
+    margin-bottom: 20px;
 
 }
 .containerdiv .test .db{
@@ -77,18 +16,23 @@ li .on-right:active{
     font-family: 'Ruluko', serif;
     color: black;
     padding: 10px;
+   
 }
+
 .row{
     width: 90%;
     margin: 0 auto;
 }
-
-.test{
-    margin-top: 8px;
-}
-
 .test:hover{
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+        transition: 0.5s;
+
+
+}
+.test:hover{
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+
 }
 .text{
     text-align: center;
@@ -103,4 +47,19 @@ li .on-right:active{
     text-align: center;
     padding: 30px;
     
+}
+
+.profile{
+    display: block;
+    font-family: 'Ruluko', serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin-left: 30px;
+    background-color: #E0E0E0;
+    padding: 12px;
+    position: fixed;
+    right: 0px;
+    width: 21%;
+}
+strong{
+    font-size: 17px;
 }

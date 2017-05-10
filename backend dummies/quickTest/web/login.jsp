@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/warning.css" />" />
 <script type="text/javascript" src="<c:url value="/assets/scripts/warning.js"/>"></script>
 <div class="mega-container">
-    <% String warn = String.valueOf(request.getSession().getAttribute("warn")); 
+    <% String warn = String.valueOf(request.getSession().getAttribute("warn"));
        if(warn != "null"){%>
         <div class="message-container">
             <span><%= warn %></span>

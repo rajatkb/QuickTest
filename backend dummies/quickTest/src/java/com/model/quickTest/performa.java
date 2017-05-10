@@ -1,36 +1,17 @@
 
 package com.model.quickTest;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 
 public class performa {
     private int studentId;
     private int testId;
-    private int marks;
-    private String response;
-    private String remark;
+    private int marks = 0;
+    private String response="";
+    private String remark = "none";
     
-    public void setData( student stdObj, test testObj , String response)
-    {
-        if(stdObj.getBatchAndDep() == testObj.getBatchAndDep())
-        {
-            this.studentId = stdObj.getStudentId();
-            this.testId = testObj.getBatchAndDep();
-            this.marks = 0;
-            String answers = testObj.getAnswerScript();
-            for(int i=0 ; i<response.length() ; i++)
-            {
-                if(response.charAt(i) == answers.charAt(i))
-                {
-                    this.marks++;
-                }
-            }
-            this.remark = "PASS";
-            if(this.marks < testObj.getPassMark())
-            {
-                this.remark = "FAIL";
-            }   
-        }
-    }
     
     public void viewData()
     {
@@ -41,5 +22,55 @@ public class performa {
         System.out.println(this.remark);
     }
     
+    
+    public int createDB(Connection dbObj)
+    {
+        try
+        {
+            Statement state = dbObj.createStatement();
+            state.execute("CREATE TABLE IF NOT EXISTS performa(\n" +
+                               "    studentId   INT NOT NULL,\n" +
+                               "    testId      INT NOT NULL,\n" +
+                               "    response    VARCHAR(50) DEFAULT ' ',\n" +
+                               "    marks       INT         DEFAULT  0, \n" +
+                               "    remark      VARCHAR(50) DEFAULT 'none' \n" +
+                               ");");
+            return 1;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return 0;
+        }
+    
+    }
+    
+    
+    
+    public int insertPerforma(String response)
+    {
+        try
+        {
+            return 1;
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex);
+            return 0;
+        }
+    
+    }
+    
+    public int insertIntoDB(Connection dbObj)
+    {
+        try{
+        
+            return 1;
+        }catch(Exception ex){
+            System.out.println(ex);
+            return 0;
+        }
+    }
+            
     
 }

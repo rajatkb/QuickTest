@@ -49,7 +49,9 @@ public class student {
         return batchYear;
     }
    
-    
+    public int getDepCode() {
+        return depCode;
+    }
     public void setNewData(String email,int rollNo, int batchYear, String name, String username, int depCode)
     {
         utility util = new utility();
