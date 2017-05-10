@@ -197,7 +197,8 @@ a.control_next {
         width: 60%;
         height: 40px;
         margin: 0px;
-        padding: 1px
+        padding: 1px;
+        
     }
     
     
@@ -308,4 +309,42 @@ a.control_next {
 #colon{
     color: black;
     font-size: 70px;
+}
+.another-random-class{
+    text-align: left;
+    padding: 20px;
+    font-size: 16px;
+}
+#color_panel{
+    text-align: center;
+    font-size: 25px;
+    background-color: white;
+
+}
+.right-side{
+    background-color: #ECEFF1;
+}
+.answer-panel{
+    background-color: white;
+    padding: 10px;
+}
+#submit{
+    background-color: darkred;
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+    transition: all ease 0.3s;
+}
+#submit:hover{
+    background-color: white;
+    color: darkred;
+    font-size: 18px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+    
+}
+#submit:active {
+  box-shadow: 0 3px 0 #00823F;
+  top: 3px;
+    transform:scale(.9);
 }
