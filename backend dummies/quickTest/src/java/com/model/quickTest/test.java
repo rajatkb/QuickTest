@@ -45,7 +45,7 @@ public class test {
     {
         try {
             
-            this.timeInSeconds = this.allotedTime * 60 +5;
+            this.timeInSeconds = this.allotedTime * 60;
             final Timer time = new Timer();
             time.schedule( new java.util.TimerTask(){
             
@@ -57,6 +57,7 @@ public class test {
                     {
                         time.cancel();
                         testLoad.removeAttribute(String.valueOf(testId));
+                        
                     }
                 }
             
@@ -69,8 +70,6 @@ public class test {
         }
     }
     
-    
-
     public int getTimeInSeconds() {
         return timeInSeconds;
     }
@@ -84,6 +83,18 @@ public class test {
     }
     
     
+
+    public int getTotalMarks() {
+        return totalMarks;
+    }
+
+    public int getPassMarks() {
+        return passMarks;
+    }
+
+    public String getTitle() {
+        return title;
+    }
 
     public int getAllotedTime() {
         return allotedTime;
@@ -158,10 +169,7 @@ public class test {
         return this.answerScript;
     }
     
-    public int getPassMark()
-    {
-        return this.passMarks;
-    }
+   
     /*
         The DB mangement starts here
     */

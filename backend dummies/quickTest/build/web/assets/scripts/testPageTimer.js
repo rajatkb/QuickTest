@@ -30,7 +30,6 @@ $(document).ready(function(){
                                 data: $.param({answerScript: final_answer}),
                                 success: function(response){
                                    if (response.d == true) {
-                                        alert("You will now be redirected.");
                                         window.location = "//www.aspsnippets.com/";
                                     }
                                 },

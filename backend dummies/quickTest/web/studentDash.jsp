@@ -10,7 +10,7 @@
     dbManager dbObj = new dbManager();
     student obj =(student) request.getSession().getAttribute("user_data");
     if(obj == null){%>
-    <c:redirect url="/login" />
+        <c:redirect url="/login" />
 <%}%>
 
  <div id="profile" class="profile" style="display:none">
@@ -26,7 +26,7 @@
         <div class="row">
             <% int i=0; 
             while( set.next() ){ if( ! set.getBoolean("finished") ){ i++; %>
-            <a href="#" ><div class="four columns test ">
+            <a href="testPage?testId=<%= set.getString("testId") %>" ><div class="four columns test ">
                 <div><%= set.getString("title") %></div>
                     <div class="db">
                         Date of Test: <%= set.getString("scheduledDate")%><br>
