@@ -5,6 +5,7 @@ import com.model.quickTest.teacher;
 import com.model.quickTest.test;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,11 +16,32 @@ public class testInteract extends HttpServlet {
 
     
     
-
+    //USED FOR GETTING THE TIME OF THE INDIVIDUAL TEST
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        if(String.valueOf(request.getSession().getAttribute("user_data").getClass().getSimpleName()).equals("teacher"))
+        {
+            int time;
+            ServletContext testLoad = getServletContext();
+            int testId = Integer.parseInt(request.getParameter("testId"));
+            if(testLoad.getAttribute(String.valueOf(testId)) == null)
+            {
+                dbManager obj = new dbManager();
+                test tobj = obj.getTest(testId);
+                time = tobj.getTimeInSeconds();
+                
+            }else{
+                test tobj = (test) testLoad.getAttribute(String.valueOf(testId));
+                time = tobj.getTimeInSeconds();
+            }
+            response.getWriter().print(time);
+            
+        }
+        else
+        {    
+            response.sendRedirect("login");
+        }   
     }
     
     @Override

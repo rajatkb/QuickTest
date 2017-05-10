@@ -295,5 +295,14 @@ public class dbManager {
             return null;
         }
     }
+    ///////////////FOR MNAGING TEST AND PURPOSES//////////////////////////
+    
+    public test getTest(int testId )
+    {
+        
+        test obj= new test();
+        obj.loadFromDB(dbObj, testId);
+        return obj;
+    }
     
 }

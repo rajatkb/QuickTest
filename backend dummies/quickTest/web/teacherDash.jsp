@@ -7,11 +7,18 @@
 <%@ include file="partials/header.jsp" %>
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/dashboard_teacher_mobile.css" />" />
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/dashboard_teacher_styles.css" />" />
+<link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/performa.css" />" />
+<link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/timer.css" />" />
 <script type="text/javascript" src="<c:url value="/assets/scripts/dashboard_teacher_scripts.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/new_test_scripts.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/scripts/teacherPageTimer.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/scripts/initializeTest.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/scripts/performa.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/scripts/loader.js"/>"></script>
 <% teacher obj = (teacher) request.getSession().getAttribute("user_data"); 
    dbManager dbObj =new dbManager(); 
    utility util = new utility();
+   ServletContext serv = getServletContext();
 %>
 
 <% if( obj == null){ %>
@@ -51,23 +58,30 @@
                 <h5>organize a new test</h5>
                 <i id="plus-circle" class="fa fa-3x fa-plus-circle" style="margin: 4px"></i>
             </button>
+            <% String idRunning = "0";%>
             <div class="test-list">
                 <% ResultSet set = dbObj.getAllTest( obj.getID() );
                    while(set.next()){ %>
                         <% if(set.getBoolean("finished")){%>
-                            <div class="test-list-item test-conducted" id="test<%= set.getString("testId") %>">
+                            <div class="test-list-item test-conducted" id="test<%= set.getString("testId") %>">  
                         <% } else { %>       
-                            <div class="test-list-item test-submitted" id="test<%= set.getString("testId") %>">
+                            <div class="test-list-item test-submitted" id="test<%= set.getString("testId") %>"> 
                         <% } %>    
+                                <%
+                                    if(serv.getAttribute(String.valueOf(set.getString("testId"))) != null)
+                                        {  idRunning = set.getString("testId");
+                                        }
+                                %>
                             <div class="test-title">
                                 <h5> <%= set.getString("title") %> </h5>
                             </div>
                             <div class="test-info">
-                                <p> <%= set.getString("description") %> </p>
-                                <span class="test-info-labels">Scheduled date of examination: </span><span> <%= set.getString("scheduledDate") %></span> <br>
-                                <span class="test-info-labels">Department: </span><span> <%= util.mapDepCode( set.getInt("depCode"))  %></span> <br>
-                                <span class="test-info-labels">Batch: </span><span><%= set.getString("batchYear") %></span> <br>
-                                <span class="test-info-labels">Maximum marks: </span><span><%= set.getString("totalMarks") %> </span> <br>
+                                <p class="desc"> <%= set.getString("description") %> </p>
+                                <span class="test-info-labels">Scheduled date of examination: </span><span class="schedule"> <%= set.getString("scheduledDate") %></span> <br>
+                                <span class="test-info-labels">Department: </span><span class="dept"> <%= util.mapDepCode( set.getInt("depCode"))  %></span> <br>
+                                <span class="test-info-labels">Batch: </span><span class="batchYear"><%= set.getString("batchYear") %></span> <br>
+                                <span class="test-info-labels">Maximum marks: </span><span class="totalMarks" ><%= set.getString("totalMarks") %> </span> <br>
+                                <span class="test-info-labels">AllotedTime:</span><span class="allotedTime" ><%= set.getString("allotedTime") %> </span>
                             </div>
                             <div class="controls">
                                 <% if(set.getBoolean("finished")){%>
@@ -81,15 +95,20 @@
                 <% }%>
                 
             </div>
+            <span class="runnning" id="<%= idRunning %>" ></span>    
             <div class="ongoing-test-info">
-                <div class="test-title"><h5 id="ongoing-test-title">Test title</h5></div>
-                <span id="ongoing-test-desc">This test has been described by you as this</span><br>
+                <div class="ongoing-test-title"><h5 id="ongoing-test-title">Test title</h5></div>
+                <span id="ongoing-test-desc" style="text-align: justify">This test has been described by you as this</span><br>
                 <strong>Department: </strong><span id="ongoing-test-dept">CSE</span><br>
-                <strong>Semester: </strong><span id="ongoing-test-sem">IV</span><br>
+                <strong>Semester: </strong><span id="ongoing-test-batch">IV</span><br>
                 <strong>Full marks: </strong><span id="ongoing-test-full-marks">100</span><br>
-                <strong>Passing marks: </strong><span id="ongoing-test_pass-marks">30</span><br>
-                <strong>Duration: </strong><span id="ongoing-test_duration">3 hours</span><br>
-                <strong>Time left: </strong><h1 id="ongoing-test-time-left">3:00:00</h1>
+                <strong>Time left: </strong>
+                <h1 id="ongoing-test-time-left">    
+                    <div id="time">
+                    <span id="hour" class="num">03</span><span id="colon">:</span><span id="minutes" class="num">00</span><span id="colon">:</span><span id="seconds" class="num">00</span>
+                    </div>
+                    <div id="boton"><button id="button">Start</button></div>
+                </h1>
                 <div class="close-this"><button type="button" class="form-button escape-start-test"><i class="fa fa-window-close"></i>Close</button></div>
             </div>
             <div class="delete-test-conf">
@@ -98,9 +117,8 @@
                 <button class="delete-test-no"><i class="fa fa-2x fa-window-close"></i>No</button>
             </div>
         </div>
-        
+                
         <div class="grand-container"> </div>
- 
         <div class="dummy-grand">
             <div class="new-test-form">
                 <div class="row" style="padding-bottom: 5px">
@@ -200,6 +218,49 @@
             </form>
         </div>
         </div> 
+        <div class="performa-container">
+        <div class="performa-title"><h5 id="review-test-title">Weekly Test - I</h5></div>
+        <div class="performa-info">
+            <div class="basic-test-info">
+                <div class="row">
+                    <div class="six columns"><strong>Date of exam: </strong><span id="review-test-date">21/04/2017</span></div>
+                    <div class="six columns"><a href="#" download="performa.pdf"><button id="download-performa"><i class="fa fa-download"></i>Download</button></a></div>
+                </div>
+                <div class="row">
+                    <div class="four columns"><strong>Department: </strong><span  id="review-test-dept">CSE</span></div>
+                    <div class="four columns"><strong>Batch: </strong><span id="review-test-batch">2016</span></div>
+                    <div class="four columns"><strong>Maximum marks: </strong><span id="review-test-marks">100</span></div>
+                </div>
+            </div>
+            <h6><em>*According to the marks obtained</em></h6>
+            <div class="row headings">
+                <div class="six columns"><strong>Name of the student</strong></div>
+                <div class="six columns"><strong>Marks obtained</strong></div>
+            </div>
+            <div class="students-list">
+                <div class="student row">
+                    <div class="six columns">Meghali Nandi</div>
+                    <div class="six columns">100</div>
+                </div>
+                <div class="student row">
+                    <div class="six columns">Rajat Kanti Bhattacharjee</div>
+                    <div class="six columns">150</div>
+                </div>
+                <div class="student row">
+                    <div class="six columns">Prantick Das</div>
+                    <div class="six columns">95</div>
+                </div>
+                <div class="student row">
+                    <div class="six columns">Amrit Jha</div>
+                    <div class="six columns">25</div>
+                </div>
+                <div class="student row">
+                    <div class="six columns">Jnandeep Dev Sharma</div>
+                    <div class="six columns">100</div>
+                </div>
+            </div>
+        </div>
+    </div>
         
         
         

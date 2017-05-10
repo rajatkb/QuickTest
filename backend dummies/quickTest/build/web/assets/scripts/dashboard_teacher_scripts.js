@@ -1,6 +1,10 @@
+window.totalsec=0;
+testInProgress = false;
+
 $(document).ready(onLoading);
 
 function onLoading(){    
+    
     fixButtons();
     $("#new-test-button").click(loadNewTestForm);
     $("#update-info-button").click(updateTeachersInfo);
@@ -78,14 +82,7 @@ function updateTeachersInfo(){
     $(".grand-container").css("height", pageHeight);
     $(".update-info-form").fadeIn(500);
 }
-function startTest(){
-    console.log("clicked start test");
-    $("html body").animate({scrollTop: 0}, "fast");
-    $(".grand-container").fadeIn(500);
-    var pageHeight = String(parseFloat($(".main-container").css("height"))+150);
-    $(".grand-container").css("height", pageHeight);
-    $(".ongoing-test-info").fadeIn(500);
-}
+
 function addNewQuestion(screen_qs_index, index){
     var newQuestionTemplate = '<div class="question" id="question'+ index + '"' + '><input class="form-item qs_title" name="qs_' + index + '" placeholder="Enter question '+ index +'" required /><div class="row"><div class="six columns"><input class="form-item" name="qs_' + index + '_choice_1" placeholder="A" required /></div><div class="six columns"><input class="form-item" name="qs_' + index + '_choice_2" placeholder="B" required /></div></div><div class="row"><div class="six columns"><input class="form-item" name="qs_' + index + '_choice_3" placeholder="C" required /></div><div class="six columns"><input class="form-item" name="qs_' + index + '_choice_4" placeholder="D" required /></div></div><div class="row"><div class="six columns"><select class="form-item" name="answer" required><option value="" disabled selected hidden>Correct choice</option><option value="a">A</option><option value="b">B</option><option value="c">C</option><option value="d">D</option></select></div></div></div>'
     $('#question'+String(screen_qs_index)).hide('slide', {direction: 'left'}, 200, function(){

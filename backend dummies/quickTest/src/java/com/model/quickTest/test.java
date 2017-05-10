@@ -13,6 +13,8 @@ package com.model.quickTest;
 import com.businessLogic.quickTest.utility;
 import java.sql.*;
 import java.io.*;
+import java.util.Timer;
+import javax.servlet.ServletContext;
 
 public class test {
     private int testId;
@@ -36,12 +38,56 @@ public class test {
     private String answerScript;
     private String department;
     
+    //to be used when the test is running
+    private int timeInSeconds;
+    
+    public int startTimer(final ServletContext testLoad)
+    {
+        try {
+            
+            this.timeInSeconds = this.allotedTime * 60 +5;
+            final Timer time = new Timer();
+            time.schedule( new java.util.TimerTask(){
+            
+                @Override
+                public void run(){
+                    System.out.println("testId"+String.valueOf(testId)+":"+String.valueOf(timeInSeconds));
+                    timeInSeconds--;
+                    if(timeInSeconds<0)
+                    {
+                        time.cancel();
+                        testLoad.removeAttribute(String.valueOf(testId));
+                    }
+                }
+            
+            }, 0 , 1000);
+            
+            return 1;
+        } catch (Exception e) {
+            System.out.println(e);
+            return 0;
+        }
+    }
+    
+    
+
+    public int getTimeInSeconds() {
+        return timeInSeconds;
+    }
+    
+    
+    
+    ////////////////////////////////////
     public test()
     {
         this.yetToStart = true;
     }
     
     
+
+    public int getAllotedTime() {
+        return allotedTime;
+    }
     
     
     public int setData( 
@@ -70,6 +116,7 @@ public class test {
         this.allotedTime= allotedTime;
         this.answerScript = answerScript;
         this.department = util.mapDepCode(depCode);
+        this.timeInSeconds= this.allotedTime * 60;
         return 1;
     }
     
@@ -201,6 +248,7 @@ public class test {
             this.finished = set.getBoolean("finished");
             this.answerScript = set.getString("answerScript");
             this.department = util.mapDepCode(this.depCode);
+            this.timeInSeconds = this.allotedTime * 60;
             return 1;   
         }catch(Exception ex)
         {
@@ -241,7 +289,13 @@ public class test {
         }
     
     }
-            
+    
+    private int startTestInDB()
+    {
+        this.yetToStart = false;
+        this.running=true;
+        return 1;
+    }
     
     
 }
