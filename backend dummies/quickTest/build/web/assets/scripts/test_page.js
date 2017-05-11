@@ -39,7 +39,7 @@ function showDivs(n) {
     function showSelectedQuestion(){
         var ques_search = Number($(".search-ques").val());
         var x = $(".question");
-        if((ques_search>x.length) || (ques_search<1) || (ques_search==String(ques_search))){return;}
+        if((ques_search>x.length) || (ques_search<1)){return;}
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none"; 
         }
@@ -66,15 +66,14 @@ function showDivs(n) {
             answers.push($(this).val());
             
         });
-        final_answer=answers.join("");
+        var final_answer=answers.join("");
         $.ajax({
            type:"post",
-            url:"",
+            url:"performa",
             data: $.param({answerScript : final_answer}),
             success: function(dat){
                 alert("You will now be redirected.");
-                window.location = "//www.aspsnippets.com/";
-  
+                window.location = "studentDash";
             },
             failure: function(dat){
                 alert("NO DATA SEND");

@@ -2,45 +2,47 @@ $(document).ready(function(){
     index=Number($('.00').attr('id'));
     var totalsec=index;
     var inter;
-    var state=false;
     setInitTime(totalsec);
-    
-    
-                totalsec=index;
-                setInitTime(totalsec);
-                
-                var out;
-                var h,m,s;
-                inter=setInterval(function(){
-                    h=Math.floor(totalsec/(60*60));
-                    m=Math.floor((totalsec%(60*60))/60);
-                    s=Math.floor((totalsec%(60*60))%60);
-                    out=h.toString()+":"+m.toString()+":"+s.toString();
-                    chsec(s);
-                    chminute(m);
-                    chhour(h);
+    totalsec=index;
+    setInitTime(totalsec);
+    var out;
+    var h,m,s;
+    inter=setInterval(function(){
+    h=Math.floor(totalsec/(60*60));
+    m=Math.floor((totalsec%(60*60))/60);
+    s=Math.floor((totalsec%(60*60))%60);
+    out=h.toString()+":"+m.toString()+":"+s.toString();
+    chsec(s);
+    chminute(m);
+    chhour(h);
 
-                    totalsec--;
-                     if(totalsec < 0)
-                        {
-                            clearInterval(inter);
-                            $.ajax({
-                                type: "POST",
-                                url: "Default.aspx/GetResponse",
-                                data: $.param({answerScript: final_answer}),
-                                success: function(response){
-                                   if (response.d == true) {
-                                        window.location = "//www.aspsnippets.com/";
-                                    }
-                                },
-                                failure:function(response) {
-                                    alert(response.d);
-                                }
-                                });
-                        }
+    totalsec--;
+     if(totalsec < 0)
+        {   var answers=[];
+            $(".question input[type=radio]:checked").each(function(val){
+            
+            answers.push($(this).val());
+            
+        });
+        var final_answer=answers.join("");
+            clearInterval(inter);
+            $.ajax({
+                type: "post",
+                url: "performa",
+                data: $.param({answerScript: final_answer }),
+                success: function(response){
+                        alert("You are getting redirecteed TIME OVER");
+                        window.location = "studentDash";
 
-                },1000);
-        
+                },
+                failure:function(response) {
+                    alert();
+                }
+                });
+        }
+
+},1000);
+
     
    
 });   

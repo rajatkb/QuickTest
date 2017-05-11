@@ -24,6 +24,14 @@
         <servlet-name>startTestStudent</servlet-name>
         <servlet-class>com.controller.quickTest.startTestStudent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>answer</servlet-name>
+        <servlet-class>com.businessLogic.quickTest.answer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>performa</servlet-name>
+        <servlet-class>com.businessLogic.quickTest.performa</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -88,9 +96,17 @@
         <servlet-name>testPage</servlet-name>
         <url-pattern>/testPage</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>answer</servlet-name>
+        <url-pattern>/answer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>performa</servlet-name>
+        <url-pattern>/performa</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
+            1000
         </session-timeout>
     </session-config>
 </web-app>

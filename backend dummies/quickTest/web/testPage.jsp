@@ -1,3 +1,4 @@
+<%@page import="java.sql.ResultSet"%>
 <%@page import="com.model.quickTest.test"%>
 <%@page import="com.model.quickTest.student"%>
 <%@page import="com.model.quickTest.dbManager"%>
@@ -17,9 +18,8 @@
 <%  }
     ServletContext serv = getServletContext();
     if(serv.getAttribute(request.getParameter("testId"))== null ){
-        out.print("<h1>"+ serv.getAttribute(request.getParameter("testId")) +"</h1>");
     %>
-       <h1 style="text-align: center; padding-top: 50px;">( ._.) TEST YET TO START</h1>
+       <h1 style="text-align: center; padding-top: 50px;">('._.) TEST YET TO START</h1>
 <% } else{ %>
 <% 
   test tobj =(test)serv.getAttribute(request.getParameter("testId"));      
@@ -40,45 +40,21 @@
                     <div id="slider">
                     <a href="#" class="control_next"><i class="fa fa-chevron-right right" style="font-size:60px;color:black;"></i></a>
                     <a href="#" class="control_prev"><i class="fa fa-chevron-left left" style="font-size:60px;color:black;"></i></a></div>
-                 
+                    <% ResultSet set = dbObj.getAllQuestion(tobj.getTestId()); int i=0;%> 
                 <div class="questions">
+                    <% while(set.next()){ i++; %>
                     <div class="question" style="display:none;">    
                         <span class="bm bm1" ><i class="fa fa-bookmark " id="bm"></i></span><br>
-                        <div class="question-content">Q1. </div>
-                        <input type="radio" name="option1" value="a"> a) <br>
-                        <input type="radio" name="option1" value="b" > b) <br>
-                        <input type="radio" name="option1" value="c"> c) <br>
-                        <input type="radio" name="option1" value="d"> d) <br>
+                        <div class="question-content">Q<%= i %>.<%= set.getString("question") %> </div>
+                        <input type="radio" name="option1" value="a"> a) <%= set.getString("dummy1") %> <br>
+                        <input type="radio" name="option1" value="b" >b)<%= set.getString("dummy2") %> <br>
+                        <input type="radio" name="option1" value="c"> c)<%= set.getString("dummy3") %> <br>
+                        <input type="radio" name="option1" value="d"> d)<%= set.getString("dummy4") %> <br>
                         <input type="radio" name="option1" value="e" style="display:none;" checked>
                     </div>
-                  
-                    <div class="question" style="display:none;">
-                       
-                        
-                        <span class="bm bm1" ><i class="fa fa-bookmark " id="bm"></i></span><br>
-                        <div class="question-content">Q2. </div>
-                        <input type="radio" name="option2" value="a"> a) <br>
-                        <input type="radio" name="option2" value="b" > b) <br>
-                        <input type="radio" name="option2" value="c"> c) <br>
-                        <input type="radio" name="option2" value="d"> d) <br>
-                        <input type="radio" name="option2" value="e" style="display:none;" checked>
-                    </div>
-                    
-                    <div class="question" style="display:none;">
-                       
-                        
-                        <span class="bm bm1" ><i class="fa fa-bookmark " id="bm"></i></span><br>
-                        <div class="question-content">Q3. </div>
-                        <input type="radio" name="option3" value="a"> a) <br>
-                        <input type="radio" name="option3" value="b" > b) <br>
-                        <input type="radio" name="option3" value="c"> c) <br>
-                        <input type="radio" name="option3" value="d"> d) <br>
-                        <input type="radio" name="option3" value="e" style="display:none;" checked>
-                    </div>
+                  <% } %>
                 </div>
-            
                 <div class="ques-iterators">
-                    
                     <div class="goto-ques" style="text-align: center">
                         <input type="text" class="search-ques" placeholder="Go to question number">
                         <button id="search-ques-button" type="button"><i class="fa fa-arrow-circle-right"></i></button>

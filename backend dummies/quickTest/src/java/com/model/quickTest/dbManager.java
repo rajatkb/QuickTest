@@ -305,4 +305,18 @@ public class dbManager {
         return obj;
     }
     
+   public ResultSet getAllQuestion(int testId)
+   {    
+       try{
+        Statement state = this.dbObj.createStatement();
+        ResultSet set = state.executeQuery("select * from question where testId="+String.valueOf(testId)+";");
+        return set;
+       }
+       catch(Exception ex)
+       {
+           System.out.println("Error at getting all question:"+ex);
+           return null;
+       }
+   }
+    
 }
