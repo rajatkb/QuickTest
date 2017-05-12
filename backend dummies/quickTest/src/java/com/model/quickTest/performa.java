@@ -58,7 +58,7 @@ public class performa {
         try
         {
            Statement state = dbObj.createStatement();
-           
+           state.execute("");
             return 1;
         }
         catch(Exception ex)
@@ -69,16 +69,7 @@ public class performa {
     
     }
     
-    public int insertIntoDB(Connection dbObj)
-    {
-        try{
-        
-            return 1;
-        }catch(Exception ex){
-            System.out.println(ex);
-            return 0;
-        }
-    }
+   
             
     
 }

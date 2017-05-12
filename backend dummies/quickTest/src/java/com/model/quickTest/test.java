@@ -169,7 +169,11 @@ public class test {
         return this.answerScript;
     }
     
-   
+
+    public float getMarksPerQuestion() {
+        return marksPerQuestion;
+    }
+    
     /*
         The DB mangement starts here
     */

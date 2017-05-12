@@ -27,4 +27,19 @@ public class utility {
         return "";
     }
     
+    public float calcMarks(String answerScript ,  String response , float marksPerQuestion)
+    {
+        int i=0; float marks=0;
+        if(answerScript.length() == response.length())
+        {   for(i=0;i< answerScript.length() ; i++)
+            {
+                if(answerScript.charAt(i) == response.charAt(i))
+                {
+                    marks+= marksPerQuestion;
+                }
+            }
+        }
+        return marks;
+    }
+    
 }

@@ -1,6 +1,7 @@
 
 package com.businessLogic.quickTest;
 
+import com.model.quickTest.test;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -23,8 +24,24 @@ public class performa extends HttpServlet {
             throws ServletException, IOException {
         if(String.valueOf(request.getSession().getAttribute("user_data").getClass().getSimpleName()).equals("student"))
         {
-            String answerScript = request.getParameter("answerScript");
-            System.out.println("Answer from user:"+answerScript);
+            try{
+            String responseText = request.getParameter("answerScript");
+            int testId = Integer.parseInt((String)request.getSession().getAttribute("testId"));
+            test testObj = (test)getServletContext().getAttribute(String.valueOf(testId));
+            request.getSession().removeAttribute("testId");
+            utility util = new utility();
+            float marks = util.calcMarks( testObj.getAnswerScript() , responseText, testObj.getMarksPerQuestion() );
+            
+            
+            }
+            catch(Exception ex)
+            {
+                System.out.println("performa error:"+ ex);
+            }
+            
+        }
+        else{
+            response.sendRedirect("login");
         }
     }
 

@@ -11,6 +11,7 @@
 
 
 <% 
+    
     dbManager dbObj = new dbManager();
     student obj =(student) request.getSession().getAttribute("user_data");
     if(obj == null){%>
@@ -23,7 +24,9 @@
 <% } else{ %>
 <% 
   test tobj =(test)serv.getAttribute(request.getParameter("testId"));      
-  int time = tobj.getTimeInSeconds();%>
+  int time = tobj.getTimeInSeconds();
+  request.getSession().setAttribute("testId",request.getParameter("testId") );
+%>
 <div class="row">
             
                 <div class="eight columns test random-class">
