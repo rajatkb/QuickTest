@@ -35,33 +35,34 @@ th{
 
 }
 .row{
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 80px;
     font-size: 18px;
 }
 .score{
     padding: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     width: auto;
-            background-color: #dddddd;
+    background-color: #dddddd;
 
 }
 .pdf{
-    right: 200px;
+    
     position: relative;
-    float: right;
     padding: 5px;
     width: auto;
     height: auto;
     text-transform: none;
-    margin-bottom: 10px;
+    margin-top: 20px;
     background-color: limegreen;
     font-size: 20px;
     color: white;
+    left: 600px;
+    display: none;                               
 }
 .pdf:hover{
-            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4) inset;
     background-color: darkgreen;
     color: white;
 
