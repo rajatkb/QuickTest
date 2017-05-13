@@ -60,9 +60,9 @@ public class dbManager {
         pobj.createDB(dbObj);
         tobj.createDB(dbObj);
         sobj.createDB(dbObj);
-        qobj.createDB(dbObj);
         tsobj.createDB(dbObj);
         perObj.createDB(dbObj);
+        qobj.createDB(dbObj);
         return 1;
     }
     /////////////TEACHER MANAGERIAL PART ///////////
