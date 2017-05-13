@@ -387,7 +387,7 @@ public class dbManager {
            ResultSet set = state.executeQuery("SELECT name , marks from student , performa where student.`studentId` = performa.`studentId`and testId="+String.valueOf(testId)+";");
            while(set.next())
            {
-               res+="\""+set.getString("name")+"\":"+"\""+set.getString("marks")+"\" ,";
+               res+=""+set.getString("name")+":"+set.getString("marks")+"?";
            }
            return res;
        }

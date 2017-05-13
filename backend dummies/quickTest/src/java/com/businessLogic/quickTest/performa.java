@@ -20,9 +20,8 @@ public class performa extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String toBeSent="{";
+        String toBeSent="";
         toBeSent+= dbObj.getPerforma(Integer.parseInt(request.getParameter("testId")));
-        toBeSent+="}";
         System.out.println(toBeSent);
         response.getWriter().print(toBeSent);
     }

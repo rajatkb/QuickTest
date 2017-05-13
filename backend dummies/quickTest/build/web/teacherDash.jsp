@@ -14,7 +14,6 @@
 <script type="text/javascript" src="<c:url value="/assets/scripts/new_test_scripts.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/teacherPageTimer.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/initializeTest.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/assets/scripts/performa.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/loader.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/performaTeacher.js"/>"></script>
 
@@ -245,14 +244,6 @@
                 <div class="six columns"><strong>Marks obtained</strong></div>
             </div>
             <div class="students-list">
-                <div class="student row">
-                    <div class="six columns">Amrit Jha</div>
-                    <div class="six columns">1500</div>
-                </div>
-                <div class="student row">
-                    <div class="six columns">Rajat Kanti Bhattacharjee</div>
-                    <div class="six columns">150</div>
-                </div>
                 
             </div>
         </div>

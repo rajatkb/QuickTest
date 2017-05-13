@@ -13,12 +13,14 @@ function showPerforma() {
         url: "performa",
         data : $.param({testId:testIndex}),
         success: function(data){
+            $(".students-list")[0].innerHTML="";
             console.log(data);
-            var responseJSON = JSON.parse(data);
-            console.log(responseJSON);
-            var students = Object.keys(responseJSON);
-            for(var i=0; i<students.length; i++){
-                var performaTemplate = '<div class="student row"><div class="six columns">' + students[i] + '</div><div class="six columns">' + responseJSON[students[i]] + '</div></div>';
+            var students = data.split('?');
+            console.log(students);
+            for(var i=0; i<students.length-1; i++){
+                var dat = students[i].split(':');
+                console.log(data);
+                var performaTemplate = '<div class="student row"><div class="six columns">' + dat[0] + '</div><div class="six columns">' + dat[1] + '</div></div>';
                 $(".students-list").append(performaTemplate);
                 }
             var pageHeight = String(parseFloat($(window).height()));
