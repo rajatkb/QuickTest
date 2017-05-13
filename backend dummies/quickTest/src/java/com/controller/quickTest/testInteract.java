@@ -53,7 +53,8 @@ public class testInteract extends HttpServlet {
             dbManager obj = new dbManager();
             int testId = obj.addTest(request, response);
             obj.insertTestForAllStudents(testId);
-            response.getWriter().print(String.valueOf(testId));
+            System.out.println("Commiteing test with index:"+testId);
+            response.getWriter().print(testId);
         }
     }
 

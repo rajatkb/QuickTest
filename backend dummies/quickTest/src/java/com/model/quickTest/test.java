@@ -45,7 +45,7 @@ public class test {
     {
         try {
             
-            this.timeInSeconds = this.allotedTime * 60;
+            this.timeInSeconds = this.allotedTime * 60 + 5;
             final Timer time = new Timer();
             time.schedule( new java.util.TimerTask(){
             
@@ -57,7 +57,8 @@ public class test {
                     {
                         time.cancel();
                         testLoad.removeAttribute(String.valueOf(testId));
-                        
+                        dbManager obj = new dbManager();
+                        obj.finishTest(testId);
                     }
                 }
             
@@ -302,12 +303,7 @@ public class test {
     
     }
     
-    private int startTestInDB()
-    {
-        this.yetToStart = false;
-        this.running=true;
-        return 1;
-    }
+    
     
     
 }

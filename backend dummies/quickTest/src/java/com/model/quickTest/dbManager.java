@@ -209,7 +209,7 @@ public class dbManager {
             return 0;
         }
     }
-    
+    ///// MANGES THE TEST///////////////
     public int addTest(HttpServletRequest request, HttpServletResponse response )
     {
         try{
@@ -242,6 +242,8 @@ public class dbManager {
                 qobj.putQuestion(testId, questionNo, questionOptions);
                 qobj.insertIntoDB(dbObj);
             }
+            
+            
             return testId;
         }
         catch(Exception ex)
@@ -295,8 +297,28 @@ public class dbManager {
             return null;
         }
     }
+    
+    
+    
+    
+    
     ///////////////FOR MNAGING TEST AND PURPOSES//////////////////////////
     
+    public int finishTest(int testId)
+    {
+        try
+        {
+            Statement state = this.dbObj.createStatement();
+            state.execute("update test set yetToStart=0 , finished=1 where testId="+String.valueOf(testId)+";");
+            return 1;
+        }
+        catch(Exception ex)
+        {
+            System.out.println("finish test:"+ex);
+            return 0;
+        }
+    }
+   
     public test getTest(int testId )
     {
         
@@ -319,4 +341,63 @@ public class dbManager {
        }
    }
     
+   
+   ////////// PERFORMA SETTINGS ////////////
+   
+   public int setPerforma( String response , float marks , String remark , int studentId , int testId)
+   {
+       try
+       {
+           performa obj = new performa();
+           obj.setData(studentId, testId);
+           obj.insertPerforma(response, remark, marks, dbObj);
+           return 1;
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
+      
+   }
+   
+   public ResultSet getPerforma( int studentId , int testId)
+   {
+       try
+       {
+           String response="";
+           Statement state = this.dbObj.createStatement();
+           ResultSet set = state.executeQuery("select * from performa where studentId="+String.valueOf(studentId)+" and testId="+String.valueOf(testId)+";");
+           return set; 
+       }
+       catch(Exception ex)
+       {
+           System.out.println("At get performa:"+ex);
+           return null;
+       }
+   
+   
+   }
+   
+   public String getPerforma(int testId)
+   {
+       try
+       {
+           String res="";
+           Statement state = this.dbObj.createStatement();
+           ResultSet set = state.executeQuery("SELECT name , marks from student , performa where student.`studentId` = performa.`studentId`and testId="+String.valueOf(testId)+";");
+           while(set.next())
+           {
+               res+="\""+set.getString("name")+"\":"+"\""+set.getString("marks")+"\" ,";
+           }
+           return res;
+       }
+       catch(Exception ex)
+       {
+           System.out.println("At get performa for teacher"+ex);
+           return "";
+       }
+   
+   
+   }
+   
 }

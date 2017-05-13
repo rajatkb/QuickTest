@@ -67,13 +67,13 @@ function showDivs(n) {
             
         });
         var final_answer=answers.join("");
+        var testId = $('.testId')[0].innerText;
         $.ajax({
-           type:"post",
+           type:"get",
             url:"performa",
             data: $.param({answerScript : final_answer}),
             success: function(dat){
-                alert("You will now be redirected.");
-                window.location = "studentDash";
+                window.location = "resultSheet?testId="+testId;
             },
             failure: function(dat){
                 alert("NO DATA SEND");

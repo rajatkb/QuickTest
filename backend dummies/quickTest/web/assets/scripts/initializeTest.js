@@ -1,6 +1,5 @@
 function startTest(){
     var testToStart = $($(this).parent()[0]).parent()[0];
-    console.log($(testToStart));
     var testID = $(testToStart).attr("id");
     var testIndex = Number(testID.match(/\d/g).join(""));
     window.testIndex = testIndex;

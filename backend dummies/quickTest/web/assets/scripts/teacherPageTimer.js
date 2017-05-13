@@ -35,7 +35,7 @@ $(document).ready(function(){
             totalsec--;
              if(totalsec < 0)
                 {
-                    window.location.href="teacherDash";
+                    window.location="teacherDash";
                     clearInterval(inter);
                 }
 

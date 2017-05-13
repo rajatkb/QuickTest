@@ -7,9 +7,6 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/test_page.css" />" />
 <script type="text/javascript" src="<c:url value="/assets/scripts/test_page.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/testPageTimer.js"/>"></script>
-
-
-
 <% 
     
     dbManager dbObj = new dbManager();
@@ -19,14 +16,18 @@
 <%  }
     ServletContext serv = getServletContext();
     if(serv.getAttribute(request.getParameter("testId"))== null ){
-    %>
+%>
        <h1 style="text-align: center; padding-top: 50px;">('._.) TEST YET TO START</h1>
 <% } else{ %>
 <% 
   test tobj =(test)serv.getAttribute(request.getParameter("testId"));      
+  request.getSession().setAttribute("test", tobj); // setting test as a session object
   int time = tobj.getTimeInSeconds();
-  request.getSession().setAttribute("testId",request.getParameter("testId") );
+  
+  if(time<0)
+      time=0;
 %>
+<span class="testId"><%= tobj.getTestId() %></span>
 <div class="row">
             
                 <div class="eight columns test random-class">
@@ -49,11 +50,11 @@
                     <div class="question" style="display:none;">    
                         <span class="bm bm1" ><i class="fa fa-bookmark " id="bm"></i></span><br>
                         <div class="question-content">Q<%= i %>.<%= set.getString("question") %> </div>
-                        <input type="radio" name="option1" value="a"> a) <%= set.getString("dummy1") %> <br>
-                        <input type="radio" name="option1" value="b" >b)<%= set.getString("dummy2") %> <br>
-                        <input type="radio" name="option1" value="c"> c)<%= set.getString("dummy3") %> <br>
-                        <input type="radio" name="option1" value="d"> d)<%= set.getString("dummy4") %> <br>
-                        <input type="radio" name="option1" value="e" style="display:none;" checked>
+                        <input type="radio" name="option<%= i%>" value="a"> a)<%= set.getString("dummy1") %> <br>
+                        <input type="radio" name="option<%= i%>" value="b"> b)<%= set.getString("dummy2") %> <br>
+                        <input type="radio" name="option<%= i%>" value="c"> c)<%= set.getString("dummy3") %> <br>
+                        <input type="radio" name="option<%= i%>" value="d"> d)<%= set.getString("dummy4") %> <br>
+                        <input type="radio" name="option<%= i%>" value="e" style="display:none;" checked>
                     </div>
                   <% } %>
                 </div>
@@ -79,14 +80,12 @@
                         <strong>Title:</strong> <%= tobj.getTitle()%><br>
                         <strong>Marks:</strong> <%= tobj.getTotalMarks()%><br>
                         <strong>PassMarks:</strong><%= tobj.getPassMarks() %><br>
-                        
+                        <strong>TotalQuestions:</strong><%= tobj.getAnswerScript().length() %><br>    
                     </div>
     
                     <div><br><br><br>
-                        <button id="submit" class="on-right submit">Submit</button>
-                        
-
-
+                        <button type="button" id="submit" class="on-right submit">Submit</button>
+          
                     </div>
             </div>
             

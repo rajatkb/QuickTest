@@ -1,5 +1,10 @@
 $("document").ready(function(){
-    $("#submit-new-test").click(makeFormSubmission);
+    $('#new-test-form').submit(function( e ){
+        makeFormSubmission();
+        return false;
+    });
+   // $("#submit-new-test").click();
+
 });
 
 var deplist= {
@@ -17,7 +22,7 @@ function makeFormSubmission(){
     $("input[name=newtest_pass_marks]").attr("max", max_marks);
     var newTestData = getTestData();
     var testCount = $(".test-list").children();
-    
+    var res;
     $.ajax({
         type: "post",
         url: "testInteract",
@@ -25,7 +30,7 @@ function makeFormSubmission(){
         success: function(data) {
             if(Number(data) != 0)
             {   escapeFormWindow();
-                var newTestTemplate = '<div class="test-list-item test-submitted" id="test'+ String(data) + '"><div class="test-title"><h5>' + newTestData.testData.title + '</h5></div><div class="test-info"><p>' + newTestData.testData.desc + '</p><span class="test-info-labels">Scheduled date of examination: </span><span>' + newTestData.testData.date + '</span> <br><span class="test-info-labels">Department: </span><span>' + deplist[newTestData.testData.dept] + '</span> <br><span class="test-info-labels">Batch: </span><span> ' + 20+newTestData.testData.batch + '</span> <br><span class="test-info-labels">Maximum marks: </span><span>' + newTestData.testData.fullMarks + '</span> <br></div><div class="controls"><button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now<button class="delete-test"><i class="fa fa-trash-o"></i>Delete</button></div></div>';
+                var newTestTemplate = '<div class="test-list-item test-submitted" id="test'+ String(data) + '"><div class="test-title"><h5>' + newTestData.testData.title + '</h5></div><div class="test-info"><p class="desc">' + newTestData.testData.desc + '</p><span class="test-info-labels">Scheduled date of examination: </span><span>' + newTestData.testData.date + '</span> <br><span class="test-info-labels dept">Department: </span><span>' + deplist[newTestData.testData.dept] + '</span> <br><span class="test-info-labels batchYear">Batch: </span><span> ' + 20+newTestData.testData.batch + '</span> <br><span class="test-info-labels totalMarks">Maximum marks: </span><span>' + newTestData.testData.fullMarks + '</span><br><span class="test-info-labels">Alloted Time:'+newTestData.testData.duration+'</span><br></span><span> <br></div><div class="controls"><button class="start-test"><i class="fa fa-3x fa-hourglass-start"></i>Start now<button class="delete-test"><i class="fa fa-trash-o"></i>Delete</button></div></div>';
                 $(".test-list").prepend(newTestTemplate);
             }
         },

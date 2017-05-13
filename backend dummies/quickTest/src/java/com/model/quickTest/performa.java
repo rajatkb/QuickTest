@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class performa {
     private int studentId;
     private int testId;
-    private int marks = 0;
+    private float marks = 0;
     private String response="";
     private String remark = "none";
     
@@ -38,7 +38,7 @@ public class performa {
                                "    studentId   INT NOT NULL,\n" +
                                "    testId      INT NOT NULL,\n" +
                                "    response    VARCHAR(50) DEFAULT ' ',\n" +
-                               "    marks       INT         DEFAULT  0, \n" +
+                               "    marks       DECIMAL         DEFAULT  0, \n" +
                                "    remark      VARCHAR(50) DEFAULT 'none' \n" +
                                ");");
             return 1;
@@ -53,13 +53,16 @@ public class performa {
     
     
     
-    public int insertPerforma(String response, Connection dbObj)
+    public int insertPerforma(String response,String remark ,float marks, Connection dbObj)
     {
         try
         {
+            this.response = response;
+            this.marks = marks;
+            this.remark = remark;
            Statement state = dbObj.createStatement();
-           state.execute("");
-            return 1;
+           state.execute("UPDATE performa SET response=\""+this.response+"\" , marks="+ String.valueOf(this.marks) +", remark=\""+ this.remark +"\" where studentId="+ this.studentId +" and testId="+this.testId+"; ");
+           return 1;
         }
         catch(Exception ex)
         {

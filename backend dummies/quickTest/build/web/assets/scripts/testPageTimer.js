@@ -26,17 +26,17 @@ $(document).ready(function(){
         });
         var final_answer=answers.join("");
             clearInterval(inter);
+            var testId = $('.testId')[0].innerText;
             $.ajax({
-                type: "post",
+                type: "get",
                 url: "performa",
                 data: $.param({answerScript: final_answer }),
                 success: function(response){
                         alert("You are getting redirecteed TIME OVER");
-                        window.location = "studentDash";
-
+                        window.location = "resultSheet?testId="+testId;
                 },
                 failure:function(response) {
-                    alert();
+                    alert("Server Connection Cut off RECONNECT ASAP");
                 }
                 });
         }

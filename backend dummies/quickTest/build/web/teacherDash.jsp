@@ -9,12 +9,15 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/dashboard_teacher_styles.css" />" />
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/performa.css" />" />
 <link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/timer.css" />" />
+<link rel="stylesheet" type="text/css" href="<c:url value="/assets/styles/teacherPerforma.css" />" />
 <script type="text/javascript" src="<c:url value="/assets/scripts/dashboard_teacher_scripts.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/new_test_scripts.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/teacherPageTimer.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/initializeTest.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/performa.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/assets/scripts/loader.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/scripts/performaTeacher.js"/>"></script>
+
 <% teacher obj = (teacher) request.getSession().getAttribute("user_data"); 
    dbManager dbObj =new dbManager(); 
    utility util = new utility();
@@ -126,9 +129,9 @@
                     <div class="four columns close-this"><button type="button" class="form-button escape-test-form-button"><i class="fa fa-window-close"></i>Close</button></div>
                 </div>
                 
-            <form method="post">
+            <form id="new-test-form" method="post">
                 <input type="text" class="form-item" id="test_title" name="newtest_title" placeholder="Title for the test" required/>
-                <textarea class="form-item" name="newtest_description" placeholder="Add a description" required></textarea>
+                <textarea class="form-item" name="newtest_description" placeholder="Add a description" required ></textarea>
                 <hr>
                 <div class="row">
                     <div class="six columns">
@@ -224,7 +227,11 @@
             <div class="basic-test-info">
                 <div class="row">
                     <div class="six columns"><strong>Date of exam: </strong><span id="review-test-date">21/04/2017</span></div>
-                    <div class="six columns"><a href="#" download="performa.pdf"><button id="download-performa"><i class="fa fa-download"></i>Download</button></a></div>
+                    <div class="six columns">
+                        <button id="download-performa"><i class="fa fa-download"></i>Download</button>
+                        <button type="button" class="close-performa-button"><i class="fa fa-window-close"></i>Close</button>
+                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="four columns"><strong>Department: </strong><span  id="review-test-dept">CSE</span></div>
@@ -239,25 +246,14 @@
             </div>
             <div class="students-list">
                 <div class="student row">
-                    <div class="six columns">Meghali Nandi</div>
-                    <div class="six columns">100</div>
+                    <div class="six columns">Amrit Jha</div>
+                    <div class="six columns">1500</div>
                 </div>
                 <div class="student row">
                     <div class="six columns">Rajat Kanti Bhattacharjee</div>
                     <div class="six columns">150</div>
                 </div>
-                <div class="student row">
-                    <div class="six columns">Prantick Das</div>
-                    <div class="six columns">95</div>
-                </div>
-                <div class="student row">
-                    <div class="six columns">Amrit Jha</div>
-                    <div class="six columns">25</div>
-                </div>
-                <div class="student row">
-                    <div class="six columns">Jnandeep Dev Sharma</div>
-                    <div class="six columns">100</div>
-                </div>
+                
             </div>
         </div>
     </div>

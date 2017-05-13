@@ -96,6 +96,14 @@
         <servlet-name>testPage</servlet-name>
         <url-pattern>/testPage</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>resultSheet</servlet-name>
+        <jsp-file>/resultSheet.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>resultSheet</servlet-name>
+        <url-pattern>/resultSheet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>answer</servlet-name>
         <url-pattern>/answer</url-pattern>
@@ -106,7 +114,7 @@
     </servlet-mapping>
     <session-config>
         <session-timeout>
-            1000
+            300
         </session-timeout>
     </session-config>
 </web-app>

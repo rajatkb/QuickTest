@@ -1,0 +1,76 @@
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+
+}
+
+td, th {
+    border: 2px solid blue;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.marksheet{
+    text-align: center;
+    margin: 10px;
+    width: auto;
+    text-decoration: underline;
+    font-size: 30px;
+
+    
+}
+th{
+    text-decoration: underline;
+    font-size: 20px;
+        background-color: #dddddd;
+    
+
+}
+.row{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 80px;
+    font-size: 18px;
+}
+.score{
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    width: auto;
+    background-color: #dddddd;
+
+}
+.pdf{
+    
+    position: relative;
+    padding: 5px;
+    width: auto;
+    height: auto;
+    text-transform: none;
+    margin-top: 20px;
+    background-color: limegreen;
+    font-size: 20px;
+    color: white;
+    left: 600px;
+    display: none;                               
+}
+.pdf:hover{
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4) inset;
+    background-color: darkgreen;
+    color: white;
+
+}
+.pdf:active{
+    transform: scale(0.95);
+}
+.score:hover{
+                box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4) inset;
+
+}

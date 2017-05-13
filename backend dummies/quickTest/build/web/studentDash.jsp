@@ -47,9 +47,9 @@
 <div class="containerdiv prevest">
         <span class="text">PREVIOUS TESTS</span>
         <div class="row">
-            <% i=0; 
+            <% i=0; set.beforeFirst();
             while( set.next() ){ if( set.getBoolean("finished") ){ i++; %>
-            <a href=""><div class="four columns test ">
+            <a href="resultSheet?testId=<%= set.getString("testId") %>"><div class="four columns test ">
                 <div><%= set.getString("title") %></div>
                     <div class="db">
                         Date of Test: <%= set.getString("scheduledDate")%><br>
