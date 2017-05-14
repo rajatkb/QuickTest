@@ -384,7 +384,7 @@ public class dbManager {
        {
            String res="";
            Statement state = this.dbObj.createStatement();
-           ResultSet set = state.executeQuery("SELECT name , marks from student , performa where student.`studentId` = performa.`studentId`and testId="+String.valueOf(testId)+";");
+           ResultSet set = state.executeQuery("SELECT name , marks from student , performa where student.`studentId` = performa.`studentId`and testId="+String.valueOf(testId)+" order by marks desc;");
            while(set.next())
            {
                res+=""+set.getString("name")+":"+set.getString("marks")+"?";
